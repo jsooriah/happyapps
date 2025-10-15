@@ -3,5 +3,5 @@ targets:
       default: true
     
     - name: "github-deploy"
-      output: "/tmp/output"
+      output: /tmp/output
       url: "https://jsooriah.github.io/happyapps/"
