@@ -3,5 +3,5 @@ targets:
       default: true
     
     - name: live
-      output: live
+      output: /tmp/output
       url: "https://jsooriah.github.io/happyapps/"
