@@ -1,5 +1,5 @@
 :root {
-    --link-color: #5856d7;
+    --link-color: #000;
     --link-color-visited: #5856d7;
     --link-color-hover: #302ea9;
     --link-color-active: #5856d7;
@@ -12,10 +12,10 @@
     
     --pre-background-color: #fff;
     
-    --text-color: #333;
+    --text-color: #000;
     --text-color-1: #000;
-    --text-color-2: #666;
-    --text-color-3: #999;
+    --text-color-2: #000;
+    --text-color-3: #000;
     
     --white-color: #ffffff;
     --black-color: #000000;
@@ -40,10 +40,10 @@
         --link-color-hover: #aba9ff;
         --link-color-active: #7d7aff;
         
-        --text-color: #c9c9c9;
-        --text-color-1: #f0f0f0;
-        --text-color-2: #999;
-        --text-color-3: #ccc;
+        --text-color: #fff;
+        --text-color-1: #fff;
+        --text-color-2: #fff;
+        --text-color-3: #fff;
         
         --background-color: #000;
         --background-color-1: #1a1a1a;

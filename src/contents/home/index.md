@@ -1,5 +1,5 @@
 ---
-title: "Swift application development and consulting"
-description: "Swift application development and consulting. Secure, efficient, scalable solutions."
+title: "HappyApps - Building products and teams, the human centric way"
+description: ""
 image: /images/default.png
 ---

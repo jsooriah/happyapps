@@ -103,8 +103,8 @@ main > section header p {
     padding: 0px 0;
 }
 .hero img {
-    width: 45px;
-    height: 45px;
+    width: 50%;
+    height: 50%;
 }
 .hero p {
     font-size: 1.5rem;
