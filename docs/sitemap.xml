@@ -1,18 +1,18 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     <url>
-        <loc>https://127.0.0.1:3000</loc>
+        <loc>https://jsooriah.github.io/happyapps</loc>
         <lastmod>2025-10-15</lastmod>
-        <loc>https://127.0.0.1:3000/blog/</loc>
+        <loc>https://jsooriah.github.io/happyapps/blog/</loc>
         <lastmod>2025-01-30</lastmod>
-        <loc>https://127.0.0.1:3000/blog/authors/joel-sooriah/</loc>
+        <loc>https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/</loc>
         <lastmod>2025-10-15</lastmod>
-        <loc>https://127.0.0.1:3000/blog/tags/open-api/</loc>
+        <loc>https://jsooriah.github.io/happyapps/blog/tags/open-api/</loc>
         <lastmod>2025-01-30</lastmod>
-        <loc>https://127.0.0.1:3000/blog/tags/product-updates/</loc>
+        <loc>https://jsooriah.github.io/happyapps/blog/tags/product-updates/</loc>
         <lastmod>2025-01-30</lastmod>
-        <loc>https://127.0.0.1:3000/blog/tags/swift/</loc>
+        <loc>https://jsooriah.github.io/happyapps/blog/tags/swift/</loc>
         <lastmod>2025-01-30</lastmod>
-        <loc>https://127.0.0.1:3000/blog/posts/dont-go-chasing-waterfalls-and-turn-the-ship-around/</loc>
+        <loc>https://jsooriah.github.io/happyapps/blog/posts/dont-go-chasing-waterfalls-and-turn-the-ship-around/</loc>
         <lastmod>2025-10-15</lastmod>
     </url>
 </urlset>
