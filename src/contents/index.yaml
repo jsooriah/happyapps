@@ -1,6 +1,6 @@
 baseUrl: "https://127.0.0.1:3000/"
 language: "en-US"
 title: "Happy Apps"
-description: "Building products and teams, the human centric way"
+description: "Designing products and teams, the human centric way"
 dateFormat: "yyyy.MM.dd."
 navigation:
