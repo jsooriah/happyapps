@@ -2,6 +2,6 @@ targets:
     - name: main
       default: true
     
-    - name: "github-deploy"
-      output: /tmp/output
+    - name: live
+      output: live
       url: "https://jsooriah.github.io/happyapps/"
