@@ -1,0 +1,7 @@
+targets:
+    - name: dev
+      default: true
+    
+    - name: "github-deploy"
+      output: "/tmp/output"
+      url: "https://jsooriah.github.io/happyapps/"
