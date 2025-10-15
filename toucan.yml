@@ -1,5 +1,5 @@
 targets:
-    - name: dev
+    - name: main
       default: true
     
     - name: "github-deploy"
