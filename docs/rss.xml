@@ -4,7 +4,7 @@
     <description>Designing products and teams, the human centric way</description>
     <link>https://jsooriah.github.io/happyapps</link>
     <language>en-US</language>
-    <lastBuildDate>Tue, 11 Nov 2025 11:46:52 +0000</lastBuildDate>
+    <lastBuildDate>Tue, 11 Nov 2025 12:00:13 +0000</lastBuildDate>
     <pubDate>Wed, 07 Jun 2023 14:57:12 +0000</pubDate>
     <ttl>250</ttl>
     <atom:link href="https://jsooriah.github.io/happyappsrss.xml" rel="self" type="application/rss+xml"/>
@@ -19,7 +19,7 @@
 <item>
     <guid isPermaLink="true">https://jsooriah.github.io/happyapps/blog/posts/root-cause-analysis-in-product-management-learning-the-hard-way/</guid>
     <title><![CDATA[ Root Cause Analysis In Product Management Learning The Hard Way ]]></title>
-    <description><![CDATA[ A personal story about why understanding the real problem matters more than building the perfect solution. As tech people, we’re often eager to build. The excitement of creating something new, something that showcases our technical capabilities and vision, can be intoxicating. But sometimes, our rush to solution-building can blind us to the fundamental question that should drive every product decision:What problem are we really solving? I learned this lesson the hard way while building a product for restaurant management — a story that fundamentally changed how I approach product discovery and root cause analysis, and ultimately why I transitioned from engineering to product management. ]]></description>
+    <description><![CDATA[ As tech people, we’re often eager to build. The excitement of creating something new, something that showcases our technical capabilities and vision, can be intoxicating. But sometimes, our rush to solution-building can blind us to the fundamental question that should drive every product decision:What problem are we really solving? ]]></description>
     <link>https://jsooriah.github.io/happyapps/blog/posts/root-cause-analysis-in-product-management-learning-the-hard-way/</link>
     <pubDate>Wed, 07 Jun 2023 14:57:12 +0000</pubDate>
 </item>
