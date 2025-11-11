@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="canonical" href="https://jsooriah.github.io/happyapps/blog/posts/root-cause-analysis-in-product-management-learning-the-hard-way/">
+    
+    
+    
+    <title> - Happy Apps</title>
+    <meta name="description" content="">
+    
+    <meta property="og:url" content="https://jsooriah.github.io/happyapps/blog/posts/root-cause-analysis-in-product-management-learning-the-hard-way/">
+    <meta property="og:title" content=" - Happy Apps">
+    <meta property="og:description" content="">
+    
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content=" - Happy Apps">
+    <meta name="twitter:description" content="">
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap">
+
+    <link rel="stylesheet" href="/happyapps/css/modern-normalize.css">
+    <link rel="stylesheet" href="/happyapps/css/modern-base.css">
+    <link rel="stylesheet" href="/happyapps/css/variables.css">
+    <link rel="stylesheet" href="/happyapps/css/base.css">
+    <link rel="stylesheet" href="/happyapps/css/grid.css">
+    <link rel="stylesheet" href="/happyapps/css/navigation.css">
+    <link rel="stylesheet" href="/happyapps/css/footer.css">
+    <link rel="stylesheet" href="/happyapps/css/style.css">
+
+    
+    
+    <link rel="icon" href="/icons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/icons/icon-320.png" type="image/png">
+    
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon-180x180.png">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+        media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+        media="(prefers-color-scheme: dark)"
+    >
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KQCKHXQ8');</script>
+    <!-- End Google Tag Manager -->
+</head>
+
+<body>
+    <div id="navigation-container">
+        <header id="navigation" class="wrapper">
+            <a href="/happyapps/">
+                <picture>
+                    <source
+                        srcset="/happyapps/images/logos/happyapps-logo~dark.png"
+                        media="(prefers-color-scheme: dark)"
+                        >
+                    <img
+                        src="/happyapps/images/logos/happyapps-logo.png"
+                        alt="Logo of Happy Apps"
+                        title="Happy Apps"
+                        >
+                </picture>
+            </a>
+            <nav>
+                <input type="checkbox" id="primary-menu-button" name="menu-button" class="menu-button">
+                    <label for="primary-menu-button">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </label>
+                    <div class="menu-items">
+                    </div>
+            </nav>
+        </header>
+    </div>
+    
+    <main>
+        
+        <p>A personal story about why understanding the real problem matters more than building the perfect solution_</p><p>As tech people, we’re often eager to build. The excitement of creating something new, something that showcases our technical capabilities and vision, can be intoxicating. But sometimes, our rush to solution-building can blind us to the fundamental question that should drive every product decision: <strong>What problem are we really solving?</strong></p><p>I learned this lesson the hard way while building a product for restaurant management — a story that fundamentally changed how I approach product discovery and root cause analysis, and ultimately why I transitioned from engineering to product management.</p><h2 id="the-shiny-solution-that-nobody-asked-for">The Shiny Solution That Nobody Asked For</h2><p>Picture this: I was tasked with building a sophisticated, drag-and-drop table management system for iPad. The vision was compelling — an intuitive interface where managers could visualize their entire restaurant layout, drag tables around to optimize seating arrangements, and manage reservations with elegant gestures. It felt innovative, modern, and exactly what the hospitality industry needed to modernize their operations.</p><p>Months went into developing this system. We crafted beautiful interfaces, implemented complex drag-and-drop functionality, built real-time synchronization, and created detailed table visualization features. The engineering effort was substantial, and frankly, we were proud of the technical sophistication we’d achieved.</p><p>But when we finally put it in front of our target users — managers of typical French brasseries — the response was lukewarm at best.</p><h2 id="the-reality-check-what-restaurant-managers-actually-needed">The Reality Check: What Restaurant Managers Actually Needed</h2><p>After the initial disappointment, I decided to step back and do what I should have done from the beginning: truly understand the jobs our users were trying to get done. Using Jobs-to-be-Done (JTBD) methodology and outcome-driven innovation principles, I spent time observing and interviewing brasserie managers during their actual work.</p><p>What I discovered was both humbling and enlightening.</p><p>The primary pain point wasn’t about sophisticated table management or visual restaurant layouts. During busy service periods, managers had one simple, urgent need: <strong>“Show me which tables are available right now for a party of four.”</strong></p><p>That’s it. No drag-and-drop required. No beautiful visualizations needed. Just a quick, reliable answer to help them seat customers efficiently during the dinner rush.</p><p>Our elaborate iPad solution was like bringing a Formula 1 race car to someone who just needed a bicycle to get to the corner store.</p><h2 id="the-low-hanging-fruit-we-missed">The Low-Hanging Fruit We Missed</h2><p>The insight was painful but clear. The core job-to-be-done could have been solved with a simple list interface:</p><p><strong>Available Tables — 8:30 PM</strong></p><ul><li>Table 12 (4 seats) — Available now</li><li>Table 7 (4 seats) — Available in 15 min</li><li>Table 23 (6 seats) — Available now</li></ul><p>This solution would have required minimal engineering effort, could have been built in days rather than months, and would have delivered immediate value to our users. More importantly, it would have addressed the highest-frequency, highest-urgency need that managers faced every single day.</p><h2 id="root-cause-analysis-where-we-went-wrong">Root Cause Analysis: Where We Went Wrong</h2><p>Looking back, our failure wasn’t technical — it was methodological. We fell into several classic product management traps:</p><p><strong>Solution-First Thinking</strong>: We started with what we wanted to build rather than what users needed. The drag-and-drop interface was exciting to us, but irrelevant to the actual problem.</p><p><strong>Assumptions Over Evidence</strong>: We assumed that because restaurants have complex table layouts, managers would want complex table management tools. We never validated this assumption.</p><p><strong>Feature Complexity Bias</strong>: We equated sophisticated features with valuable solutions, ignoring the principle that the best solutions are often the simplest ones that directly address user pain points.</p><p><strong>Insufficient Problem Discovery</strong>: We skipped the deep dive into understanding the specific jobs our users were trying to accomplish in their daily workflows.</p><h2 id="the-framework-that-could-have-saved-us">The Framework That Could Have Saved Us</h2><p>Had we applied proper root cause analysis and outcome-driven methodology from the start, our process would have looked different:</p><p><strong>Step 1: Define the Job-to-be-Done</strong> Rather than assuming we knew what restaurant managers needed, we should have spent time understanding their daily struggles and the outcomes they were trying to achieve.</p><p><strong>Step 2: Map the Current Process</strong> Observing how managers currently handle table availability during service would have revealed the simplicity of their actual needs.</p><p><strong>Step 3: Identify the Root Cause</strong> The real problem wasn’t complex table management — it was quick access to availability information during high-pressure moments.</p><p><strong>Step 4: Design for the Outcome</strong> The desired outcome was faster seating decisions, not prettier interfaces.</p><h2 id="lessons-for-fellow-product-managers">Lessons for Fellow Product Managers</h2><p>This experience taught me several principles that now guide every product decision I make:</p><p><strong>Start with the Problem, Not the Solution</strong>: Always begin by deeply understanding the job your users are trying to get done. What outcome are they seeking? What’s currently preventing them from achieving it?</p><p><strong>Validate Assumptions Early</strong>: Every assumption about user needs should be tested with real users in real contexts before significant development effort begins.</p><p><strong>Embrace Simplicity</strong>: The most elegant solution is often the simplest one that effectively addresses the core problem. Complexity should be added only when it directly serves user outcomes.</p><p><strong>Observe Users in Context</strong>: How people work in the comfort of an interview setting often differs dramatically from how they work under real-world pressure.</p><p><strong>Question Your Own Excitement</strong>: If you find yourself more excited about the solution than users are about their problem, that’s a red flag.</p><h2 id="the-path-forward">The Path Forward</h2><p>Root cause analysis in product management isn’t just about problem-solving — it’s about problem understanding. Before we can solve anything effectively, we need to understand not just what users say they want, but what they actually need to accomplish their goals.</p><p>The next time you find yourself sketching out an elaborate solution, pause and ask: Have I truly understood the root cause of the problem I’m trying to solve? Have I validated that this problem is significant enough to warrant the solution I’m envisioning?</p><p>Sometimes the most valuable thing you can build is the simplest thing that gets the job done. In our case, a simple list would have been worth more than our sophisticated drag-and-drop interface — because it would have actually solved the problem our users faced every day.</p><p>The fancy iPad system we built might have impressed other product managers, but the simple list would have impressed the people who mattered most: our users trying to run their restaurants efficiently.</p><p>That’s the difference between building something cool and building something valuable. Root cause analysis helps ensure we’re always building the latter.</p><p>Ultimately, the fancy table management system happens to have a target market segment; but is it the best opportunity you can get from a business perspective at that specific time your are building ? How do you segment the market based on jobs to be done ? How do you scale this methodology to drive a complete product strategy that is connected to your business outcomes, and how do you align cross functional teams around a compelling product vision ?</p><p>More in a next article !:)</p>
+        
+    </main>
+    
+    <div id="footer-container">
+        <footer class="wrapper">
+            <div class="grid grid-211">
+                <div>
+                    <a href="/">
+                <picture>
+                    <source
+                        srcset="/happyapps/images/logos/happyapps-logo~dark.png"
+                        media="(prefers-color-scheme: dark)"
+                        >
+                    <img
+                        src="/happyapps/images/logos/happyapps-logo.png"
+                        alt="Logo of Happy Apps"
+                        title="Happy Apps"
+                        >
+                </picture>
+            </a>
+                    <h2></h2>
+                    <p>A blog on building products the human centric way</p>
+                </div>
+                <div class="links">
+                    <div class="external">
+                        
+                    </div>
+                    <div class="contact">
+                        <h3></h3>
+                        <p>
+                        <br>
+                        <a href="mailto:">
+                            
+                        </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+    
+            <div id="copyright"></div>
+    
+        </footer>
+    </div>
+
+    
+    
+    <script src="/js/favicon.js"></script>
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQCKHXQ8"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+</body>
+</html>
