@@ -14,7 +14,7 @@ redirects:
 
 Historically, many organisations operated with a waterfall-like model where product managers or business analysts would create detailed specifications that engineers would implement. Engineering teams would receive “clearer guidance upfront” with regular check-ins to ensure alignment. This approach treats engineers primarily as implementers who translate requirements into code.
 
-The Shift Toward Participatory Engineering
+When We Shifted Towards Participatory Engineering
 ------------------------------------------
 
 The modern tech industry increasingly favors empowering engineers to participate in solution design. Leading tech companies have “built intentional cultures that keep top engineers engaged, empowered, and sticking around through clear missions, internal mobility, open-source cred, trust in leadership, and clear technical missions.” [Code, culture, and competitive edge: Who’s winning the engineering talent war in tech?](https://www.signalfire.com/blog/whos-winning-the-engineering-talent-war)
@@ -39,8 +39,8 @@ The shift toward participatory approaches reflects several industry realizations
 
 The consensus among successful tech companies is that while clear communication and alignment remain important, the most effective approach involves engineers as partners in solution design rather than just implementers of predetermined specifications. This participatory model leverages technical expertise more effectively and creates stronger engineering cultures that attract top talent.
 
-The Waterfall Trap Is Back
---------------------------
+Now, The Waterfall Trap Is Back
+-------------------------------
 
 Fast forward to today, AI tools are luring product teams back into waterfall patterns. [As Alex Hipp points out](https://www.alexhipp.com/blog/the-waterfall-workflow-trap-is-back), “vibe coding has reintroduced the very problems that drove software engineering away from waterfall development two decades ago” [The waterfall trap is back](https://www.alexhipp.com/blog/the-waterfall-workflow-trap-is-back) — teams describe what they want in plain English, AI generates working code in minutes, but the underlying workflow remains dangerously linear.
 
@@ -57,35 +57,30 @@ Turn the Ship Around
 
 “Turn the Ship Around!” by David Marquet offers powerful leadership principles that directly address the core dysfunction of waterfall approaches and provide a blueprint for adaptive product and engineering management.
 
-Inherent Uncertainty in Product Development
--------------------------------------------
+**Inherent Uncertainty in Product Development**
 
 Traditional waterfall assumes you can specify requirements upfront and execute linearly. But **user needs evolve, technical discoveries emerge, and market conditions shift**. Instead of fighting this reality:
 
 *   **Product Management**: Build hypothesis-driven roadmaps rather than feature factories. Accept that your initial product requirements are educated guesses that will change as you learn.
 *   **Engineering Management**: Design systems for changeability rather than trying to architect the “perfect” solution upfront. Embrace iterative technical design.
 
-Empowerment Over Command-and-Control
-------------------------------------
+**Empowerment Over Command-and-Control**
 
 Waterfall centralizes decision-making in planning phases, creating bottlenecks and slow response times. The Leader-Leader model distributes intelligence:
 
 *   **Empower Product Decisions**: Let engineers who understand technical constraints influence feature prioritization. Let customer-facing team members shape product direction based on user feedback.
 *   **Empower Technical Decisions**: Give senior engineers authority to refactor code, choose implementation approaches, and make architecture trade-offs within agreed boundaries.
 
-Managing Variability Through Clear Intent
------------------------------------------
+**Managing Variability Through Clear Intent**
 
-Clarity of Intent Replaces Detailed Specifications
---------------------------------------------------
+**Clarity of Intent Replaces Detailed Specifications**
 
 Instead of 200-page requirements documents, provide clear **outcome-focused intent**:
 
 *   **Product Intent**: “We intend to reduce user onboarding time by 50% while maintaining conversion quality” rather than “Build these 15 specific onboarding screens”
 *   **Technical Intent**: “We intend to improve system reliability to 99.9% uptime” rather than prescribing specific technical solutions
 
-Competence Development for Adaptive Teams
------------------------------------------
+**Competence Development for Adaptive Teams**
 
 Waterfall assumes you can plan away the need for judgment. Instead, invest in capabilities that handle uncertainty:
 
@@ -93,8 +88,7 @@ Waterfall assumes you can plan away the need for judgment. Instead, invest in ca
 *   **Technical Judgment**: The ability to make good trade-offs between speed, quality, and maintainability under pressure
 *   **Product Sense**: Pattern recognition for what works and doesn’t work for users
 
-Psychological Safety Enables Rapid Learning
--------------------------------------------
+**Psychological Safety Enables Rapid Learning**
 
 Waterfall punishes “changes” as scope creep or planning failures. Create environments where:
 
@@ -102,8 +96,7 @@ Waterfall punishes “changes” as scope creep or planning failures. Create env
 *   **Technical Experiments are Safe**: Engineers can try new approaches, refactor code, or challenge architectural assumptions without career risk
 *   **Honest Feedback Flows**: Bad news travels fast and without punishment, enabling quick course corrections
 
-“I Intend To” Breaks Waterfall Permission Cycles
-------------------------------------------------
+**“I Intend To” Breaks Waterfall Permission Cycles**
 
 Traditional approaches create approval bottlenecks. The intent-based language accelerates decision-making:
 
@@ -117,27 +110,22 @@ Traditional approaches create approval bottlenecks. The intent-based language ac
 *   “I intend to implement this performance optimization during the next sprint” (vs. formal architecture review processes)
 *   “I intend to roll back this deployment if error rates exceed our threshold” (vs. incident escalation procedures)
 
-Benefits That Transform Product and Engineering Velocity
---------------------------------------------------------
+**Benefits That Transform Product and Engineering Velocity**
 
-Increased Innovation Through Bounded Experimentation
-----------------------------------------------------
+**Increased Innovation Through Bounded Experimentation**
 
 *   **Product Teams** can test radical ideas quickly rather than debating them in planning meetings
 *   **Engineering Teams** can explore new technologies and approaches within guardrails rather than waiting for “innovation sprints”
 
-Resilience Through Distributed Decision-Making
-----------------------------------------------
+**Resilience Through Distributed Decision-Making**
 
 When problems emerge (and they always do), teams can respond immediately rather than escalating through layers. A critical user experience issue gets fixed by the frontend engineer who discovered it, not scheduled for the next planning cycle.
 
-Unleashing Technical and Product Potential
-------------------------------------------
+**Unleashing Technical and Product Potential**
 
 Waterfall treats people as resources executing predetermined plans. Intent-based leadership treats them as intelligent actors who can solve problems creatively within clear boundaries.
 
-Practical Implementation Framework
-----------------------------------
+**Practical Implementation Framework**
 
 **Replace Waterfall Artifacts**:
 
