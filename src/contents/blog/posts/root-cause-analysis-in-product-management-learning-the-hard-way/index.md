@@ -1,10 +1,10 @@
 ---
 type: post
 title: Root Cause Analysis In Product Management Learning The Hard Way
-description: A personal story about why understanding the real problem matters more than building the perfect solution. As tech people, we’re often eager to build. The excitement of creating something new, something that showcases our technical capabilities and vision, can be intoxicating. But sometimes, our rush to solution-building can blind us to the fundamental question that should drive every product decision:What problem are we really solving? I learned this lesson the hard way while building a product for restaurant management — a story that fundamentally changed how I approach product discovery and root cause analysis, and ultimately why I transitioned from engineering to product management.
+description: A personal story about why understanding the real problem matters more than building the perfect solution. As tech people, we’re often eager to build. The excitement of creating something new, something that showcases our technical capabilities and vision, can be intoxicating. But sometimes, our rush to solution-building can blind us to the fundamental question that should drive every product decision:What problem are we really solving?
 publication: 2023-06-07 14:57:12
 tags:
-  - swift
+  - product management
 authors:
   - joel-sooriah
 featured: false
