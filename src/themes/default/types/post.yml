@@ -30,7 +30,7 @@ context:
         posts:
             sort: publication
             order: desc
-            limit: 3
+            limit: 10
         
         featured:
             sort: publication
