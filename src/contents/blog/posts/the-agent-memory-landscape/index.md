@@ -1,15 +1,15 @@
 ---
 type: post
-title: Root Cause Analysis In Product Management Learning The Hard Way
-description: As tech people, we’re often eager to build. The excitement of creating something new, something that showcases our technical capabilities and vision, can be intoxicating. But sometimes, our rush to solution-building can blind us to the fundamental question that should drive every product decision:What problem are we really solving?
+title: The Agent Memory Landscape - A PM Guide to Building Context-Aware AI Systems
+description: AI agents, quite often, don’t remember. They are brilliant in the moment, terrible across moments. Every conversation is day one. Every interaction starts from zero ! That limitation—and the architectural challenge of solving it—has become close to fascination to me. LLMs and agents are nothing without memory and context. An agent that forgets is just an expensive API call. An agent that remembers becomes something closer to a very good friend or assistant ! The landscape of agent memory solutions has exploded in the past two years. For product managers building AI-native products, understanding this landscape isn't optional—it's foundational. Here's a map of the territory.
 publication: 2023-06-07 14:57:12
 tags:
   - ProductManagement
 authors:
   - joel-sooriah
-featured: false
+featured: true
 redirects:
-    - from: root-cause-analysis-in-product-management-learning-the-hard-way
+    - from: the-agent-memory-landscape
 ---
 
 **The Agent Memory Landscape: A Product Manager's Guide to Building Context-Aware AI Systems**

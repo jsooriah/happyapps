@@ -4,7 +4,7 @@
     <description>Designing products and teams, the human centric way</description>
     <link>https://jsooriah.github.io/happyapps</link>
     <language>en-US</language>
-    <lastBuildDate>Sat, 06 Dec 2025 10:09:01 +0000</lastBuildDate>
+    <lastBuildDate>Sat, 06 Dec 2025 10:13:58 +0000</lastBuildDate>
     <pubDate>Tue, 07 Nov 2023 14:57:12 +0000</pubDate>
     <ttl>250</ttl>
     <atom:link href="https://jsooriah.github.io/happyappsrss.xml" rel="self" type="application/rss+xml"/>
@@ -32,8 +32,8 @@
 </item>
 <item>
     <guid isPermaLink="true">https://jsooriah.github.io/happyapps/blog/posts/the-agent-memory-landscape/</guid>
-    <title><![CDATA[ Root Cause Analysis In Product Management Learning The Hard Way ]]></title>
-    <description><![CDATA[ As tech people, we’re often eager to build. The excitement of creating something new, something that showcases our technical capabilities and vision, can be intoxicating. But sometimes, our rush to solution-building can blind us to the fundamental question that should drive every product decision:What problem are we really solving? ]]></description>
+    <title><![CDATA[ The Agent Memory Landscape - A PM Guide to Building Context-Aware AI Systems ]]></title>
+    <description><![CDATA[ AI agents, quite often, don’t remember. They are brilliant in the moment, terrible across moments. Every conversation is day one. Every interaction starts from zero ! That limitation—and the architectural challenge of solving it—has become close to fascination to me. LLMs and agents are nothing without memory and context. An agent that forgets is just an expensive API call. An agent that remembers becomes something closer to a very good friend or assistant ! The landscape of agent memory solutions has exploded in the past two years. For product managers building AI-native products, understanding this landscape isn&#39;t optional—it&#39;s foundational. Here&#39;s a map of the territory. ]]></description>
     <link>https://jsooriah.github.io/happyapps/blog/posts/the-agent-memory-landscape/</link>
     <pubDate>Wed, 07 Jun 2023 14:57:12 +0000</pubDate>
 </item>
