@@ -20,6 +20,6 @@ context:
             foreignKey: tags
             sort: title
             order: asc
-            limit: 10
+            limit: 5
 
 
