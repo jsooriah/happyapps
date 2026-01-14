@@ -12,7 +12,7 @@ context:
             sort: title
             order: asc
             pagination:
-                limit: 10
+                limit: 5
                 
     local:
         posts:
