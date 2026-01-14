@@ -4,7 +4,7 @@ title: Joel Sooriah
 description: Product and Tech Guy
 image: ./assets/joel-sooriah.jpeg
 priority: 10
-github: 
+github: jsooriah
 x: 
 sswg: true 
 ---
