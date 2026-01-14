@@ -9,7 +9,7 @@ authors:
   - joel-sooriah
 featured: false
 redirects:
-    - from: root-cause-analysis-in-product-management-learning-the-hard-way
+    - from: why-your-product-team-speaks-a-different-language-than-your-customers-jtbd-part-1
 ---
 
 
