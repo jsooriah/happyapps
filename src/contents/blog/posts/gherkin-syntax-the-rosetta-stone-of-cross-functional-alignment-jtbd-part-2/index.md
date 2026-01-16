@@ -13,15 +13,28 @@ redirects:
 ---
 
 
-# **Part 2: Gherkin Syntax: The Rosetta Stone of Cross-Functional Alignment**
+Gherkin Syntax: The Rosetta Stone of Cross-Functional Alignment
+---------------------------------------------------------------
 
 In 1799, French soldiers discovered a stone tablet in Egypt that changed our understanding of ancient civilizations. The Rosetta Stone contained the same decree written in three different scripts—hieroglyphics, Demotic, and ancient Greek. Because scholars could read Greek, they could finally decode hieroglyphics.Your product team needs a Rosetta Stone.Not to decode ancient languages, but to translate between the four dialects we identified in Part 1: customer outcomes, product capabilities, engineering logic, and business metrics. You need a syntax that all four groups can read, write, and understand without losing meaning in translation.That syntax already exists. You've probably seen it in your engineering team's test suites. It's called Gherkin.
 
-## **What Is Gherkin? (And Why You Think It's Just for Testing)**
+What Is Gherkin? (And Why You Think It's Just for Testing)
+----------------------------------------------------------
 
-Gherkin is a structured syntax originally created for Behavior-Driven Development (BDD). Engineers use it to write acceptance criteria that look like this:gherkinGiven a user is logged into their accountWhen they click the "Export Data" buttonThen they should receive a CSV file with their dataAnd the file should download within 3 secondsMost product teams see Gherkin as an engineering artifact—something QA writes, developers reference, and product managers occasionally glance at. It lives in the technical realm, adjacent to code.This is a catastrophic underutilization of what Gherkin actually offers.
+Gherkin is a structured syntax originally created for Behavior-Driven Development (BDD). Engineers use it to write acceptance criteria that look like this:
 
-## **Why Gherkin Is Actually a Universal Translation Protocol**
+```gherkin
+Given a user is logged into their account
+When they click the "Export Data" button
+Then they should receive a CSV file with their data
+And the file should download within 3 seconds
+``` 
+
+Most product teams see Gherkin as an engineering artifact—something QA writes, developers reference, and product managers occasionally glance at. It lives in the technical realm, adjacent to code.
+
+This is a catastrophic underutilization of what Gherkin actually offers.
+
+**Why Gherkin Is Actually a Universal Translation Protocol**
 
 # Gherkin isn't just a testing syntax. It's a **structured way to describe cause and effect**.Look at the structure:* **Given** = The context or situation
 
