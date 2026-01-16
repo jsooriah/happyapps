@@ -1,7 +1,7 @@
 ---
 type: post
 title: About this blog
-description: 
+description: Blogging helps me reflect on my day to day initiatives at work - product intitiatives, methodologies, interaction with cross functional teams, customers, management, and end users. Being quite fascinated by the human centered design element of things in an excessively digitalized world, I came to realise that most problems encountered by organisations, are ultimately a human problem - lack of alignment, team boundaries, communication, lack of empathy, ..., and the list can be long, ...very long. After some years of experience in the field, I found myself solving these problems, whenever I see teams struggling, I cannot help from finding ways to solve them. As a matter of fact, that's exactly how I transitioned from engineering to product management. Blogging helps me learn while I am writing - whenever I experience the desire to write on something that I believe should be shared to others, I run also some research to support my writings and learn along the way.
 publication: 2025-04-19 14:57:12
 tags:
   - about
