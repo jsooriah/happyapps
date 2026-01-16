@@ -2,7 +2,7 @@
 type: post
 title: Root Cause Analysis In Product Management Learning The Hard Way
 description: As tech people, we’re often eager to build. The excitement of creating something new, something that showcases our technical capabilities and vision, can be intoxicating. But sometimes, our rush to solution-building can blind us to the fundamental question that should drive every product decision:What problem are we really solving?
-publication: 2023-06-07 14:57:12
+publication: 2025-05-29 15:54:12
 tags:
   - ProductManagement
 authors:

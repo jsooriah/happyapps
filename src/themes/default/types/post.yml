@@ -4,7 +4,7 @@ template: blog.post.default
 
 pagination:
     bundle: blog/posts/pagination
-    limit: 5
+    limit: 10
     sort: publication
     order: desc
 
@@ -30,12 +30,12 @@ context:
         posts:
             sort: publication
             order: desc
-            limit: 5
+            limit: 10
         
         featured:
             sort: publication
             order: desc
-            limit: 5
+            limit: 10
             filter:
                 field: featured
                 method: equals
@@ -59,14 +59,14 @@ context:
             foreignKey: $same.tags
             sort: publication
             order: desc
-            limit: 5
+            limit: 10
 
         moreByAuthors:
             references: post
             foreignKey: $same.authors
             sort: publication
             order: desc
-            limit: 5
+            limit: 10
         
 
 

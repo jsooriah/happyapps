@@ -2,7 +2,7 @@
 type: post
 title: Gherkin Syntax - The Rosetta Stone of Cross-Functional Alignment
 description: Historically, many organisations operated with a waterfall-like model where product managers or business analysts would create detailed specifications that engineers would implement. Engineering teams would receive “clearer guidance upfront” with regular check-ins to ensure alignment. This approach treats engineers primarily as implementers who translate requirements into code.
-publication: 2023-06-07 14:57:12
+publication: 2026-01-15 14:57:12
 tags:
   - productmanagement
 authors:

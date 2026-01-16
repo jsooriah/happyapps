@@ -2,7 +2,7 @@
 type: post
 title: The Silent Kitchen - What Sébastien Bras Reminds Us About Building Products and Teams
 description: We've all absorbed the mythology of the chaotic kitchen—the screaming, the clanging, the barely controlled chaos of a dinner rush. Gordon Ramsay has built an empire on it. "Yes, chef!" shouted at maximum volume. Pans slammed for emphasis. The kitchen as controlled explosion. The brigade system as military operation, with hierarchy enforced through decibels. This mythology is so pervasive that we accept it as the natural state of excellence under pressure. We assume that when stakes are high and standards are higher, chaos is not just inevitable but necessary—the very proof of seriousness, of commitment, of refusing to accept mediocrity.
-publication: 2023-06-07 14:57:12
+publication: 2025-11-13 03:23:12
 tags:
   - ProductManagement
 authors:

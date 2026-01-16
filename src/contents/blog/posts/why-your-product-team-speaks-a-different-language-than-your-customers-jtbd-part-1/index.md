@@ -2,7 +2,7 @@
 type: post
 title: Why Your Product Team Speaks a Different Language Than Your customers
 description: Every product team has experienced this moment. You ship a feature you're certain customers need. The engineering was solid. The design was clean. The rollout was smooth. And then... crickets. Not because customers don't have the problem you're solving. They do. But because the way you understood their problem and the way they actually experience it exist in two completely different universes.
-publication: 2023-06-07 14:57:12
+publication: 2026-01-14 14:57:12
 tags:
   - ProductManagement
 authors:
