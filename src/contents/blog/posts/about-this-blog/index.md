@@ -2,7 +2,7 @@
 type: post
 title: About this blog
 description: 
-publication: 2025-08-19 14:57:12
+publication: 2025-04-19 14:57:12
 tags:
   - about
 authors:
@@ -12,10 +12,8 @@ redirects:
     - from: about-this-blog
 ---
 
-# **About this blog**
-
-## ** Why I run this blog: Reflect and Learn
---------------------------------------------
+## Why I run this blog
+----------------------
 
 **Reflect and Learn**
 
@@ -28,8 +26,8 @@ As a matter of fact, that's exactly how I transitioned from engineering to produ
 
 Blogging helps me learn while I am writing - whenever I experience the desire to write on something that I believe should be shared to others, I run also some research to support my writings and learn along the way.
 
-How do I run this blog:LLM based knowledge Management System
-------------------------------------------------------------
+How do I run this blog
+----------------------
 
 **Open Source Server-Side-Swift & Markdown-Based Static Site Generator**
 The last time I pushed code into production was in 2018 and that was on the Apple store and in Swift - Since then I have had in my mind the desire to mingle with some server side swift at some point.
