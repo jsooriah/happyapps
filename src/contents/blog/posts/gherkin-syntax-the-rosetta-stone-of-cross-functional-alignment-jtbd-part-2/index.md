@@ -23,7 +23,7 @@ What Is Gherkin? (And Why You Think It's Just for Testing)
 
 Gherkin is a structured syntax originally created for Behavior-Driven Development (BDD). Engineers use it to write acceptance criteria that look like this:
 
-```gherkin
+```
 Given a user is logged into their account
 When they click the "Export Data" button
 Then they should receive a CSV file with their data
