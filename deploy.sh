@@ -1,0 +1,1 @@
+toucan generate; git add .; git commit -a -m "updated posts"; git push origin;
