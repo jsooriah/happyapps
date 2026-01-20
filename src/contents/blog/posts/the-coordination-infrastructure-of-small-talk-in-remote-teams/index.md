@@ -4,7 +4,7 @@ title: The Coordination Infrastructure of Small Talk in Remote Teams
 description: Historically, many organisations operated with a waterfall-like model where product managers or business analysts would create detailed specifications that engineers would implement. Engineering teams would receive “clearer guidance upfront” with regular check-ins to ensure alignment. This approach treats engineers primarily as implementers who translate requirements into code.
 publication: 2025-09-06 11:27:12
 tags:
-  - swift
+  - team
 authors:
   - joel-sooriah
 featured: false

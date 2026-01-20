@@ -4,7 +4,7 @@ title: The Pragmatist Roots of Agile - John Dewey's Philosophy and Modern Softwa
 description: The Pragmatist Roots of Agile - John Dewey's Philosophy and Modern Software Development. When the seventeen software developers gathered at the Snowbird ski resort in Utah in 2001 to draft the Agile Manifesto, they were articulating principles that would revolutionize how teams build software. What they may not have realized is that they were echoing ideas first developed nearly a century earlier by American philosopher and educator John Dewey. The parallels between Dewey's pragmatist philosophy and agile software development reveal a deeper truth - both represent responses to rigid, theoretical approaches that fail to account for the messy, adaptive nature of real-world problem-solving.
 publication: 2025-12-12 13:02:11
 tags:
-  - ProductManagement
+  - ProductManagement agile
 authors:
   - joel-sooriah
 featured: false

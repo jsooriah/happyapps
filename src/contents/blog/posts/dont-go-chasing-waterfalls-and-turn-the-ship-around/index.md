@@ -4,10 +4,10 @@ title: Don't go chasing waterfalls and turn the ship around
 description: Historically, many organisations operated with a waterfall-like model where product managers or business analysts would create detailed specifications that engineers would implement. Engineering teams would receive “clearer guidance upfront” with regular check-ins to ensure alignment. This approach treats engineers primarily as implementers who translate requirements into code.
 publication: 2025-09-06 11:27:12
 tags:
-  - swift
+  - agile aiprototyping vibecoding
 authors:
   - joel-sooriah
-featured: true
+featured: false
 redirects:
     - from: dont-go-chasing-waterfalls-and-turn-the-ship-around
 ---

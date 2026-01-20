@@ -4,7 +4,7 @@ title: The Agent Memory Landscape - A PM Guide to Building Context-Aware AI Syst
 description: AI agents, quite often, don’t remember. They are brilliant in the moment, terrible across moments. Every conversation is day one. Every interaction starts from zero ! That limitation—and the architectural challenge of solving it—has become close to fascination to me. LLMs and agents are nothing without memory and context. An agent that forgets is just an expensive API call. An agent that remembers becomes something closer to a very good friend or assistant ! The landscape of agent memory solutions has exploded in the past two years. For product managers building AI-native products, understanding this landscape isn't optional—it's foundational. Here's a map of the territory.
 publication: 2025-12-07 13:32:12
 tags:
-  - ProductManagement
+  - aiengineering
 authors:
   - joel-sooriah
 featured: false

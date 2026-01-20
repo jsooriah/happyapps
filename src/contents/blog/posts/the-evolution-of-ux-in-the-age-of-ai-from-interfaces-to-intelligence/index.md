@@ -4,7 +4,7 @@ title: The Evolution of UX in the Age of AI - From Interfaces to Intelligence
 description: Users don’t fundamentally care about your interface — they care about what it helps them accomplish. Nobody opens Photoshop because they love its toolbar; they open it because they need to edit an image. The interface is just the mediator between intention and result. This realization brings us to a critical inflection point - What if our obsession with UI elements has been missing the bigger picture of UX — the holistic user experience? What if AI could help us transcend the limitations of traditional interfaces to focus directly on user outcomes?
 publication: 2025-05-20 14:57:12
 tags:
-  - ProductManagement
+  - ProductManagement UXEngineering
 authors:
   - joel-sooriah
 featured: false
