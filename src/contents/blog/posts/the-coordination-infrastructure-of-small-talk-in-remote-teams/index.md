@@ -7,7 +7,7 @@ tags:
   - swift
 authors:
   - joel-sooriah
-featured: true
+featured: false
 redirects:
     - from: dont-go-chasing-waterfalls-and-turn-the-ship-around
 ---

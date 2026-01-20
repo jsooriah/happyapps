@@ -125,16 +125,23 @@ The Three Levels of Gherkin Translation
 **Level 1: Job-Level Gherkin (Customer Progress)**
 
 This describes the customer's struggling moment and desired progress in their language:
-gherkin
+```gherkin
 Given I'm responsible for platform safety but don't have legal training
 When a case involves complex speech that might be protected
 Then I need to make a decision I can defend to leadershipAnd avoid both under-enforcement that risks users and over-enforcement that risks lawsuits
+```
 
 This is pure JTBD territory. No features mentioned. Just context, trigger, and desired outcome.
 
 **Level 2: Solution-Level Gherkin (Product Requirements)**
 
-This describes how your product creates that progress:gherkinGiven a moderator reviewing a case with legal complexityWhen they flag the case as "legal uncertainty"Then the system should route it to a specialized legal review queueAnd surface relevant precedent cases with legal annotationsAnd provide decision-support documentation from platform counselNotice: Same structure, now solution-aware. We've moved from customer job to product capability, but the Given-When-Then structure keeps us anchored to the original struggling moment.
+This describes how your product creates that progress:
+
+```gherkin
+Given a moderator reviewing a case with legal complexity
+When they flag the case as "legal uncertainty"
+Then the system should route it to a specialized legal review queueAnd surface relevant precedent cases with legal annotations
+And provide decision-support documentation from platform counselNotice: Same structure, now solution-aware. We've moved from customer job to product capability, but the Given-When-Then structure keeps us anchored to the original struggling moment.
 
 **Level 3: Implementation-Level Gherkin (Technical Specs)**
 

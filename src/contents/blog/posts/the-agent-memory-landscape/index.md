@@ -7,7 +7,7 @@ tags:
   - ProductManagement
 authors:
   - joel-sooriah
-featured: true
+featured: false
 redirects:
     - from: the-agent-memory-landscape
 ---
