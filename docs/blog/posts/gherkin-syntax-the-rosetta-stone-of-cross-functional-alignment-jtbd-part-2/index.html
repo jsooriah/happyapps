@@ -144,132 +144,19 @@ And display them in the right sidebar
 When they have access to similar past cases
 Then decision confidence scores should increase by 30%
 And average review time should decrease by 40%
-</code></pre><p>Notice what just happened. The same syntax moved from customer insight to product spec to technical implementation to business metric. Each translation added specificity appropriate to that function, but the causal structure remained intact.</p><p><strong>The Given-When-Then structure preserved the why through every handoff.</strong></p><h2 id="why-this-works-when-other-approaches-don-t"><strong>Why This Works When Other Approaches Don’t</strong></h2><h1>Most cross-functional alignment tools fail because they ask different functions to adopt an entirely new language. Product teams try to get engineers to care about personas. Engineering tries to get product to understand technical constraints. Everyone talks past each other.</h1><p>Gherkin works because it doesn’t ask anyone to abandon their native language.</p><p>Instead, it provides a <strong>structural grammar</strong> that works for everyone:</p><p><strong>For customers</strong>:<br>Gherkin statements describe their experience in causal terms they recognize.<br>“Given I’m trying to X, when Y happens, then I need Z” maps directly to how they think about their struggles.</p><p><strong>For product managers</strong>: Gherkin forces clarity about context, triggers, and outcomes—the same things product needs to spec requirements effectively.</p><p><strong>For engineers</strong>: Gherkin is already their language for acceptance criteria. No new syntax to learn.</p><p><strong>For designers</strong>: Given-When-Then maps to user flows and interaction states they’re already thinking about.</p><p><strong>For QA</strong>: This is literally how they write test cases.</p><p><strong>For marketing</strong>: These statements become the foundation for messaging that describes customer progress, not just features.</p><p><strong>For sales</strong>: Discovery questions can be structured as Given-When-Then explorations of customer context.</p><p>Everyone’s speaking the same structural language, just emphasizing different parts based on their function.</p><h2 id="the-three-levels-of-gherkin-translation">The Three Levels of Gherkin Translation</h2><h1>Gherkin works as a translation layer because it operates at three distinct levels of abstraction—and you can move between them without losing the causal thread.</h1><p><strong>Level 1: Job-Level Gherkin (Customer Progress)</strong></p><p>This describes the customer’s struggling moment and desired progress in their language:</p><pre><code class="language-gherkin">Given I'm responsible for platform safety but don't have legal training
+</code></pre><p>Notice what just happened. The same syntax moved from customer insight to product spec to technical implementation to business metric. Each translation added specificity appropriate to that function, but the causal structure remained intact.</p><p><strong>The Given-When-Then structure preserved the why through every handoff.</strong></p><h2 id="why-this-works-when-other-approaches-don-t">Why This Works When Other Approaches Don’t</h2><h1>Most cross-functional alignment tools fail because they ask different functions to adopt an entirely new language. Product teams try to get engineers to care about personas. Engineering tries to get product to understand technical constraints. Everyone talks past each other.</h1><p>Gherkin works because it doesn’t ask anyone to abandon their native language.</p><p>Instead, it provides a <strong>structural grammar</strong> that works for everyone:</p><p><strong>For customers</strong>:<br>Gherkin statements describe their experience in causal terms they recognize.<br>“Given I’m trying to X, when Y happens, then I need Z” maps directly to how they think about their struggles.</p><p><strong>For product managers</strong>: Gherkin forces clarity about context, triggers, and outcomes—the same things product needs to spec requirements effectively.</p><p><strong>For engineers</strong>: Gherkin is already their language for acceptance criteria. No new syntax to learn.</p><p><strong>For designers</strong>: Given-When-Then maps to user flows and interaction states they’re already thinking about.</p><p><strong>For QA</strong>: This is literally how they write test cases.</p><p><strong>For marketing</strong>: These statements become the foundation for messaging that describes customer progress, not just features.</p><p><strong>For sales</strong>: Discovery questions can be structured as Given-When-Then explorations of customer context.</p><p>Everyone’s speaking the same structural language, just emphasizing different parts based on their function.</p><h2 id="the-three-levels-of-gherkin-translation">The Three Levels of Gherkin Translation</h2><h1>Gherkin works as a translation layer because it operates at three distinct levels of abstraction—and you can move between them without losing the causal thread.</h1><p><strong>Level 1: Job-Level Gherkin (Customer Progress)</strong></p><p>This describes the customer’s struggling moment and desired progress in their language:</p><pre><code class="language-gherkin">Given I'm responsible for platform safety but don't have legal training
 When a case involves complex speech that might be protected
 Then I need to make a decision I can defend to leadershipAnd avoid both under-enforcement that risks users and over-enforcement that risks lawsuits
 </code></pre><p>This is pure JTBD territory. No features mentioned. Just context, trigger, and desired outcome.</p><p><strong>Level 2: Solution-Level Gherkin (Product Requirements)</strong></p><p>This describes how your product creates that progress:</p><pre><code class="language-gherkin">Given a moderator reviewing a case with legal complexity
 When they flag the case as "legal uncertainty"
 Then the system should route it to a specialized legal review queueAnd surface relevant precedent cases with legal annotations
 And provide decision-support documentation from platform counselNotice: Same structure, now solution-aware. We've moved from customer job to product capability, but the Given-When-Then structure keeps us anchored to the original struggling moment.
-
-**Level 3: Implementation-Level Gherkin (Technical Specs)**
-
-# This describes exactly how the system behaves:
-gherkin
-Given a case with legal\_uncertainty flag = true
+</code></pre><p><strong>Level 3: Implementation-Level Gherkin (Technical Specs)</strong></p><h1>This describes exactly how the system behaves:</h1><pre><code class="language-gherkin">Given a case with legal\_uncertainty flag = true
 When the moderator submits the case for review
 Then POST /cases/{id}/route with destination: "legal\_queue"
 And GET /cases/similar?legal\_precedent=true\&limit=3
 And display legal\_documentation component in sidebarAnd send notification to legal\_review\_team Slack channel
-
-Same structure. Same causal logic. Now executable by engineering.
-
-## **Why This Matters More Than You Realize**
-
-# Most product development processes have a **semantic gap** between customer research and technical implementation. Customer insights exist in one format (interview notes, recordings, synthesis documents). Requirements exist in another (user stories, specs). Technical implementation exists in yet another (code, tests, documentation).Every translation between these formats loses fidelity. Details get dropped. Context gets lost. The "why" behind decisions becomes archaeology.Gherkin eliminates the semantic gap by providing **one syntax that works at every level of abstraction**.When a customer insight is documented in Given-When-Then format:* Product can refine it into requirements without restructuring
-
-* Engineering can translate it into acceptance criteria without re-interpretation
-
-* QA can turn it into test cases without inferring intent
-
-* Everyone can trace back to the original customer job without excavating meeting notes
-
-## **A Real Example: The Path from Insight to Code**
-
-# Let me show you how this worked when we built our context-aware moderation system.**Customer interview insight** (Job-Level Gherkin):gherkinGiven I'm reviewing content that seems problematic but doesn't violate our written policiesWhen I make a judgment call based on contextThen I need evidence that backs my decisionAnd I need to explain my reasoning to my manager if questioned**Product requirement** (Solution-Level Gherkin):gherkinGiven a moderator makes a judgment call on borderline contentWhen they take an enforcement actionThen the system should capture the contextual factors that informed the decisionAnd auto-generate a decision rationale based on those factorsAnd store the rationale with the case history**Engineering acceptance criteria** (Implementation-Level Gherkin):gherkinGiven a moderator selects enforcement action on a caseWhen action\_type is not directly mapped to policy\_violationThen display context\_selection modal with checkboxesAnd POST /cases/{id}/context with selected factorsAnd generate rationale\_text using template engineAnd store in case\_history table with timestamp and moderator\_id**QA test case** (Implementation-Level Gherkin):gherkinGiven a case with id="12345" has no direct policy violationWhen moderator submits action\_type="warning" with context=\["repeat\_behavior", "minor\_involved"]Then response should be 201 CreatedAnd case\_history should contain generated rationaleAnd rationale should include selected context factorsFour different functions. Same syntax. Zero semantic loss.
-
-## **The Secret: Gherkin Exposes Your Assumptions**
-
-# Here's the most powerful aspect of using Gherkin across your entire product development process: **It makes your assumptions visible and testable.**When you force yourself to write "Given X, When Y, Then Z," you can't hide behind vague language. You can't say "improve the user experience" or "make it more intuitive." You have to specify:* What context are we assuming?
-
-* What action triggers change?
-
-* What outcome must occur?This precision surfaces misalignment immediately.**Product writes**:gherkinGiven a user wants to export their dataWhen they click the export buttonThen they should receive their data instantly**Engineering reads this and says**: "Wait, what does 'instantly' mean? What format? What if they have 10 years of data?"That's not a conflict. That's **Gherkin exposing an underspecified requirement before it becomes a bug or a scope argument mid-sprint**.**Marketing writes**:gherkinGiven a prospect concerned about complianceWhen they ask about data retentionThen we should explain our GDPR features**Product reads this and says**: "What specific GDPR features? What aspect of data retention? What outcome does the prospect need?"Again, not a conflict. Just an assumption becoming visible early enough to address it.
-
-## **How Gherkin Prevents The Telephone Game**
-
-# Remember the telephone game from childhood? One person whispers a message, it passes through five people, and by the end it's completely different?That's how most product insights travel through organizations:1) Customer says: "I need to make faster decisions on escalated cases"
-
-2) Customer success translates: "Customers want better escalation handling"
-
-3) Product translates: "Build a priority queue for escalated cases"
-
-4) Engineering translates: "Implement a sorting algorithm with priority flags"
-
-5) QA tests: "Verify cases sort by priority flag value"The original customer job (reducing anxiety about missing critical issues under time pressure) is completely gone by step 5.With Gherkin, the original insight stays intact:gherkinGiven I'm responsible for missing high-severity casesWhen my manager asks why we didn't catch something criticalThen I need to show we flagged it early and explain what happenedAnd I need this evidence within 30 seconds of being askedProduct can see this isn't about sorting—it's about **defensive documentation and rapid retrieval**. The solution becomes completely different: not a priority queue, but a searchable audit trail with timeline visualization and one-click report generation.Engineering can implement this without re-interpreting because the job is already specified in causal terms.QA can test whether the actual outcome (rapid evidence retrieval) matches the customer's job, not just whether the technical implementation works.
-
-## **The Structure Enables Collaboration, Not Just Communication**
-
-# Most alignment tools are about **communication**—getting information from one function to another. Gherkin enables **collaboration**—multiple functions working on the same problem in compatible ways.When everyone uses Given-When-Then:**Product and design can collaborate on user flows**:* Product specifies the context and outcome
-
-* Design specifies the interaction that bridges them
-
-* Both are working in the same syntax**Engineering and QA can collaborate on acceptance criteria**:* Engineering writes what the system should do
-
-* QA writes how to verify it happened
-
-* Same structure, complementary perspectives**Product and marketing can collaborate on messaging**:* Product describes the progress customers make
-
-* Marketing describes how to communicate that progress
-
-* Both anchored to the same customer job**Sales and customer success can collaborate on discovery**:* Sales asks Given-When-Then questions to understand context
-
-* CS uses Given-When-Then statements to explain solutions
-
-* Both are diagnosing the same job in compatible terms
-
-## **Setting Up Your Organization to Use Gherkin**
-
-# Here's how to introduce Gherkin as a cross-functional syntax:
-
-### **Start with one team, one workflow**
-
-# Pick a single product team and a single customer job they're working on. Have them document:* The customer job in Job-Level Gherkin
-
-* Their product requirements in Solution-Level Gherkin
-
-* Their acceptance criteria in Implementation-Level Gherkin
-
-### **Run a translation exercise**
-
-# Take an existing feature request and translate it together as a team:1) Someone from customer-facing writes the job-level statement
-
-2) Product translates to solution-level
-
-3) Engineering translates to implementation-level
-
-4) The group compares: Did we lose anything? Did we add assumptions?
-
-### **Create templates for each function**
-
-# **For customer research**:gherkinGiven \[context and constraints]When \[trigger or struggling moment]Then \[desired progress]And \[forces that enable or prevent progress]**For product requirements**:gherkinGiven \[user state or system context]When \[user action or system event]Then \[system behavior or user outcome]And \[additional requirements or constraints]**For engineering specs**:gherkinGiven \[preconditions and system state]When \[action or event occurs]Then \[expected system response]And \[side effects or additional outcomes]
-
-### **Establish translation moments**
-
-# Build Gherkin translation into your existing ceremonies:* **Backlog refinement**: Require Given-When-Then format for stories
-
-* **Sprint planning**: Review acceptance criteria in Gherkin syntax
-
-* **Customer interviews**: Document jobs in Given-When-Then structure
-
-* **Retrospectives**: Analyze misalignment using Gherkin statements
-
-## **What Gherkin Doesn't Solve (And Why You Need JTBD)**
-
-# Gherkin is a syntax, not a methodology. It gives you structure, but it doesn't tell you:* How to discover the right customer jobs
-
-* How to distinguish functional, emotional, and social progress
-
-* How to identify the forces that enable or prevent progress
-
-* How to prioritize which jobs to solve for
-
-* How to know when you're building around ideas instead of jobsThat's where Jobs-to-be-Done methodology comes in.**Gherkin is your translation layer. JTBD is your research framework.**In the rest of this series, we'll dive deep into JTBD frameworks—specifically the three most powerful ones: Ulwick's Outcome-Driven Innovation, Kalbach's JTBD Canvas 2.0, and Boehme's Wheel of Progress. You'll learn how to use each framework to generate insights about customer jobs.And here's the key: **Everything you learn from JTBD research can be documented in Gherkin syntax.**When you interview customers using Ulwick's outcome statements, you can translate them into Given-When-Then format. When you map customer journeys using Kalbach's canvas, each step becomes a Gherkin scenario. When you analyze switching behavior using Boehme's Wheel, the forces become Given-When-Then conditions.JTBD provides the mental models to understand customer progress. Gherkin provides the syntax to communicate that understanding across your entire organization without degradation.Together, they solve the translation problem we identified in Part 1.
-
-## **Next: From Product Thinking to Customer Progress Thinking**
-
-# Now that you understand the syntax that will tie everything together, we're ready to dive into JTBD methodology itself.Part 3 will challenge the way you think about innovation entirely. We'll explore why "product thinking" leads teams astray, how to shift to "customer progress thinking," and what it actually means to understand the jobs customers are hiring your product to do.Because before you can translate customer jobs into requirements, you need to understand what a job actually is—and why most teams completely misunderstand the concept.
-</code></pre>
+</code></pre><p>Same structure. Same causal logic. Now executable by engineering.</p><h2 id="why-this-matters-more-than-you-realize">Why This Matters More Than You Realize</h2><h1>Most product development processes have a <strong>semantic gap</strong> between customer research and technical implementation. Customer insights exist in one format (interview notes, recordings, synthesis documents). Requirements exist in another (user stories, specs). Technical implementation exists in yet another (code, tests, documentation).Every translation between these formats loses fidelity. Details get dropped. Context gets lost. The “why” behind decisions becomes archaeology.Gherkin eliminates the semantic gap by providing <strong>one syntax that works at every level of abstraction</strong>.When a customer insight is documented in Given-When-Then format:* Product can refine it into requirements without restructuring</h1><ul><li>Engineering can translate it into acceptance criteria without re-interpretation</li><li>QA can turn it into test cases without inferring intent</li><li>Everyone can trace back to the original customer job without excavating meeting notes</li></ul><h2 id="a-real-example-the-path-from-insight-to-code">A Real Example: The Path from Insight to Code</h2><h1>Let me show you how this worked when we built our context-aware moderation system.</h1><p><strong>Customer interview insight</strong> (Job-Level Gherkin):<br>gherkin<br>Given I’m reviewing content that seems problematic but doesn’t violate our written policies<br>When I make a judgment call based on context<br>Then I need evidence that backs my decision<br>And I need to explain my reasoning to my manager if questioned</p><p><strong>Product requirement</strong> (Solution-Level Gherkin):gherkinGiven a moderator makes a judgment call on borderline contentWhen they take an enforcement actionThen the system should capture the contextual factors that informed the decisionAnd auto-generate a decision rationale based on those factorsAnd store the rationale with the case history</p><p><strong>Engineering acceptance criteria</strong> (Implementation-Level Gherkin):gherkinGiven a moderator selects enforcement action on a caseWhen action_type is not directly mapped to policy_violationThen display context_selection modal with checkboxesAnd POST /cases/{id}/context with selected factorsAnd generate rationale_text using template engineAnd store in case_history table with timestamp and moderator_id</p><p><strong>QA test case</strong> (Implementation-Level Gherkin):gherkinGiven a case with id=“12345” has no direct policy violationWhen moderator submits action_type=“warning” with context=[“repeat_behavior”, “minor_involved”]Then response should be 201 CreatedAnd case_history should contain generated rationaleAnd rationale should include selected context factorsFour different functions. Same syntax. Zero semantic loss.</p><h2 id="the-secret-gherkin-exposes-your-assumptions">The Secret: Gherkin Exposes Your Assumptions</h2><h1>Here’s the most powerful aspect of using Gherkin across your entire product development process: **It makes your assumptions visible and testable.*<em>When you force yourself to write “Given X, When Y, Then Z,” you can’t hide behind vague language. You can’t say “improve the user experience” or “make it more intuitive.” You have to specify:</em> What context are we assuming?</h1><ul><li>What action triggers change?</li><li>What outcome must occur?This precision surfaces misalignment immediately.<strong>Product writes</strong>:gherkinGiven a user wants to export their dataWhen they click the export buttonThen they should receive their data instantly<strong>Engineering reads this and says</strong>: “Wait, what does ‘instantly’ mean? What format? What if they have 10 years of data?“That’s not a conflict. That’s <strong>Gherkin exposing an underspecified requirement before it becomes a bug or a scope argument mid-sprint</strong>.<strong>Marketing writes</strong>:gherkinGiven a prospect concerned about complianceWhen they ask about data retentionThen we should explain our GDPR features<strong>Product reads this and says</strong>: “What specific GDPR features? What aspect of data retention? What outcome does the prospect need?“Again, not a conflict. Just an assumption becoming visible early enough to address it.</li></ul><h2 id="how-gherkin-prevents-the-telephone-game">How Gherkin Prevents The Telephone Game</h2><h1>Remember the telephone game from childhood? One person whispers a message, it passes through five people, and by the end it’s completely different?That’s how most product insights travel through organizations:1) Customer says: “I need to make faster decisions on escalated cases”</h1><ol><li>Customer success translates: “Customers want better escalation handling”</li><li>Product translates: “Build a priority queue for escalated cases”</li><li>Engineering translates: “Implement a sorting algorithm with priority flags”</li><li>QA tests: “Verify cases sort by priority flag value”The original customer job (reducing anxiety about missing critical issues under time pressure) is completely gone by step 5.With Gherkin, the original insight stays intact:gherkinGiven I’m responsible for missing high-severity casesWhen my manager asks why we didn’t catch something criticalThen I need to show we flagged it early and explain what happenedAnd I need this evidence within 30 seconds of being askedProduct can see this isn’t about sorting—it’s about <strong>defensive documentation and rapid retrieval</strong>. The solution becomes completely different: not a priority queue, but a searchable audit trail with timeline visualization and one-click report generation.Engineering can implement this without re-interpreting because the job is already specified in causal terms.QA can test whether the actual outcome (rapid evidence retrieval) matches the customer’s job, not just whether the technical implementation works.</li></ol><h2 id="the-structure-enables-collaboration-not-just-communication">The Structure Enables Collaboration, Not Just Communication</h2><h1>Most alignment tools are about <strong>communication</strong>—getting information from one function to another. Gherkin enables <strong>collaboration</strong>—multiple functions working on the same problem in compatible ways.When everyone uses Given-When-Then:<strong>Product and design can collaborate on user flows</strong>:* Product specifies the context and outcome</h1><ul><li>Design specifies the interaction that bridges them</li><li>Both are working in the same syntax<strong>Engineering and QA can collaborate on acceptance criteria</strong>:* Engineering writes what the system should do</li><li>QA writes how to verify it happened</li><li>Same structure, complementary perspectives<strong>Product and marketing can collaborate on messaging</strong>:* Product describes the progress customers make</li><li>Marketing describes how to communicate that progress</li><li>Both anchored to the same customer job<strong>Sales and customer success can collaborate on discovery</strong>:* Sales asks Given-When-Then questions to understand context</li><li>CS uses Given-When-Then statements to explain solutions</li><li>Both are diagnosing the same job in compatible terms</li></ul><h2 id="setting-up-your-organization-to-use-gherkin"><strong>Setting Up Your Organization to Use Gherkin</strong></h2><h1>Here’s how to introduce Gherkin as a cross-functional syntax:</h1><h3 id="start-with-one-team-one-workflow"><strong>Start with one team, one workflow</strong></h3><h1>Pick a single product team and a single customer job they’re working on. Have them document:* The customer job in Job-Level Gherkin</h1><ul><li>Their product requirements in Solution-Level Gherkin</li><li>Their acceptance criteria in Implementation-Level Gherkin</li></ul><h3 id="run-a-translation-exercise"><strong>Run a translation exercise</strong></h3><h1>Take an existing feature request and translate it together as a team:1) Someone from customer-facing writes the job-level statement</h1><ol><li>Product translates to solution-level</li><li>Engineering translates to implementation-level</li><li>The group compares: Did we lose anything? Did we add assumptions?</li></ol><h2 id="create-templates-for-each-function">Create templates for each function</h2><h1><strong>For customer research</strong>:</h1><p>gherkin<br>Given [context and constraints]<br>When [trigger or struggling moment]<br>Then [desired progress]<br>And [forces that enable or prevent progress]</p><p><strong>For product requirements</strong>:<br>gherkin<br>Given [user state or system context]<br>When [user action or system event]<br>Then [system behavior or user outcome]<br>And [additional requirements or constraints]</p><p><strong>For engineering specs</strong>:gherkinGiven [preconditions and system state]When [action or event occurs]Then [expected system response]And [side effects or additional outcomes]</p><h3 id="establish-translation-moments"><strong>Establish translation moments</strong></h3><h1>Build Gherkin translation into your existing ceremonies:* <strong>Backlog refinement</strong>: Require Given-When-Then format for stories</h1><ul><li><strong>Sprint planning</strong>: Review acceptance criteria in Gherkin syntax</li><li><strong>Customer interviews</strong>: Document jobs in Given-When-Then structure</li><li><strong>Retrospectives</strong>: Analyze misalignment using Gherkin statements</li></ul><h2 id="what-gherkin-doesn-t-solve-and-why-you-need-jtbd"><strong>What Gherkin Doesn’t Solve (And Why You Need JTBD)</strong></h2><h1>Gherkin is a syntax, not a methodology. It gives you structure, but it doesn’t tell you:* How to discover the right customer jobs</h1><ul><li>How to distinguish functional, emotional, and social progress</li><li>How to identify the forces that enable or prevent progress</li><li>How to prioritize which jobs to solve for</li><li>How to know when you’re building around ideas instead of jobsThat’s where Jobs-to-be-Done methodology comes in.**Gherkin is your translation layer. JTBD is your research framework.**In the rest of this series, we’ll dive deep into JTBD frameworks—specifically the three most powerful ones: Ulwick’s Outcome-Driven Innovation, Kalbach’s JTBD Canvas 2.0, and Boehme’s Wheel of Progress. You’ll learn how to use each framework to generate insights about customer jobs.And here’s the key: **Everything you learn from JTBD research can be documented in Gherkin syntax.**When you interview customers using Ulwick’s outcome statements, you can translate them into Given-When-Then format. When you map customer journeys using Kalbach’s canvas, each step becomes a Gherkin scenario. When you analyze switching behavior using Boehme’s Wheel, the forces become Given-When-Then conditions.JTBD provides the mental models to understand customer progress. Gherkin provides the syntax to communicate that understanding across your entire organization without degradation.Together, they solve the translation problem we identified in Part 1.</li></ul><h2 id="next-from-product-thinking-to-customer-progress-thinking"><strong>Next: From Product Thinking to Customer Progress Thinking</strong></h2><h1>Now that you understand the syntax that will tie everything together, we’re ready to dive into JTBD methodology itself.Part 3 will challenge the way you think about innovation entirely. We’ll explore why “product thinking” leads teams astray, how to shift to “customer progress thinking,” and what it actually means to understand the jobs customers are hiring your product to do.Because before you can translate customer jobs into requirements, you need to understand what a job actually is—and why most teams completely misunderstand the concept.</h1>
                     </section>
                     
                     
@@ -316,6 +203,54 @@ Same structure. Same causal logic. Now executable by engineering.
                     </li>
     <li class="first-level">
                         <a href="#the-three-levels-of-gherkin-translation">The Three Levels of Gherkin Translation</a>
+                        <ul>
+                        </ul>
+                    </li>
+    <li class="first-level">
+                        <a href="#why-this-matters-more-than-you-realize">Why This Matters More Than You Realize</a>
+                        <ul>
+                        </ul>
+                    </li>
+    <li class="first-level">
+                        <a href="#a-real-example-the-path-from-insight-to-code">A Real Example: The Path from Insight to Code</a>
+                        <ul>
+                        </ul>
+                    </li>
+    <li class="first-level">
+                        <a href="#the-secret-gherkin-exposes-your-assumptions">The Secret: Gherkin Exposes Your Assumptions</a>
+                        <ul>
+                        </ul>
+                    </li>
+    <li class="first-level">
+                        <a href="#how-gherkin-prevents-the-telephone-game">How Gherkin Prevents The Telephone Game</a>
+                        <ul>
+                        </ul>
+                    </li>
+    <li class="first-level">
+                        <a href="#the-structure-enables-collaboration-not-just-communication">The Structure Enables Collaboration, Not Just Communication</a>
+                        <ul>
+                        </ul>
+                    </li>
+    <li class="first-level">
+                        <a href="#setting-up-your-organization-to-use-gherkin">Setting Up Your Organization to Use Gherkin</a>
+                        <ul>
+                            <li><a href="#start-with-one-team-one-workflow">Start with one team, one workflow</a></li>
+            <li><a href="#run-a-translation-exercise">Run a translation exercise</a></li>
+                        </ul>
+                    </li>
+    <li class="first-level">
+                        <a href="#create-templates-for-each-function">Create templates for each function</a>
+                        <ul>
+                            <li><a href="#establish-translation-moments">Establish translation moments</a></li>
+                        </ul>
+                    </li>
+    <li class="first-level">
+                        <a href="#what-gherkin-doesn-t-solve-and-why-you-need-jtbd">What Gherkin Doesn’t Solve (And Why You Need JTBD)</a>
+                        <ul>
+                        </ul>
+                    </li>
+    <li class="first-level">
+                        <a href="#next-from-product-thinking-to-customer-progress-thinking">Next: From Product Thinking to Customer Progress Thinking</a>
                         <ul>
                         </ul>
                     </li>
@@ -366,6 +301,7 @@ Same structure. Same causal logic. Now executable by engineering.
                         alt="Logo of Happy Apps"
                         title="Happy Apps"
                         >
+                    Happy Customers, Happy Users, Happy Teams.
                 </picture>
             </a>
                     <p><small>This site was generated<br>using <a href="https://swift.org/" target="_blank">Swift</a> &amp; <a href="https://github.com/toucansites/toucan/" target="_blank">Toucan</a>.</small>

@@ -94,7 +94,8 @@ Notice what just happened. The same syntax moved from customer insight to produc
 
 **The Given-When-Then structure preserved the why through every handoff.**
 
-## **Why This Works When Other Approaches Don't**
+Why This Works When Other Approaches Don't
+------------------------------------------
 
 # Most cross-functional alignment tools fail because they ask different functions to adopt an entirely new language. Product teams try to get engineers to care about personas. Engineering tries to get product to understand technical constraints. Everyone talks past each other.
 
@@ -145,20 +146,23 @@ Given a moderator reviewing a case with legal complexity
 When they flag the case as "legal uncertainty"
 Then the system should route it to a specialized legal review queueAnd surface relevant precedent cases with legal annotations
 And provide decision-support documentation from platform counselNotice: Same structure, now solution-aware. We've moved from customer job to product capability, but the Given-When-Then structure keeps us anchored to the original struggling moment.
+```
 
 **Level 3: Implementation-Level Gherkin (Technical Specs)**
 
 # This describes exactly how the system behaves:
-gherkin
+```gherkin
 Given a case with legal\_uncertainty flag = true
 When the moderator submits the case for review
 Then POST /cases/{id}/route with destination: "legal\_queue"
 And GET /cases/similar?legal\_precedent=true\&limit=3
 And display legal\_documentation component in sidebarAnd send notification to legal\_review\_team Slack channel
+```
 
 Same structure. Same causal logic. Now executable by engineering.
 
-## **Why This Matters More Than You Realize**
+Why This Matters More Than You Realize
+--------------------------------------
 
 # Most product development processes have a **semantic gap** between customer research and technical implementation. Customer insights exist in one format (interview notes, recordings, synthesis documents). Requirements exist in another (user stories, specs). Technical implementation exists in yet another (code, tests, documentation).Every translation between these formats loses fidelity. Details get dropped. Context gets lost. The "why" behind decisions becomes archaeology.Gherkin eliminates the semantic gap by providing **one syntax that works at every level of abstraction**.When a customer insight is documented in Given-When-Then format:* Product can refine it into requirements without restructuring
 
@@ -168,11 +172,26 @@ Same structure. Same causal logic. Now executable by engineering.
 
 * Everyone can trace back to the original customer job without excavating meeting notes
 
-## **A Real Example: The Path from Insight to Code**
+A Real Example: The Path from Insight to Code
+---------------------------------------------
 
-# Let me show you how this worked when we built our context-aware moderation system.**Customer interview insight** (Job-Level Gherkin):gherkinGiven I'm reviewing content that seems problematic but doesn't violate our written policiesWhen I make a judgment call based on contextThen I need evidence that backs my decisionAnd I need to explain my reasoning to my manager if questioned**Product requirement** (Solution-Level Gherkin):gherkinGiven a moderator makes a judgment call on borderline contentWhen they take an enforcement actionThen the system should capture the contextual factors that informed the decisionAnd auto-generate a decision rationale based on those factorsAnd store the rationale with the case history**Engineering acceptance criteria** (Implementation-Level Gherkin):gherkinGiven a moderator selects enforcement action on a caseWhen action\_type is not directly mapped to policy\_violationThen display context\_selection modal with checkboxesAnd POST /cases/{id}/context with selected factorsAnd generate rationale\_text using template engineAnd store in case\_history table with timestamp and moderator\_id**QA test case** (Implementation-Level Gherkin):gherkinGiven a case with id="12345" has no direct policy violationWhen moderator submits action\_type="warning" with context=\["repeat\_behavior", "minor\_involved"]Then response should be 201 CreatedAnd case\_history should contain generated rationaleAnd rationale should include selected context factorsFour different functions. Same syntax. Zero semantic loss.
+# Let me show you how this worked when we built our context-aware moderation system.
 
-## **The Secret: Gherkin Exposes Your Assumptions**
+**Customer interview insight** (Job-Level Gherkin):
+gherkin
+Given I'm reviewing content that seems problematic but doesn't violate our written policies
+When I make a judgment call based on context
+Then I need evidence that backs my decision
+And I need to explain my reasoning to my manager if questioned
+
+**Product requirement** (Solution-Level Gherkin):gherkinGiven a moderator makes a judgment call on borderline contentWhen they take an enforcement actionThen the system should capture the contextual factors that informed the decisionAnd auto-generate a decision rationale based on those factorsAnd store the rationale with the case history
+
+**Engineering acceptance criteria** (Implementation-Level Gherkin):gherkinGiven a moderator selects enforcement action on a caseWhen action\_type is not directly mapped to policy\_violationThen display context\_selection modal with checkboxesAnd POST /cases/{id}/context with selected factorsAnd generate rationale\_text using template engineAnd store in case\_history table with timestamp and moderator\_id
+
+**QA test case** (Implementation-Level Gherkin):gherkinGiven a case with id="12345" has no direct policy violationWhen moderator submits action\_type="warning" with context=\["repeat\_behavior", "minor\_involved"]Then response should be 201 CreatedAnd case\_history should contain generated rationaleAnd rationale should include selected context factorsFour different functions. Same syntax. Zero semantic loss.
+
+The Secret: Gherkin Exposes Your Assumptions
+--------------------------------------------
 
 # Here's the most powerful aspect of using Gherkin across your entire product development process: **It makes your assumptions visible and testable.**When you force yourself to write "Given X, When Y, Then Z," you can't hide behind vague language. You can't say "improve the user experience" or "make it more intuitive." You have to specify:* What context are we assuming?
 
@@ -180,7 +199,8 @@ Same structure. Same causal logic. Now executable by engineering.
 
 * What outcome must occur?This precision surfaces misalignment immediately.**Product writes**:gherkinGiven a user wants to export their dataWhen they click the export buttonThen they should receive their data instantly**Engineering reads this and says**: "Wait, what does 'instantly' mean? What format? What if they have 10 years of data?"That's not a conflict. That's **Gherkin exposing an underspecified requirement before it becomes a bug or a scope argument mid-sprint**.**Marketing writes**:gherkinGiven a prospect concerned about complianceWhen they ask about data retentionThen we should explain our GDPR features**Product reads this and says**: "What specific GDPR features? What aspect of data retention? What outcome does the prospect need?"Again, not a conflict. Just an assumption becoming visible early enough to address it.
 
-## **How Gherkin Prevents The Telephone Game**
+How Gherkin Prevents The Telephone Game
+---------------------------------------
 
 # Remember the telephone game from childhood? One person whispers a message, it passes through five people, and by the end it's completely different?That's how most product insights travel through organizations:1) Customer says: "I need to make faster decisions on escalated cases"
 
@@ -192,7 +212,8 @@ Same structure. Same causal logic. Now executable by engineering.
 
 5) QA tests: "Verify cases sort by priority flag value"The original customer job (reducing anxiety about missing critical issues under time pressure) is completely gone by step 5.With Gherkin, the original insight stays intact:gherkinGiven I'm responsible for missing high-severity casesWhen my manager asks why we didn't catch something criticalThen I need to show we flagged it early and explain what happenedAnd I need this evidence within 30 seconds of being askedProduct can see this isn't about sorting—it's about **defensive documentation and rapid retrieval**. The solution becomes completely different: not a priority queue, but a searchable audit trail with timeline visualization and one-click report generation.Engineering can implement this without re-interpreting because the job is already specified in causal terms.QA can test whether the actual outcome (rapid evidence retrieval) matches the customer's job, not just whether the technical implementation works.
 
-## **The Structure Enables Collaboration, Not Just Communication**
+The Structure Enables Collaboration, Not Just Communication
+-----------------------------------------------------------
 
 # Most alignment tools are about **communication**—getting information from one function to another. Gherkin enables **collaboration**—multiple functions working on the same problem in compatible ways.When everyone uses Given-When-Then:**Product and design can collaborate on user flows**:* Product specifies the context and outcome
 
@@ -234,9 +255,24 @@ Same structure. Same causal logic. Now executable by engineering.
 
 4) The group compares: Did we lose anything? Did we add assumptions?
 
-### **Create templates for each function**
+Create templates for each function
+----------------------------------
 
-# **For customer research**:gherkinGiven \[context and constraints]When \[trigger or struggling moment]Then \[desired progress]And \[forces that enable or prevent progress]**For product requirements**:gherkinGiven \[user state or system context]When \[user action or system event]Then \[system behavior or user outcome]And \[additional requirements or constraints]**For engineering specs**:gherkinGiven \[preconditions and system state]When \[action or event occurs]Then \[expected system response]And \[side effects or additional outcomes]
+# **For customer research**:
+gherkin
+Given \[context and constraints]
+When \[trigger or struggling moment]
+Then \[desired progress]
+And \[forces that enable or prevent progress]
+
+**For product requirements**:
+gherkin
+Given \[user state or system context]
+When \[user action or system event]
+Then \[system behavior or user outcome]
+And \[additional requirements or constraints]
+
+**For engineering specs**:gherkinGiven \[preconditions and system state]When \[action or event occurs]Then \[expected system response]And \[side effects or additional outcomes]
 
 ### **Establish translation moments**
 
