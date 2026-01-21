@@ -33,9 +33,11 @@ Most product teams see Gherkin as an engineering artifact—something QA writes,
 
 This is a catastrophic underutilization of what Gherkin actually offers.
 
-**Why Gherkin Is Actually a Universal Translation Protocol**
 
-# Gherkin isn't just a testing syntax. It's a structured way to describe cause and effect.
+Gherkin isn't just a testing syntax. It's a structured way to describe cause and effect.
+----------------------------------------------------------------------------------------
+
+**Why Gherkin Is Actually a Universal Translation Protocol**
 
 Look at the structure:
 * **Given** = The context or situation
@@ -51,7 +53,8 @@ Look at the structure:
 
 ## **The Power of Shared Syntax**
 
-# Here's what happens when every function in your organization uses the same structured syntax:
+Here's what happens when every function in your organization uses the same structured syntax:
+---------------------------------------------------------------------------------------------
 
 **Customer Success discovers a struggling moment**:
 
@@ -68,7 +71,7 @@ Given a moderator reviewing a borderline case
 When the case involves behavior similar to past violations
 Then the system should surface the 3 most similar past cases
 And display them within the moderation workflow
-``` 
+```
 
 **Engineering translates that into acceptance criteria**:
 
