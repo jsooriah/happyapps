@@ -1,7 +1,7 @@
 ---
 type: post
 title: Gherkin Syntax - The Rosetta Stone of Cross-Functional Alignment
-description: Historically, many organisations operated with a waterfall-like model where product managers or business analysts would create detailed specifications that engineers would implement. Engineering teams would receive “clearer guidance upfront” with regular check-ins to ensure alignment. This approach treats engineers primarily as implementers who translate requirements into code.
+description: In 1799, French soldiers discovered a stone tablet in Egypt that changed our understanding of ancient civilizations. The Rosetta Stone contained the same decree written in three different scripts—hieroglyphics, Demotic, and ancient Greek. Because scholars could read Greek, they could finally decode hieroglyphics.Your product team needs a Rosetta Stone.Not to decode ancient languages, but to translate between the four dialects we identified in Part 1 - customer outcomes, product capabilities, engineering logic, and business metrics. You need a syntax that all four groups can read, write, and understand without losing meaning in translation.That syntax already exists. You've probably seen it in your engineering team's test suites. It's called Gherkin.
 publication: 2026-01-15 14:57:12
 tags:
   - productmanagement team alignment

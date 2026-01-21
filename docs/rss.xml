@@ -4,7 +4,7 @@
     <description>Designing products and teams, the human centric way</description>
     <link>https://jsooriah.github.io/happyapps</link>
     <language>en-US</language>
-    <lastBuildDate>Wed, 21 Jan 2026 06:25:57 +0000</lastBuildDate>
+    <lastBuildDate>Wed, 21 Jan 2026 06:42:00 +0000</lastBuildDate>
     <pubDate>Thu, 15 Jan 2026 14:57:12 +0000</pubDate>
     <ttl>250</ttl>
     <atom:link href="https://jsooriah.github.io/happyappsrss.xml" rel="self" type="application/rss+xml"/>
@@ -12,7 +12,7 @@
 <item>
     <guid isPermaLink="true">https://jsooriah.github.io/happyapps/blog/posts/gherkin-syntax-the-rosetta-stone-of-cross-functional-alignment-jtbd-part-2/</guid>
     <title><![CDATA[ Gherkin Syntax - The Rosetta Stone of Cross-Functional Alignment ]]></title>
-    <description><![CDATA[ Historically, many organisations operated with a waterfall-like model where product managers or business analysts would create detailed specifications that engineers would implement. Engineering teams would receive “clearer guidance upfront” with regular check-ins to ensure alignment. This approach treats engineers primarily as implementers who translate requirements into code. ]]></description>
+    <description><![CDATA[ In 1799, French soldiers discovered a stone tablet in Egypt that changed our understanding of ancient civilizations. The Rosetta Stone contained the same decree written in three different scripts—hieroglyphics, Demotic, and ancient Greek. Because scholars could read Greek, they could finally decode hieroglyphics.Your product team needs a Rosetta Stone.Not to decode ancient languages, but to translate between the four dialects we identified in Part 1 - customer outcomes, product capabilities, engineering logic, and business metrics. You need a syntax that all four groups can read, write, and understand without losing meaning in translation.That syntax already exists. You&#39;ve probably seen it in your engineering team&#39;s test suites. It&#39;s called Gherkin. ]]></description>
     <link>https://jsooriah.github.io/happyapps/blog/posts/gherkin-syntax-the-rosetta-stone-of-cross-functional-alignment-jtbd-part-2/</link>
     <pubDate>Thu, 15 Jan 2026 14:57:12 +0000</pubDate>
 </item>
