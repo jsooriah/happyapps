@@ -30,15 +30,12 @@ What Is Gherkin? (And Why You Think It's Just for Testing)
 
 Gherkin is a structured syntax originally created for Behavior-Driven Development (BDD). Engineers use it to write acceptance criteria that look like this:
 
-gherkin
-
+```gherkin
 Given a user is logged into their account
-
 When they click the "Export Data" button
-
 Then they should receive a CSV file with their data
-
 And the file should download within 3 seconds
+```
 
 Most product teams see Gherkin as an engineering artifact—something QA writes, developers reference, and product managers occasionally glance at. It lives in the technical realm, adjacent to code.
 
@@ -53,19 +50,13 @@ Gherkin isn't just a testing syntax. It's a **structured way to describe cause a
 Look at the structure:
 
 - **Given** = The context or situation
-
 - **When** = The action or event
-
 - **Then** = The expected outcome
-
 - **And/But** = Additional context, actions, or outcomes
 
 This structure forces you to think causally:
-
 - What conditions must be true?
-
 - What triggers the change?
-
 - What result must occur?
 
 Now compare that to what you learned in Part 1 about customer jobs. Customers don't want features. They want progress. They have a situation, they take action, they expect a result.
@@ -81,54 +72,37 @@ Here's what happens when every function in your organization uses the same struc
 **Customer Success discovers a struggling moment**:
 
 ```gherkin
-
 Given a restaurant manager preparing for evening service
-
 When they need to know which servers are scheduled and which stations they're covering
-
 Then they feel anxious about uneven station distribution
-
 And they spend 15+ minutes manually checking the schedule and floor plan
 ```
 
 **Product translates that into a requirement**:
 
 ```gherkin
-
 Given a restaurant manager opens the schedule for tonight's service
-
 When they view the shift assignments
-
 Then the system should display server assignments with their floor stations
-
 And highlight any stations that are over/under-staffed
 ```
 
 **Engineering translates that into acceptance criteria**:
 
 ```gherkin
-
 Given a shift with id="shift\_123" for today's date
-
 When GET /shifts/shift\_123/assignments is called
-
 Then the API should return server assignments with station mappings
-
 And include staffing\_balance indicators per station
-
 And response time should be under 200ms
 ```
 
 **Leadership translates that into success metrics**:
 
 ```gherkin
-
 Given restaurant managers are preparing for service
-
 When they use the station assignment view
-
 Then pre-service prep time should decrease by 40%
-
 And station balance issues should be identified 90% faster
 ```
 
@@ -172,17 +146,11 @@ Gherkin works as a translation layer because it operates at three distinct level
 This describes the customer's struggling moment and desired progress in their language:
 
 ```gherkin
-
 Given I'm managing a busy Friday night service with 150 reservations
-
 When a server calls in sick 2 hours before service
-
 Then I need to reassign their tables and stations immediately
-
 And avoid overwhelming the remaining servers with unfair distribution
-
 And communicate the changes to the team before service starts
-
 This is pure JTBD territory. No features mentioned. Just context, trigger, and desired outcome.
 ```
 
@@ -192,44 +160,28 @@ This is pure JTBD territory. No features mentioned. Just context, trigger, and d
 This describes how your product creates that progress:
 
 ```gherkin
-
 Given a server's shift is canceled less than 3 hours before service
-
 When the manager opens the schedule
-
 Then the system should suggest reassignment options
-
 And display impact on remaining servers' table counts
-
 And generate a notification draft for the team
-
 And allow one-click reassignment approval
-
 ```
 
 Notice: Same structure, now solution-aware. We've moved from customer job to product capability, but the Given-When-Then structure keeps us anchored to the original struggling moment.
-
 
 **Level 3: Implementation-Level Gherkin (Technical Specs)**
 
 This describes exactly how the system behaves:
 
 ```gherkin
-
 Given shift\_id="shift\_456" status changed to "canceled"
-
 When time\_until\_start < 180 minutes
-
 Then POST /shifts/reassign-suggestions with affected\_tables
-
 And calculate server\_load\_balance for remaining staff
-
 And generate notification\_template with changes
-
 And display approval\_interface with one-click confirm
-
 And send real-time updates via WebSocket to manager\_dashboard
-
 Same structure. Same causal logic. Now executable by engineering.
 ```
 
@@ -244,11 +196,8 @@ Gherkin eliminates the semantic gap by providing **one syntax that works at ever
 When a customer insight is documented in Given-When-Then format:
 
 - Product can refine it into requirements without restructuring
-
 - Engineering can translate it into acceptance criteria without re-interpretation
-
 - QA can turn it into test cases without inferring intent
-
 - Everyone can trace back to the original customer job without excavating meeting notes
 
 
@@ -259,68 +208,44 @@ Let me show you how this worked when we built context-aware features for restaur
 **Customer interview insight** (Job-Level Gherkin):
 
 ```gherkin
-
 Given I'm in the middle of Friday dinner service
-
 When a VIP guest arrives but their reservation isn't showing in the system
-
 Then I need to find their reservation details immediately
-
 And seat them without making them feel like there's a problem
-
 And I need this resolved in under 60 seconds or risk losing the customer
 ```
 
 **Product requirement** (Solution-Level Gherkin):
 
 ```gherkin
-
 Given a host searches for a reservation that doesn't appear in tonight's list
-
 When they enter the guest's name in the search bar
-
 Then the system should search across all dates and flag if found on wrong date
-
 And display the reservation with clear "wrong date" indicator
-
 And offer one-click option to move reservation to tonight
-
 And suggest available tables based on party size
 ```
 
 **Engineering acceptance criteria** (Implementation-Level Gherkin):
 
 ```gherkin
-
 Given reservation with guest\_name="Smith" exists for date != today
-
 When POST /reservations/search with query="Smith" and date=today returns empty
-
 Then GET /reservations/search with query="Smith" and date=any
-
 And if found, return with date\_mismatch: true flag
-
 And include available\_tables\_tonight based on party\_size
-
 And enable PUT /reservations/{id}/move with new\_date and table\_id
 ```
 
 **QA test case** (Implementation-Level Gherkin):
 
 ```gherkin
-
 Given reservation id="res\_789" for "Smith" party of 4 exists for tomorrow
-
 When host searches "Smith" for tonight's date
-
 Then search should return reservation with date\_mismatch: true
-
 And should display available 4-top tables for tonight
-
 And clicking move should update reservation to tonight
-
 And should confirm with success message
-
 Four different functions. Same syntax. Zero semantic loss.
 ```
 
@@ -332,9 +257,7 @@ Here's the most powerful aspect of using Gherkin across your entire product deve
 When you force yourself to write "Given X, When Y, Then Z," you can't hide behind vague language. You can't say "improve the user experience" or "make it more intuitive." You have to specify:
 
 - What context are we assuming?
-
 - What action triggers change?
-
 - What outcome must occur?
 
 This precision surfaces misalignment immediately.
@@ -342,11 +265,8 @@ This precision surfaces misalignment immediately.
 **Product writes**:
 
 ```gherkin
-
 Given a manager wants to see labor costs
-
 When they open the reports dashboard
-
 Then they should see labor cost percentages instantly
 ```
 
@@ -357,11 +277,8 @@ That's not a conflict. That's **Gherkin exposing an underspecified requirement b
 **Marketing writes**:
 
 ```gherkin
-
 Given a prospect concerned about employee turnover
-
 When they ask about scheduling features
-
 Then we should explain our auto-scheduling capabilities
 ```
 
@@ -378,13 +295,9 @@ Remember the telephone game from childhood? One person whispers a message, it pa
 That's how most product insights travel through organizations:
 
 1. Customer says: "I need to adjust schedules faster when employees call in sick"
-
 2. Customer success translates: "Customers want better schedule management"
-
 3. Product translates: "Build a drag-and-drop schedule editor"
-
 4. Engineering translates: "Implement a grid-based UI with drag handlers"
-
 5. QA tests: "Verify shifts can be moved via drag and drop"
 
 The original customer job (rapidly handling last-minute callouts without disrupting service) is completely gone by step 5.
@@ -392,15 +305,10 @@ The original customer job (rapidly handling last-minute callouts without disrupt
 With Gherkin, the original insight stays intact:
 
 ```gherkin
-
 Given an employee calls in sick 2 hours before their shift
-
 When the manager needs to cover their tables and responsibilities
-
 Then the manager needs reassignment suggestions within 30 seconds
-
 And needs to notify affected staff immediately
-
 And needs confidence the new assignments won't overwhelm anyone
 ```
 
@@ -421,33 +329,25 @@ When everyone uses Given-When-Then:
 **Product and design can collaborate on user flows**:
 
 - Product specifies the context and outcome
-
 - Design specifies the interaction that bridges them
-
 - Both are working in the same syntax
 
 **Engineering and QA can collaborate on acceptance criteria**:
 
 - Engineering writes what the system should do
-
 - QA writes how to verify it happened
-
 - Same structure, complementary perspectives
 
 **Product and marketing can collaborate on messaging**:
 
 - Product describes the progress customers make
-
 - Marketing describes how to communicate that progress
-
 - Both anchored to the same customer job
 
 **Sales and customer success can collaborate on discovery**:
 
 - Sales asks Given-When-Then questions to understand context
-
 - CS uses Given-When-Then statements to explain solutions
-
 - Both are diagnosing the same job in compatible terms
 
 
@@ -462,9 +362,7 @@ Here's how to introduce Gherkin as a cross-functional syntax:
 Pick a single product team and a single customer job they're working on. Have them document:
 
 - The customer job in Job-Level Gherkin
-
 - Their product requirements in Solution-Level Gherkin
-
 - Their acceptance criteria in Implementation-Level Gherkin
 
 
@@ -473,11 +371,8 @@ Pick a single product team and a single customer job they're working on. Have th
 Take an existing feature request and translate it together as a team:
 
 1. Someone from customer-facing writes the job-level statement
-
 2. Product translates to solution-level
-
 3. Engineering translates to implementation-level
-
 4. The group compares: Did we lose anything? Did we add assumptions?
 
 
@@ -486,39 +381,27 @@ Take an existing feature request and translate it together as a team:
 **For customer research**:
 
 ```gherkin
-
 Given \[context and constraints]
-
 When \[trigger or struggling moment]
-
 Then \[desired progress]
-
 And \[forces that enable or prevent progress]
 ```
 
 **For product requirements**:
 
 ```gherkin
-
 Given \[user state or system context]
-
 When \[user action or system event]
-
 Then \[system behavior or user outcome]
-
 And \[additional requirements or constraints]
 ```
 
 **For engineering specs**:
 
 ```gherkin
-
 Given \[preconditions and system state]
-
 When \[action or event occurs]
-
 Then \[expected system response]
-
 And \[side effects or additional outcomes]
 ```
 
@@ -528,11 +411,8 @@ Establish translation moments
 Build Gherkin translation into your existing ceremonies:
 
 - **Backlog refinement**: Require Given-When-Then format for stories
-
 - **Sprint planning**: Review acceptance criteria in Gherkin syntax
-
 - **Customer interviews**: Document jobs in Given-When-Then structure
-
 - **Retrospectives**: Analyze misalignment using Gherkin statements
 
 
@@ -542,13 +422,9 @@ What Gherkin Doesn't Solve (And Why You Need JTBD)
 Gherkin is a syntax, not a methodology. It gives you structure, but it doesn't tell you:
 
 - How to discover the right customer jobs
-
 - How to distinguish functional, emotional, and social progress
-
 - How to identify the forces that enable or prevent progress
-
 - How to prioritize which jobs to solve for
-
 - How to know when you're building around ideas instead of jobs
 
 That's where Jobs-to-be-Done methodology comes in.
