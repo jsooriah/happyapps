@@ -4,7 +4,7 @@
     <description>Designing products and teams, the human centric way</description>
     <link>https://jsooriah.github.io/happyapps</link>
     <language>en-US</language>
-    <lastBuildDate>Sun, 25 Jan 2026 12:19:58 +0000</lastBuildDate>
+    <lastBuildDate>Sun, 25 Jan 2026 12:36:38 +0000</lastBuildDate>
     <pubDate>Thu, 15 Jan 2026 14:57:12 +0000</pubDate>
     <ttl>250</ttl>
     <atom:link href="https://jsooriah.github.io/happyappsrss.xml" rel="self" type="application/rss+xml"/>
@@ -19,7 +19,7 @@
 <item>
     <guid isPermaLink="true">https://jsooriah.github.io/happyapps/blog/posts/building-an-agentic-rag-tool-to-support-my-hobby-research-into-the-history-of-the-french-revolution-in-the-indian-ocean/</guid>
     <title><![CDATA[ Building an agentic RAG tool to support my hobby research into the history of the French Revolution in the Indian Ocean ]]></title>
-    <description><![CDATA[ Academic research generates an enormous volume of PDF documents—papers, theses, archival materials, and historical analyses. Everytime I have a chance, I am digging into a huge amount of history related complex topics related to the French revolution period in the Indian Ocean. This history and its impact spans over decades across multiple locations like the Mascarene Islands, India, and of course, France and the UK as well. Given the huge amount of information that my brain needs to process a get a good understanding of all the intricacies going on at that time, and given the limited time I have as well to dig into these huge amount of documentary materials, I have decided to build a RAG pipeline powered by graph databases to help me out. Of course, traditional RAG approaches hit fundamental limitations. Modern LLMs have context windows ranging from 128K to 200K tokens, but a single comprehensive research paper can consume 20,000+ tokens. A research corpus of 50 papers quickly exceeds 1 million tokens—far beyond what any model can process in a single query. Simply &quot;uploading PDFs&quot; to a chat interface doesn&#39;t work at scale. ]]></description>
+    <description><![CDATA[ Academic research generates an enormous volume of PDF documents—papers, theses, archival materials, and historical analyses. Across the years, I found myself interested into the history of French revolution in the Indian Ocean. This history and its impact spans over decades across multiple locations like the Mascarene Islands, India, and of course, France and the UK as well. Given the huge amount of information that my brain needs to process to get a good understanding of all the intricacies happening on at that time, I have decided to build a RAG pipeline powered by graph databases to help me out. This is perfect for a RAG system based on graph representation of entities. This experiment addresses that challenge head-on, building a Retrieval-Augmented Generation (RAG) system that transforms raw research PDFs into an intelligent, queryable knowledge base augmented with relationship understanding through graph technology. ]]></description>
     <link>https://jsooriah.github.io/happyapps/blog/posts/building-an-agentic-rag-tool-to-support-my-hobby-research-into-the-history-of-the-french-revolution-in-the-indian-ocean/</link>
     <pubDate>Wed, 14 Jan 2026 11:27:12 +0000</pubDate>
 </item>
