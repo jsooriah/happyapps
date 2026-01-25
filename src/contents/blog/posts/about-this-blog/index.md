@@ -20,7 +20,7 @@ The last time I pushed code into production was in 2018 and that was on the Appl
 I was more than happy when I discovered Toucan (please make sure to have a look at it) - moreover given the fact that it is markdown based and follows some nice convention over configuration paradigm. 
 
 **LLM based knowledge Management System**
-I rapidly saw the potential of coupling it with an AI writing Assistant working on an LLM based personal knowledge management system. 
+I like the potential of coupling Toucan with an AI writing Assistant working on an LLM based personal knowledge management system. 
 Btw this blog is also a journey into AI engineering, leveraging some tools out there to do some cool stuff ! 
 
 
