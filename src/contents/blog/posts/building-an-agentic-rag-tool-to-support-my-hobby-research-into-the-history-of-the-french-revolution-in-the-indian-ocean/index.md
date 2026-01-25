@@ -245,7 +245,7 @@ The final stage uses GPT-4o to generate answers from the retrieved context. The 
 - Source attribution: Each claim traces to specific documents and pages
 
 
-When I upload a PDF, here is what is supposed to happen:
+**When I upload a PDF, here is what is supposed to happen:**
 1\. Parse: PyMuPDF extracts text from each page
 2\. Chunk: SemanticChunker creates \~800 token chunks at paragraph boundaries
 3\. Embed: OpenAI generates 1536-dim vectors for each chunk
@@ -253,8 +253,7 @@ When I upload a PDF, here is what is supposed to happen:
 5\. Extract: GPT-4o identifies entities (Napoleon, Mauritius, 1810) and relationships
 6\. Graph: NetworkX builds the knowledge graph
 
-When I ask a question like "How did British rule affect Mauritius after 1810?":
-
+**When I ask a question like "How did British rule affect Mauritius after 1810?":**
 1\. Embed Query: Convert question to vector
 2\. Retrieve: Qdrant finds similar chunks; graph expands to related entities
 3\. Assemble: Top chunks form context within token limits
