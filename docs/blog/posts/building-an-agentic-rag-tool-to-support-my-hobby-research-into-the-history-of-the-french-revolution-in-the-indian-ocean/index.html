@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="canonical" href="https://jsooriah.github.io/happyapps/blog/posts/building-an-agentic-rag-tool-to-support-my-hobby-research-into-the-history-of-the-french-revolution-in-the-indian-ocean/">
+    <link rel="prev" href="https://jsooriah.github.io/happyapps/blog/posts/about-this-blog/">
+    
+    
+    <title>Don&#39;t go chasing waterfalls and turn the ship around - Happy Apps</title>
+    <meta name="description" content="Academic research generates an enormous volume of PDF documents—papers, theses, archival materials, and historical analyses. Everytime I have a chance, I am digging into a huge amount of history related complex topics related to the French revolution period in the Indian Ocean. This history and its impact spans over decades across multiple locations like the Mascarene Islands, India, and of course, France and the UK as well. Given the huge amount of information that my brain needs to process a get a good understanding of all the intricacies going on at that time, and given the limited time I have as well to dig into these huge amount of documentary materials, I have decided to build a RAG pipeline powered by graph databases to help me out. Of course, traditional RAG approaches hit fundamental limitations. Modern LLMs have context windows ranging from 128K to 200K tokens, but a single comprehensive research paper can consume 20,000+ tokens. A research corpus of 50 papers quickly exceeds 1 million tokens—far beyond what any model can process in a single query. Simply &quot;uploading PDFs&quot; to a chat interface doesn&#39;t work at scale.">
+    
+    <meta property="og:url" content="https://jsooriah.github.io/happyapps/blog/posts/building-an-agentic-rag-tool-to-support-my-hobby-research-into-the-history-of-the-french-revolution-in-the-indian-ocean/">
+    <meta property="og:title" content="Don&#39;t go chasing waterfalls and turn the ship around - Happy Apps">
+    <meta property="og:description" content="Academic research generates an enormous volume of PDF documents—papers, theses, archival materials, and historical analyses. Everytime I have a chance, I am digging into a huge amount of history related complex topics related to the French revolution period in the Indian Ocean. This history and its impact spans over decades across multiple locations like the Mascarene Islands, India, and of course, France and the UK as well. Given the huge amount of information that my brain needs to process a get a good understanding of all the intricacies going on at that time, and given the limited time I have as well to dig into these huge amount of documentary materials, I have decided to build a RAG pipeline powered by graph databases to help me out. Of course, traditional RAG approaches hit fundamental limitations. Modern LLMs have context windows ranging from 128K to 200K tokens, but a single comprehensive research paper can consume 20,000+ tokens. A research corpus of 50 papers quickly exceeds 1 million tokens—far beyond what any model can process in a single query. Simply &quot;uploading PDFs&quot; to a chat interface doesn&#39;t work at scale.">
+    
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Don&#39;t go chasing waterfalls and turn the ship around - Happy Apps">
+    <meta name="twitter:description" content="Academic research generates an enormous volume of PDF documents—papers, theses, archival materials, and historical analyses. Everytime I have a chance, I am digging into a huge amount of history related complex topics related to the French revolution period in the Indian Ocean. This history and its impact spans over decades across multiple locations like the Mascarene Islands, India, and of course, France and the UK as well. Given the huge amount of information that my brain needs to process a get a good understanding of all the intricacies going on at that time, and given the limited time I have as well to dig into these huge amount of documentary materials, I have decided to build a RAG pipeline powered by graph databases to help me out. Of course, traditional RAG approaches hit fundamental limitations. Modern LLMs have context windows ranging from 128K to 200K tokens, but a single comprehensive research paper can consume 20,000+ tokens. A research corpus of 50 papers quickly exceeds 1 million tokens—far beyond what any model can process in a single query. Simply &quot;uploading PDFs&quot; to a chat interface doesn&#39;t work at scale.">
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap">
+
+    <link rel="stylesheet" href="/happyapps/css/modern-normalize.css">
+    <link rel="stylesheet" href="/happyapps/css/modern-base.css">
+    <link rel="stylesheet" href="/happyapps/css/variables.css">
+    <link rel="stylesheet" href="/happyapps/css/base.css">
+    <link rel="stylesheet" href="/happyapps/css/grid.css">
+    <link rel="stylesheet" href="/happyapps/css/navigation.css">
+    <link rel="stylesheet" href="/happyapps/css/footer.css">
+    <link rel="stylesheet" href="/happyapps/css/style.css">
+
+    
+    
+    <link rel="icon" href="/icons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/icons/icon-320.png" type="image/png">
+    
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon-180x180.png">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+        media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+        media="(prefers-color-scheme: dark)"
+    >
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FPVBWK1C1S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-FPVBWK1C1S');
+    </script>
+
+</head>
+
+<body>
+    <div id="navigation-container">
+        <header id="navigation" class="wrapper">
+            <a href="/happyapps/">
+                <picture>
+                    <source
+                        srcset="/happyapps/images/logos/happyapps-logo~dark.png"
+                        media="(prefers-color-scheme: dark)"
+                        >
+                    <img
+                        src="/happyapps/images/logos/happyapps-logo.png"
+                        alt="Logo of Happy Apps"
+                        title="Happy Apps"
+                        >
+                </picture>
+            </a>
+            <nav>
+                <input type="checkbox" id="primary-menu-button" name="menu-button" class="menu-button">
+                    <label for="primary-menu-button">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </label>
+                    <div class="menu-items">
+                        <a href="https://github.com/jsooriah/">Github</a>
+                        <a href="https://jsooriah.github.io/happyapps/blog/posts/about-this-blog/">About</a>
+                    </div>
+            </nav>
+        </header>
+    </div>
+    
+    <main>
+        <div class="wrapper">
+        <div class="article-with-toc">
+            <div>
+                <article>
+                    <header>
+        
+                        <div class="meta">
+                            <time datetime="2025.01.12.">2025.01.12.</time>
+                             &middot; <span class="reading-time">6 min read</span>
+                        </div>
+                        
+                        <h1>Don&#39;t go chasing waterfalls and turn the ship around</h1>
+                        <p>Academic research generates an enormous volume of PDF documents—papers, theses, archival materials, and historical analyses. Everytime I have a chance, I am digging into a huge amount of history related complex topics related to the French revolution period in the Indian Ocean. This history and its impact spans over decades across multiple locations like the Mascarene Islands, India, and of course, France and the UK as well. Given the huge amount of information that my brain needs to process a get a good understanding of all the intricacies going on at that time, and given the limited time I have as well to dig into these huge amount of documentary materials, I have decided to build a RAG pipeline powered by graph databases to help me out. Of course, traditional RAG approaches hit fundamental limitations. Modern LLMs have context windows ranging from 128K to 200K tokens, but a single comprehensive research paper can consume 20,000+ tokens. A research corpus of 50 papers quickly exceeds 1 million tokens—far beyond what any model can process in a single query. Simply &quot;uploading PDFs&quot; to a chat interface doesn&#39;t work at scale.</p>
+                    </header>
+        
+                    <section>
+                        <h2 id="building-an-agentic-rag-tool-to-support-my-hobby-research-into-the-history-of-the-french-revolution-in-the-indian-ocean">Building an agentic RAG tool to support my hobby research into the history of the French Revolution in the Indian Ocean</h2><p><strong>The Challenge: Research Documents and Context Windows</strong></p><p>Academic research generates an enormous volume of PDF documents—papers, theses, archival materials, and historical analyses. Everytime I have a chance, I am digging into a huge amount of history related complex topics related to the French revolution period in the Indian Ocean. This history and its impact spans over decades across multiple locations like the Mascarene Islands, India, and of course, France and the UK as well. </p><p>Given the huge amount of information that my brain needs to process a get a good understanding of all the intricacies going on at that time, and given the limited time I have as well to dig into these huge amount of documentary materials, I have decided to build a RAG pipeline powered by graph databases to help me out. </p><p>Of course, traditional RAG approaches hit fundamental limitations. Modern LLMs have context windows ranging from 128K to 200K tokens, but a single comprehensive research paper can consume 20,000+ tokens. A research corpus of 50 papers quickly exceeds 1 million tokens—far beyond what any model can process in a single query. Simply “uploading PDFs” to a chat interface doesn’t work at scale.</p><p>This experiment addresses that challenge head-on: building a Retrieval-Augmented Generation (RAG) system that transforms raw research PDFs into an intelligent, queryable knowledge base augmented with relationship understanding through graph technology.</p><p><strong>Why Naive RAG Falls Short</strong></p><p>Naive RAG implementations follow a straightforward pattern: split documents into chunks, embed them, store in a vector database, and retrieve relevant chunks for each query. This works for simple use cases but breaks down with academic research:</p><p><strong>Problem 1: Naive Chunking Destroys Context</strong></p><p>Fixed-size chunking (e.g., “split every 500 tokens”) cuts through sentences, paragraphs, and sections indiscriminately. An argument that spans multiple paragraphs becomes fragmented across chunks, losing the logical flow that makes it comprehensible.</p><p><strong>Problem 2: Semantic Similarity Misses Relationships</strong></p><p>Vector similarity finds passages that “sound like” the query, but research questions often require understanding relationships. “How did Napoleon’s policies affect Mauritius?” requires connecting information about Napoleon (one context) with Mauritius (another context) through their relationship—something pure vector similarity cannot capture.</p><p><strong>Problem 3: No Entity Awareness</strong></p><p>Naive RAG treats text as anonymous content. It has no understanding that “Bonaparte,” “Napoleon,” and “the Emperor” refer to the same person, or that mentions of “Port Louis” across different documents refer to the capital of Mauritius.</p><p><strong>Problem 4: Citation and Provenance Loss</strong></p><p>Researchers need to trace answers back to specific sources with page numbers. Naive implementations lose this metadata during chunking.</p><h2 id="the-experiment-agentic-rag-with-graph-enhancement">The Experiment: Agentic RAG with Graph Enhancement</h2><p>This system implements a multi-stage pipeline that addresses each limitation through purpose-built components:</p><p>```</p><p>┌─────────────────────────────────────────────────────────────────┐</p><p>│                        Streamlit Frontend                        │</p><p>│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────────┐  │</p><p>│  │ PDF Upload  │  │ Query UI    │  │ Graph Visualization     │  │</p><p>│  └─────────────┘  └─────────────┘  └─────────────────────────┘  │</p><p>└─────────────────────────────────────────────────────────────────┘</p><p>                             │</p><p>                             ▼</p><p>┌─────────────────────────────────────────────────────────────────┐</p><p>│                         RAG Pipeline                             │</p><p>│  ┌─────────────┐  ┌─────────────┐  ┌─────────────────────────┐  │</p><p>│  │ Retrieval   │  │ Context     │  │ Answer Generation       │  │</p><p>│  │ (Hybrid)    │  │ Assembly    │  │ (GPT-4o)                │  │</p><p>│  └─────────────┘  └─────────────┘  └─────────────────────────┘  │</p><p>└─────────────────────────────────────────────────────────────────┘</p><p>                             │</p><p>             ┌───────────────┴───────────────┐</p><p>             ▼                               ▼</p><p>┌─────────────────────────┐     ┌─────────────────────────┐</p><p>│      Qdrant (Vectors)   │     │    Knowledge Graph      │</p><p>│  ┌───────────────────┐  │     │  ┌───────────────────┐  │</p><p>│  │ Chunk Embeddings  │  │     │  │ Entities          │  │</p><p>│  │ (1536 dims)       │  │     │  │ Relationships     │  │</p><p>│  └───────────────────┘  │     │  └───────────────────┘  │</p><p>└─────────────────────────┘     └─────────────────────────┘</p><p>```</p><h2 id="stage-1-intelligent-pdf-ingestion">Stage 1: Intelligent PDF Ingestion</h2><p><strong>PDF Parsing with PyMuPDF</strong></p><p>The ingestion pipeline begins with PyMuPDF (fitz), chosen for its ability to extract text while preserving structural information:</p><p>Page-level extraction: Each page is processed separately, maintaining page number metadata for citations<br>Layout preservation: The parser respects reading order, handling multi-column layouts common in academic papers<br>Metadata extraction: Title, author, creation date, and other PDF metadata are captured for filtering</p><p><strong>Semantic Chunking: Respecting Document Structure</strong></p><p>The chunking strategy is the critical differentiator from naive implementations. The `SemanticChunker` operates on several principles:</p><p><strong>Token-Based Sizing</strong></p><p>Rather than character counts, chunks are sized using tiktoken (OpenAI’s tokenizer). This ensures chunks fit precisely within embedding and LLM context limits:</p><p><strong>Hierarchical Split Points</strong></p><p>The chunker finds split points in priority order:</p><p>1.Section headings (detected via regex patterns for “Chapter”, “Introduction”, etc.)<br>2.Paragraph breaks (double newlines)<br>3.Sentence endings (period + space patterns)<br>4.Word boundaries (last resort)</p><p>This ensures chunks never cut mid-sentence when paragraph or section boundaries are available.</p><p><strong>Overlap for Context Continuity</strong></p><p>A 10-15% overlap between consecutive chunks (configurable, default 100 tokens) ensures that context flows across boundaries. If a concept is introduced at the end of one chunk, the overlap carries it into the next:</p><h2 id="stage-2-embedding-generation">Stage 2: Embedding Generation</h2><p>Chunks are converted to 1536-dimensional vectors using OpenAI’s `text-embedding-3-small` model. This model offers an optimal balance:</p><p>Accuracy: Competitive with larger embedding models on retrieval benchmarks<br>Speed: Fast inference enables batch processing of large corpora<br>Cost: Economical for research-scale datasets</p><h2 id="stage-3-vector-storage-with-qdrant">Stage 3: Vector Storage with Qdrant</h2><p><strong>Why Qdrant</strong></p><p>Several vector databases exist (Pinecone, Weaviate, Milvus, ChromaDB), but Qdrant was selected for specific technical advantages:</p><p><strong>1. Local-First Operation</strong></p><p>Qdrant runs as a local Docker container or embedded process. For research applications where data sensitivity matters, having full control over where vectors are stored is crucial. No data leaves the researcher’s machine.</p><p><strong>2. Rich Filtering Capabilities</strong></p><p>Qdrant supports complex filters on payload (metadata) during search. This enables queries like “find similar content, but only from papers published after 2010” or “search within this specific source document”:</p><p><strong>3. HNSW Indexing with Tunable Parameters</strong></p><p>Qdrant uses HNSW (Hierarchical Navigable Small World) graphs for approximate nearest neighbor search. The parameters are configurable:</p><p><strong>4. Hybrid Search Support</strong></p><p>The system implements hybrid retrieval combining vector similarity with keyword matching.</p><h2 id="stage-4-entity-extraction-and-knowledge-graph">Stage 4: Entity Extraction and Knowledge Graph</h2><p>This is where the system naive RAG. The `EntityExtractor` uses GPT-4o to identify named entities and relationships from each chunk:</p><p><strong>Entity Types for Historical Research</strong></p><p>The extraction is domain-aware:</p><p>| Type | Examples |<br>|—|––|<br>| PERSON | Napoleon Bonaparte, Toussaint Louverture |<br>| LOCATION | Mauritius, Port Louis, Pondicherry |<br>| DATE | 1789, 18th century, Revolutionary period |<br>| EVENT | Storming of the Bastille, Treaty of Paris |<br>| ORGANIZATION | East India Company, National Assembly |<br>| SHIP | Naval vessels in colonial trade |<br>| DOCUMENT | Declaration of the Rights of Man |</p><p><strong>Relationship Extraction</strong></p><p>Beyond entities, the system identifies how they connect:<br>- PARTICIPATED_IN: Person → Event<br>- LOCATED_IN: Entity → Location<br>- GOVERNED: Person → Territory<br>- CAUSED: Event → Event<br>- CONTEMPORARY_OF: Person → Person<br>\</p><p><strong>Entity Resolution</strong></p><p>The extractor maintains a cache for deduplication, recognizing that “Bonaparte,” “Napoleon,” and “the Emperor” refer to the same entity;</p><p><strong>Graph Storage with NetworkX</strong></p><p>Entities and relationships form a knowledge graph stored in NetworkX, exportable to GraphML for visualization in tools like Gephi or Neo4j:</p><h2 id="stage-5-intelligent-retrieval">Stage 5: Intelligent Retrieval</h2><p>The retrieval stage combines multiple strategies:</p><p><strong>Hybrid Retrieval</strong></p><p>1. **Vector Search**: Find semantically similar chunks<br>2. **Keyword Boost**: Re-rank based on query term presence<br>3. **Graph Expansion**: If the query mentions “Napoleon,” also retrieve chunks about entities connected to Napoleon in the knowledge graph</p><p><strong>Retrieval Modes</strong></p><p>The system supports different retrieval strategies:</p><p>- **vector**: Pure semantic similarity<br>- **keyword**: Traditional keyword matching<br>- **hybrid**: Combined vector + keyword (default)<br>- **graph**: Graph-enhanced retrieval using entity relationships<br>\</p><p><strong>Context Assembly</strong></p><p>Retrieved chunks are assembled into a context window respecting token limits.</p><h2 id="stage-6-answer-generation">Stage 6: Answer Generation</h2><p>The final stage uses GPT-4o to generate answers from the retrieved context. The prompt engineering ensures:<br>- **Grounded responses**: Answers cite specific sources<br>- **Historical accuracy**: The model is instructed to prioritize factual accuracy<br>- **Source attribution**: Each claim traces to specific documents and pages</p><p>When I upload a PDF, here is what is supposed to happen:<br>1. **Parse**: PyMuPDF extracts text from each page<br>2. **Chunk**: SemanticChunker creates ~800 token chunks at paragraph boundaries<br>3. **Embed**: OpenAI generates 1536-dim vectors for each chunk<br>4. **Store**: Qdrant indexes vectors with full metadata<br>5. **Extract**: GPT-4o identifies entities (Napoleon, Mauritius, 1810) and relationships<br>6. **Graph**: NetworkX builds the knowledge graph</p><p>When I ask a question like “How did British rule affect Mauritius after 1810?”:</p><p>1. **Embed Query**: Convert question to vector<br>2. **Retrieve**: Qdrant finds similar chunks; graph expands to related entities<br>3. **Assemble**: Top chunks form context within token limits<br>4. **Generate**: GPT-4o produces answer with source citations<br>5. **Display**: Streamlit shows answer, sources, and expandable context</p><p>## Technical Advantages Over Native RAG<br>| Aspect | Native RAG | This System |<br>|—–|—|––|<br>| Chunking | Fixed-size, arbitrary splits | Semantic, paragraph-aware |<br>| Context | Text only | Text + entity relationships |<br>| Retrieval | Vector similarity | Hybrid + graph expansion |<br>| Sources | Often lost | Full page/document metadata |<br>| Relationships | None | Explicit knowledge graph |<br>| Interface | API only | Full research interface |</p>
+                    </section>
+                    
+                    
+                </article>
+            </div>
+            <div>
+                <aside>
+        
+                <div class="author-list">
+                        <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
+                        <img class="medium rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
+                        </a>
+                </div>
+                <div class="tag-list">
+                </div>
+                
+                <h4>On this page</h4>
+                <ul>
+                    <li class="first-level">
+                        <a href="#building-an-agentic-rag-tool-to-support-my-hobby-research-into-the-history-of-the-french-revolution-in-the-indian-ocean">Building an agentic RAG tool to support my hobby research into the history of the French Revolution in the Indian Ocean</a>
+                        <ul>
+                        </ul>
+                    </li>
+    <li class="first-level">
+                        <a href="#the-experiment-agentic-rag-with-graph-enhancement">The Experiment: Agentic RAG with Graph Enhancement</a>
+                        <ul>
+                        </ul>
+                    </li>
+    <li class="first-level">
+                        <a href="#stage-1-intelligent-pdf-ingestion">Stage 1: Intelligent PDF Ingestion</a>
+                        <ul>
+                        </ul>
+                    </li>
+    <li class="first-level">
+                        <a href="#stage-2-embedding-generation">Stage 2: Embedding Generation</a>
+                        <ul>
+                        </ul>
+                    </li>
+    <li class="first-level">
+                        <a href="#stage-3-vector-storage-with-qdrant">Stage 3: Vector Storage with Qdrant</a>
+                        <ul>
+                        </ul>
+                    </li>
+    <li class="first-level">
+                        <a href="#stage-4-entity-extraction-and-knowledge-graph">Stage 4: Entity Extraction and Knowledge Graph</a>
+                        <ul>
+                        </ul>
+                    </li>
+    <li class="first-level">
+                        <a href="#stage-5-intelligent-retrieval">Stage 5: Intelligent Retrieval</a>
+                        <ul>
+                        </ul>
+                    </li>
+    <li class="first-level">
+                        <a href="#stage-6-answer-generation">Stage 6: Answer Generation</a>
+                        <ul>
+                        </ul>
+                    </li>
+                </ul>
+                </aside>
+            </div>
+        </div>
+        </div>
+        
+        <section class="primary">
+            <div class="wrapper">
+                <header>
+                <h2>Related posts</h2>
+                </header>
+                <div class="grid grid-221">
+                        <div class="card post">
+                            <div class="author-list">
+                                    <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
+                                    <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
+                                    </a>
+                            </div>
+                        
+                            <div class="meta">
+                                <time datetime="2025.12.07.">2025.12.07.</time>
+                                 &middot; <span class="reading-time">6 min read</span>
+                            </div>
+                            
+                            <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/the-agent-memory-landscape/">The Agent Memory Landscape - A PM Guide to Building Context-Aware AI Systems</a></h3>
+                            <p>AI agents, quite often, don’t remember. They are brilliant in the moment, terrible across moments. Every conversation is day one. Every interaction starts from zero ! That limitation—and the architectural challenge of solving it—has become close to fascination to me. LLMs and agents are nothing without memory and context. An agent that forgets is just an expensive API call. An agent that remembers becomes something closer to a very good friend or assistant ! The landscape of agent memory solutions has exploded in the past two years. For product managers building AI-native products, understanding this landscape isn&#39;t optional—it&#39;s foundational. Here&#39;s a map of the territory.</p>
+                            
+                            
+                            <div class="tag-list">
+                            </div>
+                        </div>
+                </div>
+            </div>
+        </section>
+        
+        
+        
+    </main>
+    
+    <div id="footer-container">
+        <footer class="wrapper">
+            <div class="grid grid-211">
+                <div>
+                    <a href="/">
+                <picture>
+                    <source
+                        srcset="/happyapps/images/logos/happyapps-logo~dark.png"
+                        media="(prefers-color-scheme: dark)"
+                        >
+                    <img
+                        src="/happyapps/images/logos/happyapps-logo.png"
+                        alt="Logo of Happy Apps"
+                        title="Happy Apps"
+                        >
+                </picture>
+            </a>
+                    <h2></h2>
+                    <p></p>
+                </div>
+                <div class="links">
+                    <a href="/">
+                        <picture>
+                            <source
+                                srcset="/happyapps/images/footer/toucan-logo.png"
+                                media="(prefers-color-scheme: dark)"
+                            >
+                            <img
+                                src="/happyapps/images/footer/toucan-logo.png"
+                                alt="Logo of Happy Apps"
+                                title="Happy Apps"
+                            >
+                        </picture>
+                    </a>
+                    <p><small>This site was generated<br>using <a href="https://swift.org/" target="_blank">Swift</a> &amp; <a href="https://github.com/toucansites/toucan/" target="_blank">Toucan</a>.</small>
+                    <small>
+                    Toucan is a markdown-based static site generator writter in Swift.
+                    Toucan is open source and is free on Github.<br/>
+                    <a href="https://github.com/toucansites/website/blob/main/LICENSE" target="_blank">MIT License</a></small>
+                    </p>
+                    <div class="external">
+                        
+                    </div>
+                    <div class="contact">
+                        <h3></h3>
+                        <p>
+                        <br>
+                        <a href="mailto:">
+                            
+                        </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+    
+            <div id="copyright"></div>
+            
+            
+    
+        </footer>
+    </div>
+
+    
+    
+    <script src="/js/favicon.js"></script>
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQCKHXQ8"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+</body>
+</html>
