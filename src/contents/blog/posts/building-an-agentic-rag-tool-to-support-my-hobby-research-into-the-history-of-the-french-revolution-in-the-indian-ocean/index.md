@@ -51,7 +51,6 @@ The Experiment: Agentic RAG with Graph Enhancement
 
 This system implements a multi-stage pipeline that addresses each limitation through purpose-built components:
 
-\`\`\`
 
 ┌─────────────────────────────────────────────────────────────────┐
 
@@ -103,7 +102,7 @@ This system implements a multi-stage pipeline that addresses each limitation thr
 
 └─────────────────────────┘     └─────────────────────────┘
 
-\`\`\`
+
 
 Stage 1: Intelligent PDF Ingestion
 ----------------------------------
@@ -202,7 +201,7 @@ Beyond entities, the system identifies how they connect:
 \- GOVERNED: Person → Territory
 \- CAUSED: Event → Event
 \- CONTEMPORARY\_OF: Person → Person
-\
+
 
 **Entity Resolution**
 
@@ -227,11 +226,11 @@ The retrieval stage combines multiple strategies:
 
 The system supports different retrieval strategies:
 
-\- \*\*vector\*\*: Pure semantic similarity
-\- \*\*keyword\*\*: Traditional keyword matching
-\- \*\*hybrid\*\*: Combined vector + keyword (default)
-\- \*\*graph\*\*: Graph-enhanced retrieval using entity relationships
-\
+Vector: Pure semantic similarity
+Keyword: Traditional keyword matching
+Hybrid: Combined vector + keyword (default)
+Graph: Graph-enhanced retrieval using entity relationships
+
 
 **Context Assembly**
 
@@ -241,33 +240,25 @@ Stage 6: Answer Generation
 --------------------------
 
 The final stage uses GPT-4o to generate answers from the retrieved context. The prompt engineering ensures:
-\- \*\*Grounded responses\*\*: Answers cite specific sources
-\- \*\*Historical accuracy\*\*: The model is instructed to prioritize factual accuracy
-\- \*\*Source attribution\*\*: Each claim traces to specific documents and pages
+- Grounded responses: Answers cite specific sources
+- Historical accuracy: The model is instructed to prioritize factual accuracy
+- Source attribution: Each claim traces to specific documents and pages
 
 
 When I upload a PDF, here is what is supposed to happen:
-1\. \*\*Parse\*\*: PyMuPDF extracts text from each page
-2\. \*\*Chunk\*\*: SemanticChunker creates \~800 token chunks at paragraph boundaries
-3\. \*\*Embed\*\*: OpenAI generates 1536-dim vectors for each chunk
-4\. \*\*Store\*\*: Qdrant indexes vectors with full metadata
-5\. \*\*Extract\*\*: GPT-4o identifies entities (Napoleon, Mauritius, 1810) and relationships
-6\. \*\*Graph\*\*: NetworkX builds the knowledge graph
+1\. Parse: PyMuPDF extracts text from each page
+2\. Chunk: SemanticChunker creates \~800 token chunks at paragraph boundaries
+3\. Embed: OpenAI generates 1536-dim vectors for each chunk
+4\. Store: Qdrant indexes vectors with full metadata
+5\. Extract: GPT-4o identifies entities (Napoleon, Mauritius, 1810) and relationships
+6\. Graph: NetworkX builds the knowledge graph
 
 When I ask a question like "How did British rule affect Mauritius after 1810?":
 
-1\. \*\*Embed Query\*\*: Convert question to vector
-2\. \*\*Retrieve\*\*: Qdrant finds similar chunks; graph expands to related entities
-3\. \*\*Assemble\*\*: Top chunks form context within token limits
-4\. \*\*Generate\*\*: GPT-4o produces answer with source citations
-5\. \*\*Display\*\*: Streamlit shows answer, sources, and expandable context
+1\. Embed Query: Convert question to vector
+2\. Retrieve: Qdrant finds similar chunks; graph expands to related entities
+3\. Assemble: Top chunks form context within token limits
+4\. Generate: GPT-4o produces answer with source citations
+5\. Display: Streamlit shows answer, sources, and expandable context
 
-\## Technical Advantages Over Native RAG
-\| Aspect | Native RAG | This System |
-\|--------|------------|-------------|
-\| Chunking | Fixed-size, arbitrary splits | Semantic, paragraph-aware |
-\| Context | Text only | Text + entity relationships |
-\| Retrieval | Vector similarity | Hybrid + graph expansion |
-\| Sources | Often lost | Full page/document metadata |
-\| Relationships | None | Explicit knowledge graph |
-\| Interface | API only | Full research interface |
+
