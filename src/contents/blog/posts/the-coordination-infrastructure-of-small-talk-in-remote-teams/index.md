@@ -1,7 +1,7 @@
 ---
 type: post
 title: The Coordination Infrastructure of Small Talk in Remote Teams
-description: Historically, many organisations operated with a waterfall-like model where product managers or business analysts would create detailed specifications that engineers would implement. Engineering teams would receive “clearer guidance upfront” with regular check-ins to ensure alignment. This approach treats engineers primarily as implementers who translate requirements into code.
+description: Remote work hasn't just changed where we work - it's exposed how much of our coordination machinery was invisible. When teams went remote and small talk evaporated, what broke wasn't morale or "culture" in some fuzzy sense. It was the infrastructure for coordination itself. Small talk wasn't downtime between real work. It was the continuous background process that made everything else work - the ambient context sharing, the trust building, the calibration of shared understanding. Teams that lost it found collaboration got harder, not easier, even with all the productivity tools in the world.
 publication: 2025-09-06 11:27:12
 tags:
   - team
