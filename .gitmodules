@@ -1,0 +1,3 @@
+[submodule "lennys-newsletterpodcastdata"]
+	path = lennys-newsletterpodcastdata
+	url = https://github.com/LennysNewsletter/lennys-newsletterpodcastdata.git
