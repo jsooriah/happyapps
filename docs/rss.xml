@@ -4,11 +4,18 @@
     <description>Designing products and teams, the human centric way</description>
     <link>https://jsooriah.github.io/happyapps</link>
     <language>en-US</language>
-    <lastBuildDate>Tue, 27 Jan 2026 10:03:48 +0000</lastBuildDate>
-    <pubDate>Thu, 15 Jan 2026 14:57:12 +0000</pubDate>
+    <lastBuildDate>Wed, 18 Mar 2026 19:07:28 +0000</lastBuildDate>
+    <pubDate>Sat, 31 Jan 2026 11:27:12 +0000</pubDate>
     <ttl>250</ttl>
     <atom:link href="https://jsooriah.github.io/happyappsrss.xml" rel="self" type="application/rss+xml"/>
 
+<item>
+    <guid isPermaLink="true">https://jsooriah.github.io/happyapps/blog/posts/from-feature-requests-to-customer-jobs-basecamps-root-cause-analysis-approach-to-product-strategy/</guid>
+    <title><![CDATA[ From Feature Requests to Customer Jobs - Basecamp&#39;s Root Cause Analysis Approach to Product Strategy ]]></title>
+    <description><![CDATA[ Product teams face a universal challenge, customers constantly request features, but building everything would create bloated, unfocused products. The traditional approach—either ignoring requests entirely or meticulously tracking them in spreadsheets—fails to extract the strategic intelligence buried within these requests. Basecamp&#39;s evolved methodology demonstrates how Jobs-to-be-Done interviewing transforms raw feature requests into customer-centric product strategy. ]]></description>
+    <link>https://jsooriah.github.io/happyapps/blog/posts/from-feature-requests-to-customer-jobs-basecamps-root-cause-analysis-approach-to-product-strategy/</link>
+    <pubDate>Sat, 31 Jan 2026 11:27:12 +0000</pubDate>
+</item>
 <item>
     <guid isPermaLink="true">https://jsooriah.github.io/happyapps/blog/posts/gherkin-syntax-the-rosetta-stone-of-cross-functional-alignment-jtbd-part-2/</guid>
     <title><![CDATA[ Gherkin Syntax - The Rosetta Stone of Cross-Functional Alignment ]]></title>

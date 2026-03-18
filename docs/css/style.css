@@ -297,6 +297,40 @@ p.primary {
     margin-top: 30px;
 }
 
+.yt-card {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    border-radius: 8px;
+    overflow: hidden;
+    border: 1px solid var(--background-color-2);
+    margin: 8px 0 20px 0;
+    text-decoration: none;
+    max-width: 420px;
+    background: var(--background-color);
+}
+.yt-card img {
+    display: block;
+    width: 120px;
+    min-width: 120px;
+    height: 68px;
+    object-fit: cover;
+}
+.yt-card span {
+    display: block;
+    padding: 0 12px 0 0;
+    font-size: 0.85rem;
+    color: var(--text-color-2);
+    font-weight: 600;
+    line-height: 1.3;
+}
+.yt-card:hover {
+    border-color: var(--link-color);
+}
+.yt-card:hover span {
+    color: var(--link-color);
+}
+
 .pagination {
     margin-top: 60px;
     text-align: center;
