@@ -1,7 +1,7 @@
 ---
 type: post
 title: From Feature Requests to Customer Jobs - Basecamp's Root Cause Analysis Approach to Product Strategy
-description: Product teams face a universal challenge: customers constantly request features, but building everything would create bloated, unfocused products. The traditional approach—either ignoring requests entirely or meticulously tracking them in spreadsheets—fails to extract the strategic intelligence buried within these requests. Basecamp's evolved methodology demonstrates how Jobs-to-be-Done interviewing transforms raw feature requests into customer-centric product strategy.
+description: Product teams face a universal challenge, customers constantly request features, but building everything would create bloated, unfocused products. The traditional approach—either ignoring requests entirely or meticulously tracking them in spreadsheets—fails to extract the strategic intelligence buried within these requests. Basecamp's evolved methodology demonstrates how Jobs-to-be-Done interviewing transforms raw feature requests into customer-centric product strategy.
 publication: 2026-01-31 11:27:12
 tags:
   - jobstobedone rootcauseanalysis productstrategy
