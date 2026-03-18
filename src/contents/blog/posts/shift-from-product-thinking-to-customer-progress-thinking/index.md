@@ -1,4 +1,20 @@
-# **Part 3: Shift from Product Thinking to Customer Progress Thinking**
+---
+type: post
+title: Don't go chasing waterfalls and turn the ship around
+description: Every product manager has sat through a roadmap prioritization meeting that devolves into chaos. Engineering wants to pay down technical debt. Sales wants features that will close their current deals. Customer success wants fixes for the loudest complaints. Leadership wants innovation that moves metrics.
+Everyone's arguing about what to build. Nobody's asking why any of it matters.
+This is the natural endpoint of **product thinking**—a mode of operating where the product itself becomes the center of gravity. Features become the unit of value. Roadmaps become lists of things to ship. Success becomes adoption metrics.
+Product thinking feels productive because there's always something to build, something to measure, something to optimize. But it's fundamentally disconnected from the reason products exist in the first place.
+This is what Jobs-to-be-Done forces you to confront: customers don't want your product. They want progress. Your product is just a means to that end.
+publication: 2025-03-18 11:27:12
+tags:
+  - jtbd
+authors:
+  - joel-sooriah
+featured: true
+redirects:
+    - from: shift-from-product-thinking-to-customer-progress-thinking
+---
 
 Every product manager has sat through a roadmap prioritization meeting that devolves into chaos. Engineering wants to pay down technical debt. Sales wants features that will close their current deals. Customer success wants fixes for the loudest complaints. Leadership wants innovation that moves metrics.
 
