@@ -1,7 +1,7 @@
 ---
 type: post
 title: Before the Graph On the Necessity of Ontology Design
-description: I have been dwelling into GraphRAG for some time now, vibe coding in my spare time. I started vibe coding GRAPHOS — a Graph-based Research Assistant for Historical and Ontological Sources (I recently changed the project name to reflect the importance of ontologies in this piece of work) — I assumed the hard problem would be the ingestion pipeline. Parse the documents. Extract the entities. Build the graph. Let the system answer questions.
+description: I have been dwelling into GraphRAG for a few weeks now, vibe coding in my spare time. I started vibe coding GRAPHOS — a Graph-based Research Assistant for Historical and Ontological Sources (I recently changed the project name to reflect the importance of ontologies in this piece of work) — I assumed the hard problem would be the ingestion pipeline. Parse the documents. Extract the entities. Build the graph. Let the system answer questions.
 I was wrong about where the hard problem was.
 publication: 2026-04-06 08:00:00
 tags:
@@ -13,7 +13,7 @@ redirects:
     - from: before-the-graph-on-the-necessity-of-ontology-design
 ---
 
-I have been dwelling into GraphRAG for some time now, vibe coding in my spare time. I started vibe coding GRAPHOS — a Graph-based Research Assistant for Historical and Ontological Sources (I recently changed the project name to reflect the importance of ontologies in this piece of work) — I assumed the hard problem would be the ingestion pipeline. Parse the documents. Extract the entities. Build the graph. Let the system answer questions.
+I have been dwelling into GraphRAG for a few weeks now, vibe coding in my spare time. I started vibe coding GRAPHOS — a Graph-based Research Assistant for Historical and Ontological Sources (I recently changed the project name to reflect the importance of ontologies in this piece of work) — I assumed the hard problem would be the ingestion pipeline. Parse the documents. Extract the entities. Build the graph. Let the system answer questions.
 
 I was wrong about where the hard problem was.
 
