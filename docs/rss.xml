@@ -4,7 +4,7 @@
     <description>Designing products and teams, the human centric way</description>
     <link>https://jsooriah.github.io/happyapps</link>
     <language>en-US</language>
-    <lastBuildDate>Mon, 06 Apr 2026 11:55:57 +0000</lastBuildDate>
+    <lastBuildDate>Mon, 06 Apr 2026 12:58:04 +0000</lastBuildDate>
     <pubDate>Mon, 06 Apr 2026 08:00:00 +0000</pubDate>
     <ttl>250</ttl>
     <atom:link href="https://jsooriah.github.io/happyappsrss.xml" rel="self" type="application/rss+xml"/>
@@ -12,7 +12,7 @@
 <item>
     <guid isPermaLink="true">https://jsooriah.github.io/happyapps/blog/posts/before-the-graph-on-the-necessity-of-ontology-design/</guid>
     <title><![CDATA[ Before the Graph On the Necessity of Ontology Design ]]></title>
-    <description><![CDATA[ I had been deep into GRAPHOS (Graph-based Research Assistant for Historical and Ontological Sources) for months — as a hobby — an AI-powered research platform to make the history of Mauritius and the Mascarene Islands accessible to everyone — I assumed the hard part would be the ingestion pipeline. Parse the PDFs. Extract the entities. Build the graph. Let the LLM answer questions. ]]></description>
+    <description><![CDATA[ I have been dwelling into GraphRAG for a few weeks now, vibe coding in my spare time. I started vibe coding GRAPHOS — a Graph-based Research Assistant for Historical and Ontological Sources (I recently changed the project name to reflect the importance of ontologies in this piece of work) — I assumed the hard problem would be the ingestion pipeline. Parse the documents. Extract the entities. Build the graph. Let the system answer questions.I was wrong about where the hard problem was. ]]></description>
     <link>https://jsooriah.github.io/happyapps/blog/posts/before-the-graph-on-the-necessity-of-ontology-design/</link>
     <pubDate>Mon, 06 Apr 2026 08:00:00 +0000</pubDate>
 </item>
