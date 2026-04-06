@@ -12,11 +12,7 @@ redirects:
     - from: before-the-graph-on-the-necessity-of-ontology-design
 ---
 
-There is a particular kind of mistake you can only make once you already know quite a lot.
-
-I had been deep into GraphRAG for months — not as a hobby, but as a professional obsession. My day job building content moderation platforms had taught me to think in graphs: entities, relationships, traversal, context. When I started sketching what would become my most personal project — an AI-powered research platform to make the history of Mauritius and the Mascarene Islands accessible to everyone — I assumed the hard part would be the ingestion pipeline. Parse the PDFs. Extract the entities. Build the graph. Let the LLM answer questions.
-
-I was wrong about where the hard part was.
+I had been deep into GRAPHOS (Graph-based Research Assistant for Historical and Ontological Sources) for months — as a hobby — an AI-powered research platform to make the history of Mauritius and the Mascarene Islands accessible to everyone — I assumed the hard part would be the ingestion pipeline. Parse the PDFs. Extract the entities. Build the graph. Let the LLM answer questions.
 
 ## The Seduction of the Pipeline
 
