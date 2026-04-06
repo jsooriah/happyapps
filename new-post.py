@@ -66,7 +66,7 @@ def main():
     featured = featured_input.lower() in ("y", "yes")
 
     # Publication date
-    now = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
+    now = datetime.utcnow().strftime("%Y-%m-%d %H:%M:%S")
     pub_date = ask("Publication date", default=now)
 
     # Build frontmatter

@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="canonical" href="https://jsooriah.github.io/happyapps/blog/posts/before-the-graph-on-the-necessity-of-ontology-design/">
+    
+    <link rel="next" href="https://jsooriah.github.io/happyapps/blog/posts/from-feature-requests-to-customer-jobs-basecamps-root-cause-analysis-approach-to-product-strategy/">
+    
+    <title>Before the Graph On the Necessity of Ontology Design - Happy Apps</title>
+    <meta name="description" content="I had been deep into GRAPHOS (Graph-based Research Assistant for Historical and Ontological Sources) for months — as a hobby — an AI-powered research platform to make the history of Mauritius and the Mascarene Islands accessible to everyone — I assumed the hard part would be the ingestion pipeline. Parse the PDFs. Extract the entities. Build the graph. Let the LLM answer questions.">
+    
+    <meta property="og:url" content="https://jsooriah.github.io/happyapps/blog/posts/before-the-graph-on-the-necessity-of-ontology-design/">
+    <meta property="og:title" content="Before the Graph On the Necessity of Ontology Design - Happy Apps">
+    <meta property="og:description" content="I had been deep into GRAPHOS (Graph-based Research Assistant for Historical and Ontological Sources) for months — as a hobby — an AI-powered research platform to make the history of Mauritius and the Mascarene Islands accessible to everyone — I assumed the hard part would be the ingestion pipeline. Parse the PDFs. Extract the entities. Build the graph. Let the LLM answer questions.">
+    <meta property="og:image" content="https://jsooriah.github.io/happyapps/images/logos/happyapps-logo.png" />
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Before the Graph On the Necessity of Ontology Design - Happy Apps">
+    <meta name="twitter:description" content="I had been deep into GRAPHOS (Graph-based Research Assistant for Historical and Ontological Sources) for months — as a hobby — an AI-powered research platform to make the history of Mauritius and the Mascarene Islands accessible to everyone — I assumed the hard part would be the ingestion pipeline. Parse the PDFs. Extract the entities. Build the graph. Let the LLM answer questions.">
+    
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap">
+
+    <link rel="stylesheet" href="/happyapps/css/modern-normalize.css">
+    <link rel="stylesheet" href="/happyapps/css/modern-base.css">
+    <link rel="stylesheet" href="/happyapps/css/variables.css">
+    <link rel="stylesheet" href="/happyapps/css/base.css">
+    <link rel="stylesheet" href="/happyapps/css/grid.css">
+    <link rel="stylesheet" href="/happyapps/css/navigation.css">
+    <link rel="stylesheet" href="/happyapps/css/footer.css">
+    <link rel="stylesheet" href="/happyapps/css/style.css">
+
+    
+    
+    <link rel="icon" href="/icons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/icons/icon-320.png" type="image/png">
+    
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon-180x180.png">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+        media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+        media="(prefers-color-scheme: dark)"
+    >
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FPVBWK1C1S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-FPVBWK1C1S');
+    </script>
+
+</head>
+
+<body>
+    <div id="navigation-container">
+        <header id="navigation" class="wrapper">
+            <a href="/happyapps/">
+                <picture>
+                    <source
+                        srcset="/happyapps/images/logos/happyapps-logo~dark.png"
+                        media="(prefers-color-scheme: dark)"
+                        >
+                    <img
+                        src="/happyapps/images/logos/happyapps-logo.png"
+                        alt="Logo of Happy Apps"
+                        title="Happy Apps"
+                        >
+                </picture>
+            </a>
+            <nav>
+                <input type="checkbox" id="primary-menu-button" name="menu-button" class="menu-button">
+                    <label for="primary-menu-button">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </label>
+                    <div class="menu-items">
+                        <a href="https://github.com/jsooriah/">Github</a>
+                        <a href="https://jsooriah.github.io/happyapps/blog/posts/about-this-blog/">About</a>
+                    </div>
+            </nav>
+        </header>
+    </div>
+    
+    <main>
+        <div class="wrapper">
+        <div class="article-with-toc">
+            <div>
+                <article>
+                    <header>
+        
+                        <div class="meta">
+                            <time datetime="2026.04.06.">2026.04.06.</time>
+                             &middot; <span class="reading-time">7 min read</span>
+                        </div>
+                        
+                        <h1>Before the Graph On the Necessity of Ontology Design</h1>
+                        <p>I had been deep into GRAPHOS (Graph-based Research Assistant for Historical and Ontological Sources) for months — as a hobby — an AI-powered research platform to make the history of Mauritius and the Mascarene Islands accessible to everyone — I assumed the hard part would be the ingestion pipeline. Parse the PDFs. Extract the entities. Build the graph. Let the LLM answer questions.</p>
+                    </header>
+        
+                    <section>
+                        <p>I had been deep into GRAPHOS (Graph-based Research Assistant for Historical and Ontological Sources) for months — as a hobby — an AI-powered research platform to make the history of Mauritius and the Mascarene Islands accessible to everyone — I assumed the hard part would be the ingestion pipeline. Parse the PDFs. Extract the entities. Build the graph. Let the LLM answer questions.</p><h2 id="the-seduction-of-the-pipeline">The Seduction of the Pipeline</h2><p>GraphRAG is, on the surface, a satisfying technical problem. You have documents. You extract entities and relationships. You store them in a graph. You traverse that graph to answer questions that flat vector search cannot. The pipeline has clear stages, clear tools, clear metrics for success.</p><p>This clarity is a trap.</p><p>It invites you to think of the graph as a container — something you fill with facts extracted from documents — rather than as an argument. A claim about what kinds of things exist in a domain, what those things can do to each other, and what distinctions are worth preserving at the infrastructure level.</p><p>The pipeline asks: how do I get data into the graph?</p><p>The prior question, which the pipeline cannot ask on your behalf, is: what should the graph be capable of saying?</p><p>That prior question is what ontology design answers. And for a project about Mascarene Islands history — five centuries of colonialism, slavery, migration, and cultural formation — getting that question wrong does not produce a technically flawed system. It produces a historically dishonest one.</p><h2 id="what-an-ontology-actually-is">What an Ontology Actually Is</h2><p>An ontology is not a database schema, though it informs one. It is not a taxonomy, though it contains one. It is the formal answer to a question that most technical builders skip because it feels philosophical: what kinds of things exist in this domain, and what kinds of relationships are possible between them?</p><p>The surface layer of this question is technical. What entity types do I need? What relationship types connect them? What constraints govern those relationships? These prevent the graph from encoding nonsense — logical contradictions that would corrupt traversal and degrade answers.</p><p>But below that surface layer is something harder and more important: the ontology is a set of decisions about what deserves to be a first-class citizen in your knowledge structure. What gets its own node. What gets reduced to a property. What relationships are typed precisely enough to be queried. What distinctions are considered worth preserving.</p><p>Those decisions are never neutral. They reflect a theory of what matters in the history you are trying to represent. And in a history as contested as that of the Mascarene Islands, the theory embedded in your ontology is itself a historiographical position.</p><h2 id="the-problem-of-flat-accounts">The Problem of Flat Accounts</h2><p>History as it is usually written is a flat account. Narrative prose connects events through causation and chronology, but it does not formalise the types of those connections. A governor authorises a mission. An officer executes it. A place is named after the executor. These are three different kinds of relationship — authorisation, execution, commemoration — but in a narrative they appear as one continuous sentence.</p><p>When you extract entities and relationships from that narrative without a prior ontology, you inherit its flatness. The extraction picks up the actor most prominently associated with the event and connects them to the outcome. The authorisation chain disappears. The distinction between deciding and doing, between executing and being remembered, collapses into a single edge.</p><p>The result is a graph that is factually accurate at the sentence level and historically misleading at the structural level. It does not contain false information. It contains insufficient relationship types to represent what actually happened.</p><p>This is the failure mode that under-typed graphs share with flat accounts: they remember the visible actor and lose the decision-making chain. In naval history, this erases a governor’s final act. In the history of slavery, it erases the institutional logic that determined whether people were rescued or abandoned.</p><p>An ontology that defines <code>[AUTHORIZED]</code>, <code>[EXECUTED]</code>, and <code>[NAMESAKE_OF]</code> as distinct relationship types — rather than collapsing them into a single <code>[INVOLVED_IN]</code> — is not adding technical complexity. It is refusing to repeat the archive’s own simplifications at the infrastructure level.</p><h2 id="the-problem-of-temporal-flatness">The Problem of Temporal Flatness</h2><p>Relationship typing is one dimension of the problem. Temporal modelling is another, and in some ways more insidious, because it is harder to notice when it is absent.</p><p>A flat entity node represents a thing as it is — a snapshot. A <code>PERSON</code> node with properties for name, role, and institution captures how someone appears at a given moment in the record. For many historical actors, this is sufficient. Naval officers have careers that change slowly and are documented systematically.</p><p>But history also contains people whose fundamental status changes — sometimes legally, sometimes catastrophically, sometimes through the slow accumulation of survival. A person who is legally classified as property in one document, as a survivor in another, as a freed person in a third, and as a renamed individual in a fourth cannot be represented by a flat node without erasure. To flatten that trajectory into a single <code>legal_status</code> attribute is not a technical decision. It is a decision about whose story the graph is designed to hold.</p><p>The ontology must model <code>LEGAL_STATUS</code> as temporal — something that changes, that has a before and after, that can be contested and revised. This requires not just a different data structure but a different conceptual commitment: the recognition that for some people in this history, the most important fact about them is not what they were, but the arc of what they became.</p><p>A system that cannot represent that arc does not just fail technically. It reproduces, in its infrastructure, the same categorical rigidity that colonial administration used to manage enslaved people — classifying them once, at the point of acquisition, and never updating the record.</p><h2 id="the-problem-of-absence">The Problem of Absence</h2><p>Perhaps the most counter-intuitive insight of ontology design is that what the graph does not contain is as significant as what it does.</p><p>Every ontology implicitly defines not just what exists but what is worth tracking. An entity type that does not appear in the schema is an entity type that will never surface in an answer, never generate a follow-up question, never become visible as a gap in the record.</p><p>This matters acutely for a history built substantially on colonial archives. Those archives were meticulous about some things — ship manifests, harbour depths, administrative salaries, engineering plans — and silent about others. The silence is not neutral. It is the archive expressing, systematically, what the colonial administration considered worth recording.</p><p>If the ontology is derived solely from what the archive contains, it inherits those silences as structural features. The things the archive did not track — the names of enslaved people, the oral knowledge of indentured labourers, the domestic arrangements of plantation workers — will be absent from the graph not because the history did not happen, but because the ontology did not make space for it.</p><p>An ontology designed with historiographical intention makes those absences visible rather than invisible. It includes entity types and relationship types for which the current corpus has little evidence — not because the data exists, but because its absence is itself a historical fact worth representing. A node with no edges is a different kind of knowledge claim than a node that was never defined. The first says: this person existed, and we cannot connect them to anything else in the record. The second says: this kind of person was not considered worth tracking.</p><p>Those are not the same statement. The ontology is the only structure that can hold the difference between them.</p><h2 id="the-governance-implication">The Governance Implication</h2><p>An ontology that takes these questions seriously cannot be designed once and fixed. It must evolve — with the corpus, with the research questions, and most importantly with the growing understanding of what the history actually contains and who it concerns.</p><p>This evolution is not a sign of poor initial design. It is a sign that the platform is doing what a research tool should do: generating new questions that reveal the limits of its current structure.</p><p>But evolution requires governance. Ontology changes are not equivalent to data updates. When a new relationship type is added, it changes what the graph is capable of saying — not just about new documents, but potentially about documents already ingested. When an entity type is split into subtypes, it changes the categories through which users understand the history. When a property is made temporal, it changes which questions can be asked.</p><p>These are decisions that should be documented, reasoned about, and traceable. Not because ontology design is bureaucratic, but because the changelog of an ontology is itself a historical document — evidence of how the platform’s understanding of Mascarene history developed over time. Future researchers will want to know not just what the graph contains, but when it became capable of containing it, and why.</p><p>That traceability is not overhead. It is integrity.</p><h2 id="what-the-ontology-is-for">What the Ontology Is For</h2><p>I started this project thinking the hard problem was ingestion. Get the documents. Parse them well. Extract entities reliably. Build the graph.</p><p>The hard problem is prior to all of that. It is the question you have to answer before you write a single line of extraction code: what is a thing, in this history, and what can one thing do to another?</p><p>For the Mascarene Islands, that question is never purely technical. The history involves people who were legally classified as property, institutions that generated meticulous records of harbour depths and almost no records of human suffering, and a colonial epistemology that systematically decided what was worth naming and what was not.</p><p>An ontology designed without confronting those facts will not just be technically incomplete. It will be complicit in the same logic that shaped the archive — privileging the well-documented over the poorly documented, the named over the unnamed, the institutional over the personal, the executor over the authoriser, the cartographer over the survivor.</p><p>The graph cannot correct the archive. But it can refuse to reproduce its hierarchies as neutral infrastructure.</p><p>That refusal begins with the ontology. Before the data. Before the pipeline. Before the first entity is extracted or the first relationship is typed.</p><p>The map before the map has to know what it is mapping — and for whom. And it has to have made, deliberately and documentably, the decisions about what deserves to exist in the world it is about to construct.</p>
+                    </section>
+                    
+                    
+                </article>
+            </div>
+            <div>
+                <aside>
+        
+                <div class="author-list">
+                        <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
+                        <img class="medium rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
+                        </a>
+                </div>
+                <div class="tag-list">
+                </div>
+                
+                <h4>On this page</h4>
+                <ul>
+                    <li class="first-level">
+                        <a href="#the-seduction-of-the-pipeline">The Seduction of the Pipeline</a>
+                        <ul>
+                        </ul>
+                    </li>
+    <li class="first-level">
+                        <a href="#what-an-ontology-actually-is">What an Ontology Actually Is</a>
+                        <ul>
+                        </ul>
+                    </li>
+    <li class="first-level">
+                        <a href="#the-problem-of-flat-accounts">The Problem of Flat Accounts</a>
+                        <ul>
+                        </ul>
+                    </li>
+    <li class="first-level">
+                        <a href="#the-problem-of-temporal-flatness">The Problem of Temporal Flatness</a>
+                        <ul>
+                        </ul>
+                    </li>
+    <li class="first-level">
+                        <a href="#the-problem-of-absence">The Problem of Absence</a>
+                        <ul>
+                        </ul>
+                    </li>
+    <li class="first-level">
+                        <a href="#the-governance-implication">The Governance Implication</a>
+                        <ul>
+                        </ul>
+                    </li>
+    <li class="first-level">
+                        <a href="#what-the-ontology-is-for">What the Ontology Is For</a>
+                        <ul>
+                        </ul>
+                    </li>
+                </ul>
+                </aside>
+            </div>
+        </div>
+        </div>
+        
+        <section class="primary">
+            <div class="wrapper">
+            </div>
+        </section>
+        
+        
+        
+    </main>
+    
+    <div id="footer-container">
+        <footer class="wrapper">
+            <div class="grid grid-211">
+                <div>
+                    <a href="/">
+                <picture>
+                    <source
+                        srcset="/happyapps/images/logos/happyapps-logo~dark.png"
+                        media="(prefers-color-scheme: dark)"
+                        >
+                    <img
+                        src="/happyapps/images/logos/happyapps-logo.png"
+                        alt="Logo of Happy Apps"
+                        title="Happy Apps"
+                        >
+                </picture>
+            </a>
+                    <h2></h2>
+                    <p></p>
+                </div>
+                <div class="links">
+                    <a href="/">
+                        <picture>
+                            <source
+                                srcset="/happyapps/images/footer/toucan-logo.png"
+                                media="(prefers-color-scheme: dark)"
+                            >
+                            <img
+                                src="/happyapps/images/footer/toucan-logo.png"
+                                alt="Logo of Happy Apps"
+                                title="Happy Apps"
+                            >
+                        </picture>
+                    </a>
+                    <p><small>This site was generated<br>using <a href="https://swift.org/" target="_blank">Swift</a> &amp; <a href="https://github.com/toucansites/toucan/" target="_blank">Toucan</a>.</small>
+                    <small>
+                    Toucan is a markdown-based static site generator writter in Swift.
+                    Toucan is open source and is free on Github.<br/>
+                    <a href="https://github.com/toucansites/website/blob/main/LICENSE" target="_blank">MIT License</a></small>
+                    </p>
+                    <div class="external">
+                        
+                    </div>
+                    <div class="contact">
+                        <h3></h3>
+                        <p>
+                        <br>
+                        <a href="mailto:">
+                            
+                        </a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            
+    
+            <div id="copyright"></div>
+            
+            
+    
+        </footer>
+    </div>
+
+    
+    
+    <script src="/js/favicon.js"></script>
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQCKHXQ8"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+</body>
+</html>
