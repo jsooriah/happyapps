@@ -1,6 +1,6 @@
 ---
 type: post
-title: Before the Graph - On the Necessity of Ontology Design
+title: Before the Graph On the Necessity of Ontology Design
 description: I had been deep into GRAPHOS (Graph-based Research Assistant for Historical and Ontological Sources) for months — as a hobby — an AI-powered research platform to make the history of Mauritius and the Mascarene Islands accessible to everyone — I assumed the hard part would be the ingestion pipeline. Parse the PDFs. Extract the entities. Build the graph. Let the LLM answer questions.
 publication: 2026-04-06 14:43:42
 tags:
