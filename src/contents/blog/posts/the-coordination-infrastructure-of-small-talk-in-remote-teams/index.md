@@ -9,7 +9,7 @@ authors:
   - joel-sooriah
 featured: false
 redirects:
-    - from: dont-go-chasing-waterfalls-and-turn-the-ship-around
+    - from: the-coordination-infrastructure-of-small-talk-in-remote-teams
 ---
 
 

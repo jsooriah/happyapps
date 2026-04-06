@@ -9,7 +9,7 @@ authors:
   - joel-sooriah
 featured: false
 redirects:
-    - from: root-cause-analysis-in-product-management-learning-the-hard-way
+    - from: the-evolution-of-ux-in-the-age-of-ai-from-interfaces-to-intelligence
 ---
 
 The UI Evolution

@@ -9,7 +9,7 @@ authors:
   - joel-sooriah
 featured: false
 redirects:
-    - from: the-pragmatist-roots-of-agile-john-deweys-philosophy-and-modern-software-development
+    - from: the-silent-kitchen-what-sebastien-bras-reminds-us-about-building-products-and-teams
 ---
 
 The Silent Kitchen: What Sébastien Bras Reminds Us About Building Products and Teams
