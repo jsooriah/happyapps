@@ -19,6 +19,7 @@ redirects:
 
 **How a methodology born in the IDE is quietly reshaping who holds the pen on software intent — and why the most important experiments in 2025–2026 are happening at the boundary between product, engineering, and the agents that serve them both.**
 
+
 ---
 
 There is a moment, familiar to anyone who has worked on a cross-functional product team, when the same sentence means different things to different people in the same room. The engineer hears a constraint. The designer hears a metaphor. The product manager hears a user story. The compliance officer hears a liability. Everyone nods. Everyone leaves and builds something different.
@@ -81,7 +82,15 @@ Andrej Karpathy and Shopify CEO Tobi Lütke named the shift in mid-2025, and it 
 
 This reframe matters for SDD directly. A spec is not, in context engineering terms, a standalone artifact. It is one curated layer in a context stack. Thoughtworks articulates the full picture: MCP servers like Context7 supplying real-time documentation; CodeConcise tools extracting knowledge graphs from legacy codebases; integration with JIRA and Confluence to support subsequent code generation.[^11] The spec compresses the planning phase into a structured document; the context stack ensures the agent can execute against the realities of the actual codebase.
 
-The practical implication for teams: writing a good spec is necessary but insufficient. You also need a coherent context architecture — the memory banks, the retrieval hooks, the tool integrations — that turns the spec from a planning artefact into an executable system instruction. Most SDD tool documentation skips this. Most teams learn it the hard way.
+What this means in practice was articulated sharply by Rahul Garg, Principal Engineer at Thoughtworks, in his February 2026 essay on *Knowledge Priming*.[^17] Garg observed that AI assistants default to what he calls "the average of the internet" — a blend of millions of repositories and tutorials from training data. Without project context, a request for a `UserService` yields Express.js when the codebase uses Fastify, class-based syntax when the codebase is functional, wrong file paths, outdated APIs. The code is syntactically correct, and completely wrong for the team. His proposed remedy is to treat curated project context as infrastructure: versioned files that prime the model before each session, structured like an onboarding packet for a new hire — architecture overview, tech stack and versions, naming conventions, code examples, anti-patterns to avoid.[^17]
+
+There is a mechanistic reason this works. Garg explains it in terms of the attention mechanism: a focused priming document does not merely add context, it shifts the balance of what the model pays attention to. Curation matters more than volume — a well-structured fifty-line priming document outperforms a brain-dumped five-hundred-line one, because the model's attention is a finite budget and high-signal tokens displace low-signal ones.[^17]
+
+Garg also introduces a distinction that sharpens Böckeler's memory bank concept considerably. There are two layers of context, not one. The *priming document* captures project-level context — tech stack, architecture patterns, naming conventions — relatively stable, shared across all features and sessions. The *feature document* captures feature-level context — specific decisions made during development, what was considered and rejected, what remains open, the current state of progress. Together, they form two layers of the same context strategy: the project context as the stable foundation, the feature context as the record of where things stand.[^18]
+
+The feature document is, in essence, a living Architecture Decision Record — one that evolves in real-time as decisions are made, rather than being written after the fact. This matters because of a documented failure mode in long AI sessions: language models perform significantly worse on information placed in the middle of long contexts, as research confirms.[^18] In Garg's observation, it is not the decisions themselves that fade first, but the *reasoning behind* them. The AI might remember "we are using PostgreSQL" while forgetting *why* — and proceed to propose a schema structure that fights against PostgreSQL's relational strengths while technically complying with the stated choice. Externalising the reasoning into a feature document is the only reliable defence against this drift.
+
+The practical implication for teams: writing a good spec is necessary but insufficient. You need a coherent context architecture — memory banks, feature documents, retrieval hooks, tool integrations — that turns the spec from a planning artefact into an executable system instruction. Most SDD tool documentation skips this. Most teams learn it the hard way.
 
 ---
 
@@ -94,6 +103,10 @@ The developer reactions to Kiro are the most candid data point available. When t
 AWS has leaned into the identity shift explicitly, framing Kiro as a tool that lets business users describe what they need in plain English and then build, iterate, and refine working applications themselves — eliminating the translation loss that occurs when requirements pass through analysts and developers.[^12] This is not subtle. It is a claim that the spec layer democratises software authorship. Whether that claim survives contact with production-scale complexity is a different question.
 
 The PM-authored literature on SDD is more generous and more specific. One practitioner framing is clarifying: only 10–20% of value is the code we push; the other 80–90% is the structured conversation that decides what to build. Specs make that conversation permanent, testable, and increasingly executable.[^7] The corollary is uncomfortable for both sides of the function boundary: engineers must become fluent in the language of intent, and product managers must become fluent in the language of constraints.
+
+Garg's work on *Encoding Team Standards* adds a dimension that neither side of this debate typically acknowledges: the consistency problem.[^19] In any team, a senior engineer prompting an AI instinctively specifies architectural compliance, naming conventions, error handling, and security checks. A less experienced colleague, faced with the same task, asks the AI to "create a notification service." Same codebase. Same AI. Completely different quality gates — not just in code review, but across every kind of AI interaction: generation, refactoring, security checks. The senior's output is right not because of the tool but because of tacit knowledge built over years of reviews, production incidents, and architectural discussions. That knowledge is the team's most valuable and most fragile asset — it lives in people's heads, transfers slowly through pairing and code review, and walks out the door when someone leaves.
+
+The solution Garg proposes is to treat AI instructions as *executable governance*: versioned, reviewed, and shared artifacts that encode team judgment consistently, regardless of who is prompting. The move is from *tacit to explicit* (surfacing what the senior knows instinctively) and from *documentation to execution* (making it a config file the workflow invokes, not a wiki page that requires someone to remember it).[^19] This has a direct bearing on the spec question: the spec itself is not enough if the team's standards for what makes a spec *good* remain tribal knowledge. Those standards need to be encoded and shared too.
 
 > **The Core Tension:** The spec is simultaneously an engineering artifact (consumed by agents, versioned in git, validated against tests) and a product artifact (expressing user intent, business rules, acceptance criteria). No role owns it cleanly. Every attempt to assign ownership produces a political settlement, not a technical one.
 
@@ -147,11 +160,15 @@ Thoughtworks puts this well: the problem with traditional waterfall was not the 
 
 ## VIII. Toward a Practice: What Cross-Functional Pairing Actually Looks Like
 
-The most valuable experiments in 2025–2026 are not about tool adoption; they are about the collaboration rituals that emerge around spec authorship. Several patterns are crystallising from practitioner accounts:
+The most valuable experiments in 2025–2026 are not about tool adoption; they are about the collaboration rituals that emerge around spec authorship. The underlying principle, articulated across Garg's series, is deceptively simple: the techniques that make human collaboration effective — onboarding, structured discussion, shared standards, documented decisions, continuous learning — apply equally to AI collaboration.[^20] Several concrete patterns are crystallising from practitioner accounts:
+
+**The Five-Level Whiteboard.** Garg's *Design-First Collaboration* pattern reconstructs the whiteboarding step that AI coding tools otherwise eliminate entirely.[^21] The problem he identifies is the "Implementation Trap": AI jumps from requirement to implementation, making every technical design decision silently and embedding them invisibly in generated code. The reviewer is then forced to simultaneously evaluate scope, architecture, integration, contracts, and code quality — all at once, all entangled. The solution is five progressive levels of alignment before any code: Capabilities (what does the system need to do?), Components (what are the building blocks?), Interactions (how do they communicate?), Contracts (what are the interfaces?), and Implementation (now write the code). The hard rule: *no code until Level 5 is approved.* Each level becomes a checkpoint where disagreement is cheap to surface and resolve. Crucially, for cross-functional teams, the five levels distribute authorship naturally: PMs own Capabilities, architects own Components and Interactions, engineers own Contracts and Implementation. The spec emerges from the conversation across levels, not from any single role.[^21]
 
 **The Spec Review as the New Sprint Planning.** Teams that have adopted SDD seriously report that the spec review session — where PM, engineer, and QA analyst read the spec together before any code is generated — produces the same alignment benefits that three-amigo conversations did in BDD, but with a higher fidelity artefact as the anchor. The spec forces the questions that sprint planning often defers: What is the failure case? What does "done" mean? What are we explicitly not building?[^6]
 
-**The Constitution as Organisational Memory.** Kiro's steering files and Spec Kit's constitution are emerging as de facto architecture decision records — not just for AI agents but for human onboarding. New engineers and PMs alike can read the steering directory to understand a codebase's values, constraints, and history without reverse-engineering it from commit logs. This is knowledge transfer mediated by the spec layer, not by documentation that lives in Confluence and rots.[^5]
+**The Constitution as Organisational Memory.** Kiro's steering files and Spec Kit's constitution are emerging as de facto architecture decision records — not just for AI agents but for human onboarding. New engineers and PMs alike can read the steering directory to understand a codebase's values, constraints, and history without reverse-engineering it from commit logs. Garg's seven-section anatomy of a well-structured priming document — architecture overview, tech stack and versions, curated knowledge sources, project structure, naming conventions, code examples, anti-patterns to avoid — gives this practice its most actionable shape to date.[^17] This is knowledge transfer mediated by the spec layer, not by documentation that lives in Confluence and rots.[^5]
+
+**Encoding Standards as Executable Governance.** The most mature teams are taking a step beyond the priming document: encoding the instructions that govern every kind of AI interaction — generation, refactoring, security review, code review — as versioned, shared artifacts in the repository.[^19] The developer does not need to carry the team's full set of standards in their head; they invoke an instruction and the team's judgment is applied consistently. For cross-functional teams, this closes the quality gap between a senior and a junior contributor — not through more pairing, but through shared infrastructure that executes the senior's instincts for everyone.
 
 **Separate Implementation and Testing Agents.** The most mature SDD practitioners are now running two agents against the same spec: one to generate code, one to generate tests. The separation of concerns creates a natural quality checkpoint — the testing agent cannot simply echo the assumptions of the implementation agent, producing independent verification of whether the spec was satisfied.[^15]
 
@@ -169,6 +186,8 @@ The operative model that is emerging — articulated most clearly by CIO's engin
 
 Charity Majors from Honeycomb captures the stakes: senior engineering has far more to do with the ability to understand, maintain, explain, and manage a large body of software over time than with code generation speed.[^4] SDD does not threaten this; if anything, it makes it the only skill that cannot be delegated. The spec requires someone who understands the system well enough to describe what it should do. The review requires someone who can tell whether the agent did what the spec said. Both require depth. Neither can be prompted away.
 
+What Garg's *Encoding Team Standards* adds here is the mechanism by which this depth transfers.[^19] The senior engineer's instinct about what makes a good spec, what constitutes a security concern, what premature abstraction looks like — these become infrastructure rather than personal capacity. The team becomes collectively more capable not when everyone internalises the senior's knowledge but when that knowledge is encoded in a form that executes for everyone.
+
 ---
 
 ## X. The Stakes for Product Leaders
@@ -183,6 +202,24 @@ This is why the JTBD tradition matters here. Jobs-to-be-Done is, at its core, a 
 
 ---
 
+## XI. The Feedback Flywheel: How the Spec Culture Sustains Itself
+
+There is a question the article has deferred until now: what keeps the spec from becoming the documentation that lives in Confluence and rots?
+
+The honest answer is that most SDD implementations will follow the same arc as most quality initiatives before them — intensive adoption, gradual drift, eventual abandonment — unless there is a deliberate mechanism for keeping shared artifacts current and alive. Garg's *Feedback Flywheel* is the most concrete answer to this problem currently in the literature.[^22]
+
+The core observation is simple: every AI interaction generates signal. Prompts that worked, context that was missing, patterns that succeeded, failures worth preventing. Most teams discard this signal entirely. The Feedback Flywheel is a practice for harvesting that signal systematically and feeding it back into the artifacts — the priming documents, the encoded standards, the spec templates — that shape the next interaction.
+
+The practice operates at three cadences. After each session: a developer who discovers something worth sharing adds a line to a *learning log* in the repository — a lightweight, low-friction file that is already part of the priming context for subsequent sessions. At the retrospective: an agenda item asks what worked with AI this sprint, what friction was encountered, and what will be updated. The outputs are concrete: a priming document revision, a standards instruction refinement, a new anti-pattern documented. Periodically: a review of whether the shared artifacts remain current and whether they are actually being used.[^22]
+
+The flywheel metaphor is apt. Each rotation of the loop — individual discovery, learning log, retrospective decision, artifact update — leaves the infrastructure a little better prepared for the next rotation. One developer's discovery that a particular constraint improves code review output becomes, through the retrospective, the team's updated review standard. The generation instruction did not need to change; the priming context changed, and the system learned.
+
+This is also where the cross-functional dimension of SDD becomes self-sustaining. A PM who discovers that a particular job story format maps cleanly onto Kiro's EARS notation feeds that into the spec template. An engineer who finds that a certain level of acceptance criterion detail prevents over-engineering adds that to the encoding standards. A QA analyst who observes that separate testing agents consistently surface a class of issue that the implementation agent missed records that in the learning log. The shared infrastructure becomes the accumulation of everyone's experience — not just the senior engineer's.
+
+> **The Flywheel Test:** Could you close the AI session right now and start a new one without losing anything important? If that question creates discomfort — if you feel something essential would be lost — then the context is trapped inside a medium that was never designed to preserve it. The Feedback Flywheel is the practice of making sure the answer is always yes.[^18]
+
+---
+
 ## Coda: The Social Contract Claim
 
 The title of this essay makes a claim that deserves to be earned, not assumed. Is the spec a social contract?
@@ -191,7 +228,9 @@ A social contract is, in the philosophical tradition, an agreement about the ter
 
 What makes the spec contractual is not its format but its function. When a spec is authored jointly, reviewed openly, versioned consistently, and enforced by both tests and agents, it does the work that job titles, story points, and design mockups have always tried and often failed to do: it makes the team's shared understanding legible, durable, and contestable. You can argue with a spec. You can version a spec. You can fail a build against a spec. You cannot do any of those things with a verbal agreement in a sprint planning session.
 
-The experiments of 2025–2026 suggest that the teams getting the most from SDD are not the ones who adopted the tools fastest. They are the ones who took the spec authorship ritual seriously enough to make it a cross-functional practice — who treated the spec review session as a site of genuine negotiation, not rubber-stamping. The agent executes the spec. The humans have to write one worth executing.
+The patterns emerging from Garg's series — Knowledge Priming, Design-First Collaboration, Context Anchoring, Encoding Team Standards, Feedback Flywheel — are not, at base, techniques for getting better output from AI tools. They are techniques for making the team's collective intelligence durable: externalising what is currently tacit, versioning what is currently verbal, and feeding individual experience back into shared infrastructure. The spec is the most visible artefact in this system, but it is not the whole system.
+
+The experiments of 2025–2026 suggest that the teams getting the most from SDD are not the ones who adopted the tools fastest. They are the ones who took the spec authorship ritual seriously enough to make it a cross-functional practice — who treated the spec review session as a site of genuine negotiation, not rubber-stamping, and who built the flywheel that keeps those standards from drifting. The agent executes the spec. The humans have to write one worth executing — and keep writing better ones.
 
 That is the work. It has always been the work. The tools have just made the cost of getting it wrong faster, louder, and harder to ignore.
 
@@ -230,5 +269,17 @@ That is the work. It has always been the work. The tools have just made the cost
 [^15]: dplooy.com. (2025). *Spec-Driven Development with AI: Complete 2025 Guide.* https://www.dplooy.com/blog/spec-driven-development-with-ai-complete-2025-guide
 
 [^16]: CIO / Foundry Expert Contributor Network. (2026, February 20). *How Agentic AI Will Reshape Engineering Workflows in 2026.* https://www.cio.com/article/4134741/how-agentic-ai-will-reshape-engineering-workflows-in-2026.html
+
+[^17]: Garg, R. (2026, February 24). *Knowledge Priming.* Patterns for Reducing Friction in AI-Assisted Development. Thoughtworks / martinfowler.com. https://martinfowler.com/articles/reduce-friction-ai/knowledge-priming.html
+
+[^18]: Garg, R. (2026, March 17). *Context Anchoring.* Patterns for Reducing Friction in AI-Assisted Development. Thoughtworks / martinfowler.com. https://martinfowler.com/articles/reduce-friction-ai/context-anchoring.html
+
+[^19]: Garg, R. (2026, March 31). *Encoding Team Standards.* Patterns for Reducing Friction in AI-Assisted Development. Thoughtworks / martinfowler.com. https://martinfowler.com/articles/reduce-friction-ai/encoding-team-standards.html
+
+[^20]: Garg, R. (2026). *Patterns for Reducing Friction in AI-Assisted Development.* Series introduction. Thoughtworks / martinfowler.com. https://martinfowler.com/articles/reduce-friction-ai/
+
+[^21]: Garg, R. (2026, March 3). *Design-First Collaboration.* Patterns for Reducing Friction in AI-Assisted Development. Thoughtworks / martinfowler.com. https://martinfowler.com/articles/reduce-friction-ai/design-first-collaboration.html
+
+[^22]: Garg, R. (2026, April). *Feedback Flywheel.* Patterns for Reducing Friction in AI-Assisted Development. Thoughtworks / martinfowler.com. https://martinfowler.com/articles/reduce-friction-ai/feedback-flywheel.html
 
 ---
