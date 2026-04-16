@@ -32,13 +32,15 @@ This article traces the state of the art as of Q1 2026, maps the sociotechnical 
 
 ## I. How We Got Here: The Taxonomy That Stuck
 
-In October 2025, Thoughtworks technologist Birgitta Böckeler published a memo on Martin Fowler's site that gave the field its working vocabulary.[^1] She had looked at three tools claiming to implement SDD — AWS Kiro, GitHub Spec Kit, and Tessl — and found not one practice but three, arranged along a spectrum of commitment:
+In October 2025, Thoughtworks technologist Birgitta Böckeler published a memo on Martin Fowler's site that gave the field its working vocabulary.[^1] 
+She had looked at three tools claiming to implement SDD — AWS Kiro, GitHub Spec Kit, and Tessl — and found not one practice but three, arranged along a spectrum of commitment:
 
 | Level | Definition |
 |---|---|
 | **Spec-First** | A structured spec is written before coding begins and used during that session. The spec may or may not survive the sprint. |
 | **Spec-Anchored** | The spec is maintained after delivery, serving as the living source of truth for ongoing evolution and maintenance. |
-| **Spec-as-Source** | The spec is the only artifact humans edit. Code is generated from it and marked `// GENERATED FROM SPEC — DO NOT EDIT`. |
+| **Spec-as-Source** | The spec is the only artifact humans edit. Code is generated from it and marked |
+
 
 This taxonomy hardened quickly. A January 2026 paper on arXiv formally adopted the same three levels and added decision guidance on when each applies.[^2] The academic frame arrived faster than the tooling warranted — a sign of the field's velocity, and perhaps its anxiety.
 
