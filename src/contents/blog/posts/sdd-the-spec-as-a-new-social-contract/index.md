@@ -37,9 +37,9 @@ She had looked at three tools claiming to implement SDD — AWS Kiro, GitHub Spe
 
 | Level | Definition |
 |---|---|
-| **Spec-First** | A structured spec is written before coding begins and used during that session. The spec may or may not survive the sprint. |
-| **Spec-Anchored** | The spec is maintained after delivery, serving as the living source of truth for ongoing evolution and maintenance. |
-| **Spec-as-Source** | The spec is the only artifact humans edit. Code is generated from it and marked |
+| Spec-First | A structured spec is written before coding begins and used during that session. The spec may or may not survive the sprint. |
+| Spec-Anchored | The spec is maintained after delivery, serving as the living source of truth for ongoing evolution and maintenance. |
+| Spec-as-Source | The spec is the only artifact humans edit. Code is generated from it and marked |
 
 
 This taxonomy hardened quickly. A January 2026 paper on arXiv formally adopted the same three levels and added decision guidance on when each applies.[^2] The academic frame arrived faster than the tooling warranted — a sign of the field's velocity, and perhaps its anxiety.
