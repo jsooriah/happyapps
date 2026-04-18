@@ -29,19 +29,21 @@ Add `css` to the post's frontmatter:
 ---
 type: post
 title: My Post
-css: /happyapps/css/editorial.css
+css:
+  - /happyapps/css/editorial.css
 ---
 ```
 
+Toucan reads `css` as an array — the list syntax is required, a bare string is silently ignored.
+
 ### Revert to the default theme
 
-Remove (or comment out) the `css` line:
+Remove the `css` block entirely:
 
 ```yaml
 ---
 type: post
 title: My Post
-# css: /happyapps/css/editorial.css
 ---
 ```
 

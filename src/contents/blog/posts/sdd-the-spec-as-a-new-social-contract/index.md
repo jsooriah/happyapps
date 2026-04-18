@@ -11,7 +11,8 @@ tags:
 authors:
   - joel-sooriah
 featured: true
-css: /happyapps/css/editorial.css
+css:
+  - /happyapps/css/editorial.css
 redirects:
     - from: sdd-the-spec-as-a-new-social-contract
 ---
