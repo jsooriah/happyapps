@@ -11,8 +11,6 @@ redirects:
     - from: why-your-best-growth-opportunity-isnt-asking-for-anything
 ---
 
-# Segment Smarter: Why Your Best Growth Opportunity Isn't Asking for Anything
-
 Most roadmaps are built on a structurally flawed input: the customers who engage most actively in discovery are rarely the customers who represent the largest growth opportunity. They are vocal, articulate, and easy to build a business case around. They are also, more often than not, a minority of the addressable market — and the energy spent serving their sophistication is energy not spent on the segment that would actually move the revenue needle.
 
 This is the minority segment problem. It doesn't show up in your funnel metrics, your NPS, or your win/loss analysis. It shows up when a competitor enters with a simpler product, captures a segment you never knew you were ignoring, and grows faster than your roadmap can respond.
@@ -21,7 +19,7 @@ Outcome-Driven Innovation is the methodology that makes this problem visible bef
 
 ---
 
-## The actual case study
+## A decision that looked right until it didn't
 
 We were running a restaurant online booking platform with a clear growth mandate. The strategic question was straightforward: what's the next capability that extends our value to operators and increases platform stickiness? The answer that came back from discovery was table management — a digital floor plan editor allowing operators to assign tables, track covers, and handle walk-ins alongside online reservations.
 
@@ -43,7 +41,7 @@ What makes ODI operationally useful is that it forces you to capture outcomes in
 
 These aren't preferences. They're measurable criteria for job success. And they're precisely the kind of statements that, when mapped across a market, reveal where products are failing people — not just failing to delight them.
 
-In our case, the job we were initially designing around was: *manage the occupancy of my dining room across the service period*. That's a real job. Table management systems are a legitimate solution to it. But when we ran an ODI process — mapping outcomes, not features — we discovered something very interesting and somehow ... uncomfortable.
+In our case, the job we were initially designing around was: *manage the occupancy of my dining room across the service period*. That's a real job. Table management systems are a legitimate solution to it. But when we ran an ODI process — mapping outcomes, not features — we discovered something that reframed the entire investment.
 
 The highest-importance, lowest-satisfaction outcomes in our data weren't about floor plan management at all. They clustered around a different, simpler job:
 
@@ -53,7 +51,7 @@ This sounds like a subset of the first job. It isn't. It's a different job, held
 
 ---
 
-## Market segments you don't see on a demographic map
+## The brasserie segment: a market you don't see on a demographic map
 
 Traditional market segmentation is demographic and firmographic: restaurant size, cuisine type, number of covers, city vs. regional, independent vs. chain. These are useful categories for sales and marketing. They are almost useless for product design.
 
@@ -112,7 +110,13 @@ ODI requires you to:
 
 **4. Identify opportunity scores** — the combination of high importance and low satisfaction. These are your underserved outcomes. They point directly at where a product can create disproportionate value.
 
-**5. Segment by outcome, not by demographics.** Group customers by which outcomes they prioritize, not by what industry analysts would put them in. Ulwick describes this step in the podcast through the Bosch circular saw case: *"When we looked at the broad market, it looked like there were no opportunities. But when we segmented the market, we found a third of the population that had 14 unmet needs. They were more finished carpenters, they had to make more angle cuts, blade height adjustments — 14 unmet needs that nobody else had. So that became their target."* The conclusion he draws is blunt: *"If you build for the average, you're targeting nobody, usually ineffectively."*
+**5. Segment by outcome, not by demographics.** Group customers by which outcomes they prioritize, not by what industry analysts would put them in.
+
+Ulwick illustrates this step in the podcast through the Bosch circular saw case — and it's worth quoting in full:
+
+*"When we looked at the broad market, it looked like there were no opportunities. But when we segmented the market, we found a third of the population that had 14 unmet needs. They were more finished carpenters, they had to make more angle cuts, blade height adjustments — 14 unmet needs that nobody else had. So that became their target."*
+
+The conclusion he draws is blunt: *"If you build for the average, you're targeting nobody, usually ineffectively."*
 
 The parallel with our brasserie segment is direct. In aggregate, the booking platform market looked like it needed table management — that's what the loudest operators were asking for. But when we segmented by unmet outcomes, a third of the market turned out to be a cluster of operators with a completely different job, 14 unmet outcomes of their own, and no solution addressing any of them. They were the finished carpenters of the restaurant world. We just hadn't looked for them yet.
 
@@ -132,11 +136,7 @@ The business outcome wasn't just "we built the right feature." It was "we found 
 
 ## The broader lesson
 
-Every product team has a version of the table management trap. It usually looks like:
-
-- A loud, articulate segment of users asking for sophistication
-- An engineering investment that's technically interesting and defensible
-- A backlog shaped by the people who show up, not by the full job landscape
+What this case illustrates isn't specific to restaurant booking platforms. The same dynamic plays out in B2B SaaS, consumer products, marketplaces, and professional services — anywhere a vocal, engaged minority has the loudest voice in discovery and the smallest share of the total opportunity.
 
 ODI doesn't tell you to ignore the sophisticated users. It tells you to measure, rigorously, where importance and satisfaction diverge across the full range of outcomes your market cares about — and then to let that measurement, not advocacy volume, drive prioritization.
 
