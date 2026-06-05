@@ -21,7 +21,7 @@ Outcome-Driven Innovation is the methodology that makes this problem visible bef
 
 ---
 
-## How we got here
+## The actual case study
 
 We were running a restaurant online booking platform with a clear growth mandate. The strategic question was straightforward: what's the next capability that extends our value to operators and increases platform stickiness? The answer that came back from discovery was table management — a digital floor plan editor allowing operators to assign tables, track covers, and handle walk-ins alongside online reservations.
 
@@ -53,7 +53,7 @@ This sounds like a subset of the first job. It isn't. It's a different job, held
 
 ---
 
-## The brasserie segment: a market you don't see on a demographic map
+## Market segments you don't see on a demographic map
 
 Traditional market segmentation is demographic and firmographic: restaurant size, cuisine type, number of covers, city vs. regional, independent vs. chain. These are useful categories for sales and marketing. They are almost useless for product design.
 
