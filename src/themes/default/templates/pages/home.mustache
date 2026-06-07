@@ -1,20 +1,84 @@
 {{<html}}
 {{$main}}
 
+<!-- UX REVAMP: hero + topics + post list + about strip -->
+
+<section class="home-hero">
+  <div class="home-hero-inner">
+
+    <div class="hero-copy">
+      <p class="hero-label">happyapps</p>
+      <h1>Product &amp; Engineering<br><em>Intelligence</em></h1>
+      <p class="hero-deck">
+        Writing at the intersection of product management, AI engineering, and agile practice. Human-centric by design.
+      </p>
+      <div class="hero-actions">
+        <a href="/happyapps/blog/posts/page/1" class="btn btn-primary">Read the archive</a>
+        <a href="/happyapps/blog/posts/about-this-blog/" class="btn btn-secondary">About this blog</a>
+      </div>
+    </div>
+
+    <!-- UPDATE this card when a new post becomes the featured one -->
+    <div class="hero-feature">
+      <p class="hero-feature-tag">Latest · JTBD Series</p>
+      <h2>Why Your Best Growth Opportunity Isn't Asking for Anything</h2>
+      <p>Most roadmaps are built on a structurally flawed input — the customers who engage most actively in discovery are rarely the customers who represent the largest growth opportunity.</p>
+      <a href="/happyapps/blog/posts/why-your-best-growth-opportunity-isnt-asking-for-anything/" class="read-link">Read article</a>
+    </div>
+
+  </div>
+</section>
+
+<div class="topics-bar">
+  <div class="topics-inner">
+    <span class="topic-label">On</span>
+    <a href="#" class="topic-chip">Product Management</a>
+    <a href="#" class="topic-chip">Spec-Driven Development</a>
+    <a href="#" class="topic-chip">AI Engineering</a>
+    <a href="#" class="topic-chip">Jobs-to-be-Done</a>
+    <a href="#" class="topic-chip">Graph Databases</a>
+    <a href="#" class="topic-chip">Agile Practice</a>
+    <a href="#" class="topic-chip">Agent Memory</a>
+  </div>
+</div>
+
+<div class="posts-section">
+  <div class="section-head">
+    <span class="section-title">Recent writing</span>
+    <a href="/happyapps/blog/posts/page/1" class="section-more">All posts</a>
+  </div>
+  <div class="post-list">
+    {{#site.context.posts}}
+    {{> partials.blog.post}}
+    {{/site.context.posts}}
+  </div>
+</div>
+
+<section class="about-strip">
+  <div class="about-inner">
+    <img class="about-avatar"
+      src="/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg"
+      alt="Joel Sooriah" width="80" height="80" />
+    <div>
+      <p class="about-name">Joel Sooriah</p>
+      <p class="about-bio">Head of Product working at the intersection of trust &amp; safety infrastructure, AI agents, and regulatory compliance. Writing about building products and teams the human-centric way.</p>
+      <div class="about-links">
+        <a href="/happyapps/blog/posts/about-this-blog/">About this blog</a>
+        <a href="https://github.com/jsooriah/" target="_blank" rel="noopener">GitHub</a>
+        <a href="https://www.linkedin.com/in/jsooriah/" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- OLD HOME (commented out, kept for reference)
 {{& page.contents}}
 
 <section class="hero primary">
     <div class="wrapper">
         <picture>
-            <source
-                srcset="/happyapps/images/logos/happyapps-logo~dark.png"
-                media="(prefers-color-scheme: dark)"
-                >
-            <img
-                src="/happyapps/images/logos/happyapps-logo.png"
-                alt="Logo of {{site.title}}"
-                title="{{site.title}}"
-                >
+            <source srcset="/happyapps/images/logos/happyapps-logo~dark.png" media="(prefers-color-scheme: dark)">
+            <img src="/happyapps/images/logos/happyapps-logo.png" alt="Logo of {{site.title}}" title="{{site.title}}">
         </picture>
         <h2>Product and Engineering Intelligence</h2>
     </div>
@@ -26,50 +90,32 @@
           <h2>Featured Article</h2>
           <p>Current series describe how to use the Jobs to Done framework at each step to ensure customer centricity but also how to use Gherkins as foundation for alignment across all expertise in an organisation</p>
       </header>
-
-      <div class="grid grid-422">    
+      <div class="grid grid-422">
           <div class="info">
             <h3>Gherkin Syntax - The Rosetta Stone of Cross-Functional Alignment</h3>
-            <p>In 1799, French soldiers discovered a stone tablet in Egypt that changed our understanding of ancient civilizations. The Rosetta Stone contained the same decree written in three different scripts—hieroglyphics, Demotic, and ancient Greek. Because scholars could read Greek, they could finally decode hieroglyphics.Your product team needs a Rosetta Stone.Not to decode ancient languages, but to translate between the four dialects we identified in Part 1 - customer outcomes, product capabilities, engineering logic, and business metrics. You need a syntax that all four groups can read, write, and understand without losing meaning in translation.That syntax already exists. You've probably seen it in your engineering team's test suites. It's called Gherkin.</p>
+            <p>In 1799...</p>
           </div>
           <div class="centered more-posts">
             <a class="button" href="/blog/posts/page/1">Read Article</a>
         </div>
       </div>
-    
   </div>
 </section>
 
-
 <section class="">
     <div class="wrapper">
-        {{#empty(site.context.posts)}}
-        Empty.
-        {{/empty(site.context.posts)}}
+        {{#empty(site.context.posts)}}Empty.{{/empty(site.context.posts)}}
         {{^empty(site.context.posts)}}
         <div class="grid grid-221">
-            {{#site.context.posts}}
-            {{> partials.blog.post}}
-            {{/site.context.posts}}
+            {{#site.context.posts}}{{> partials.blog.post}}{{/site.context.posts}}
         </div>
         {{/empty(site.context.posts)}}
-
         <div class="centered more-posts">
             <a class="button" href="/happyapps/blog/posts/page/1">Browse all posts</a>
         </div>
     </div>
 </section>
-
-<!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id="></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
-
-  gtag('config', '');
-</script>
-
+-->
 
 {{/main}}
 {{/html}}

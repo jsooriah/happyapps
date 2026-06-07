@@ -1,0 +1,550 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>happyapps — Product & Engineering Intelligence</title>
+  <meta name="description" content="Writing on product management, AI engineering, agile practice, and building human-centric systems. By Joel Sooriah." />
+  <meta property="og:type"        content="website" />
+  <meta property="og:title"       content="happyapps — Product & Engineering Intelligence" />
+  <meta property="og:description" content="Writing on product management, AI engineering, agile practice, and building human-centric systems." />
+  <meta property="og:url"         content="https://jsooriah.github.io/happyapps/" />
+  <meta property="og:image"       content="https://jsooriah.github.io/happyapps/images/logos/happyapps-logo.png" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+
+  <style>
+    /* ════════════════════════════════════
+       TOKENS — same root as article.css
+    ════════════════════════════════════ */
+    :root {
+      --display: 'Libre Baskerville', Georgia, serif;
+      --serif:   'Lora', Georgia, serif;
+      --mono:    'DM Mono', 'Courier New', monospace;
+
+      --bg:           #f8f7f5;
+      --surface:      #ffffff;
+      --ink:          #1a1814;
+      --ink-mid:      #3d3a35;
+      --ink-light:    #6b6760;
+      --accent:       #2d4a7a;
+      --accent-light: #e8edf5;
+      --accent-warm:  #b05e28;
+      --rule:         #dedad4;
+
+      --hero-w: 860px;
+      --body-w: 780px;
+      --gutter: 2rem;
+
+      --ease: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; scroll-behavior: smooth; -webkit-font-smoothing: antialiased; }
+    body { background: var(--bg); color: var(--ink); font-family: var(--serif); min-height: 100vh; }
+    a { color: inherit; text-decoration: none; }
+    img { max-width: 100%; display: block; }
+
+    /* ════════════════════════════════════
+       SITE HEADER
+    ════════════════════════════════════ */
+    .site-header {
+      position: sticky; top: 0; z-index: 100;
+      background: rgba(248,247,245,0.92);
+      backdrop-filter: blur(8px);
+      border-bottom: 1px solid var(--rule);
+    }
+    .nav {
+      max-width: var(--hero-w); margin: 0 auto;
+      padding: 0 var(--gutter); height: 56px;
+      display: flex; align-items: center; justify-content: space-between;
+    }
+    .nav-logo {
+      font-family: var(--mono); font-size: 0.75rem;
+      letter-spacing: 0.18em; text-transform: lowercase;
+      color: var(--ink); font-weight: 500;
+      transition: color 0.2s var(--ease);
+    }
+    .nav-logo:hover { color: var(--accent); }
+    .nav-links { display: flex; gap: 1.75rem; align-items: center; }
+    .nav-links a {
+      font-family: var(--mono); font-size: 0.7rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--ink-light);
+      transition: color 0.2s var(--ease);
+    }
+    .nav-links a:hover { color: var(--accent); }
+    .nav-links a.cta {
+      background: var(--accent); color: #fff;
+      padding: 0.3em 0.9em; border-radius: 2px;
+      letter-spacing: 0.1em;
+    }
+    .nav-links a.cta:hover { background: var(--ink); color: #fff; }
+
+    /* ════════════════════════════════════
+       HERO BANNER
+    ════════════════════════════════════ */
+    .hero {
+      background: var(--surface);
+      border-bottom: 1px solid var(--rule);
+      padding: 5rem var(--gutter) 4rem;
+    }
+    .hero-inner {
+      max-width: var(--hero-w); margin: 0 auto;
+      display: grid; grid-template-columns: 1fr 1fr;
+      gap: 4rem; align-items: center;
+    }
+    .hero-label {
+      font-family: var(--mono); font-size: 0.68rem;
+      letter-spacing: 0.22em; text-transform: uppercase;
+      color: var(--accent); display: flex;
+      align-items: center; gap: 0.75rem; margin-bottom: 1.5rem;
+    }
+    .hero-label::after {
+      content: ''; flex: 1; height: 1px;
+      background: var(--accent); opacity: 0.35;
+    }
+    .hero h1 {
+      font-family: var(--display); font-weight: 700;
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      line-height: 1.1; letter-spacing: -0.025em;
+      color: var(--ink); margin-bottom: 1.25rem;
+    }
+    .hero h1 em { font-style: italic; color: var(--accent); }
+    .hero-deck {
+      font-family: var(--serif); font-size: 1.05rem;
+      font-style: italic; line-height: 1.7;
+      color: var(--ink-mid); margin-bottom: 2rem;
+    }
+    .hero-actions { display: flex; gap: 1rem; flex-wrap: wrap; }
+    .btn {
+      font-family: var(--mono); font-size: 0.7rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      padding: 0.65em 1.4em; border-radius: 2px;
+      transition: all 0.2s var(--ease); display: inline-block;
+    }
+    .btn-primary { background: var(--accent); color: #fff; }
+    .btn-primary:hover { background: var(--ink); }
+    .btn-secondary {
+      background: transparent; color: var(--accent);
+      border: 1px solid var(--accent);
+    }
+    .btn-secondary:hover { background: var(--accent-light); }
+
+    /* Featured post card (right side of hero) */
+    .hero-feature {
+      background: var(--bg); border: 1px solid var(--rule);
+      border-radius: 4px; padding: 2rem;
+      position: relative; overflow: hidden;
+    }
+    .hero-feature::before {
+      content: 'Featured'; font-family: var(--mono);
+      font-size: 0.62rem; letter-spacing: 0.18em; text-transform: uppercase;
+      color: #fff; background: var(--accent);
+      padding: 0.25em 0.75em;
+      position: absolute; top: 0; left: 0;
+    }
+    .hero-feature-tag {
+      font-family: var(--mono); font-size: 0.65rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--ink-light); margin: 1.5rem 0 0.75rem;
+    }
+    .hero-feature h2 {
+      font-family: var(--display); font-size: 1.2rem;
+      font-weight: 700; line-height: 1.3;
+      color: var(--ink); margin-bottom: 0.75rem;
+    }
+    .hero-feature p {
+      font-family: var(--serif); font-size: 0.88rem;
+      line-height: 1.65; color: var(--ink-mid);
+      display: -webkit-box; -webkit-line-clamp: 4;
+      -webkit-box-orient: vertical; overflow: hidden;
+      margin-bottom: 1.25rem;
+    }
+    .read-link {
+      font-family: var(--mono); font-size: 0.68rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--accent);
+      display: inline-flex; align-items: center; gap: 0.4em;
+      transition: gap 0.2s var(--ease);
+    }
+    .read-link:hover { gap: 0.7em; }
+    .read-link::after { content: '→'; }
+
+    /* ════════════════════════════════════
+       TOPIC STRIPS (series tags)
+    ════════════════════════════════════ */
+    .topics-bar {
+      background: var(--accent); padding: 0.6rem var(--gutter);
+    }
+    .topics-inner {
+      max-width: var(--hero-w); margin: 0 auto;
+      display: flex; align-items: center; gap: 1.25rem;
+      overflow-x: auto; scrollbar-width: none;
+    }
+    .topics-inner::-webkit-scrollbar { display: none; }
+    .topic-label {
+      font-family: var(--mono); font-size: 0.62rem;
+      letter-spacing: 0.18em; text-transform: uppercase;
+      color: rgba(255,255,255,0.55); white-space: nowrap;
+      flex-shrink: 0;
+    }
+    .topic-chip {
+      font-family: var(--mono); font-size: 0.65rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: rgba(255,255,255,0.85);
+      border: 1px solid rgba(255,255,255,0.25);
+      padding: 0.25em 0.85em; border-radius: 2px;
+      white-space: nowrap; flex-shrink: 0;
+      transition: all 0.2s var(--ease);
+    }
+    .topic-chip:hover {
+      background: rgba(255,255,255,0.12);
+      color: #fff; border-color: rgba(255,255,255,0.5);
+    }
+
+    /* ════════════════════════════════════
+       POSTS GRID
+    ════════════════════════════════════ */
+    .posts-section {
+      max-width: var(--body-w); margin: 0 auto;
+      padding: 3.5rem var(--gutter) 5rem;
+    }
+    .section-head {
+      display: flex; align-items: baseline;
+      justify-content: space-between;
+      padding-bottom: 1rem; border-bottom: 1px solid var(--rule);
+      margin-bottom: 2.5rem;
+    }
+    .section-title {
+      font-family: var(--mono); font-size: 0.68rem;
+      letter-spacing: 0.2em; text-transform: uppercase;
+      color: var(--ink-light);
+    }
+    .section-more {
+      font-family: var(--mono); font-size: 0.65rem;
+      letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--accent);
+      display: inline-flex; align-items: center; gap: 0.35em;
+      transition: gap 0.2s var(--ease);
+    }
+    .section-more:hover { gap: 0.6em; }
+    .section-more::after { content: '→'; }
+
+    /* Post list */
+    .post-list { display: flex; flex-direction: column; gap: 0; }
+
+    .post-item {
+      display: grid;
+      grid-template-columns: 5rem 1fr;
+      gap: 0 1.75rem;
+      padding: 1.75rem 0;
+      border-bottom: 1px solid var(--rule);
+      text-decoration: none;
+      transition: background 0.15s var(--ease);
+      margin: 0 -1rem; padding-left: 1rem; padding-right: 1rem;
+      border-radius: 3px;
+    }
+    .post-item:hover { background: var(--surface); }
+    .post-item:hover .post-title { color: var(--accent); }
+
+    .post-meta-col {
+      display: flex; flex-direction: column;
+      align-items: flex-start; padding-top: 0.2rem;
+    }
+    .post-date {
+      font-family: var(--mono); font-size: 0.62rem;
+      letter-spacing: 0.08em; color: var(--ink-light);
+      line-height: 1.5;
+    }
+    .post-readtime {
+      font-family: var(--mono); font-size: 0.6rem;
+      color: var(--ink-light); opacity: 0.6;
+      margin-top: 0.2rem;
+    }
+    .post-tag {
+      margin-top: 0.6rem; font-family: var(--mono);
+      font-size: 0.58rem; letter-spacing: 0.12em; text-transform: uppercase;
+      color: var(--accent); background: var(--accent-light);
+      padding: 0.15em 0.5em; border-radius: 2px;
+    }
+
+    .post-body-col { display: flex; flex-direction: column; }
+    .post-title {
+      font-family: var(--display); font-weight: 700;
+      font-size: 1.05rem; line-height: 1.3;
+      color: var(--ink); margin-bottom: 0.5rem;
+      transition: color 0.15s var(--ease);
+    }
+    .post-excerpt {
+      font-family: var(--serif); font-size: 0.88rem;
+      line-height: 1.65; color: var(--ink-light);
+      display: -webkit-box; -webkit-line-clamp: 2;
+      -webkit-box-orient: vertical; overflow: hidden;
+    }
+
+    /* ════════════════════════════════════
+       ABOUT STRIP
+    ════════════════════════════════════ */
+    .about-strip {
+      background: var(--surface);
+      border-top: 1px solid var(--rule);
+      border-bottom: 1px solid var(--rule);
+    }
+    .about-inner {
+      max-width: var(--body-w); margin: 0 auto;
+      padding: 3rem var(--gutter);
+      display: grid; grid-template-columns: auto 1fr;
+      gap: 2.5rem; align-items: center;
+    }
+    .about-avatar {
+      width: 80px; height: 80px;
+      border-radius: 50%; object-fit: cover;
+      border: 2px solid var(--rule);
+    }
+    .about-name {
+      font-family: var(--display); font-size: 1rem;
+      font-weight: 700; color: var(--ink); margin-bottom: 0.35rem;
+    }
+    .about-bio {
+      font-family: var(--serif); font-size: 0.88rem;
+      font-style: italic; line-height: 1.65;
+      color: var(--ink-mid); margin-bottom: 0.75rem;
+    }
+    .about-links { display: flex; gap: 1.25rem; }
+    .about-links a {
+      font-family: var(--mono); font-size: 0.65rem;
+      letter-spacing: 0.1em; text-transform: uppercase;
+      color: var(--ink-light);
+      transition: color 0.2s var(--ease);
+    }
+    .about-links a:hover { color: var(--accent); }
+
+    /* ════════════════════════════════════
+       FOOTER
+    ════════════════════════════════════ */
+    .site-footer {
+      padding: 2rem var(--gutter); text-align: center;
+    }
+    .site-footer p {
+      font-family: var(--mono); font-size: 0.65rem;
+      letter-spacing: 0.08em; color: var(--ink-light);
+      margin-bottom: 0.35rem;
+    }
+    .site-footer a { color: var(--ink-light); }
+    .site-footer a:hover { color: var(--accent); }
+    .footer-built { opacity: 0.5; font-size: 0.6rem; margin-top: 0.5rem; }
+
+    /* ════════════════════════════════════
+       RESPONSIVE
+    ════════════════════════════════════ */
+    @media (max-width: 720px) {
+      :root { --gutter: 1.25rem; }
+      .hero-inner { grid-template-columns: 1fr; gap: 2.5rem; }
+      .about-inner { grid-template-columns: 1fr; text-align: center; }
+      .about-avatar { margin: 0 auto; }
+      .about-links { justify-content: center; }
+      .post-item { grid-template-columns: 4.5rem 1fr; gap: 0 1rem; }
+    }
+
+    @media (max-width: 480px) {
+      :root { --gutter: 1rem; }
+      .hero h1 { font-size: 1.9rem; }
+      .post-item {
+        grid-template-columns: 1fr;
+      }
+      .post-meta-col {
+        flex-direction: row; gap: 0.75rem;
+        align-items: center; margin-bottom: 0.5rem;
+      }
+      .post-tag { margin-top: 0; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ════ NAV ════ -->
+  <header class="site-header">
+    <nav class="nav">
+      <a href="/" class="nav-logo">happyapps</a>
+      <div class="nav-links">
+        <a href="/blog/posts/page/1">Writing</a>
+        <a href="/blog/posts/about-this-blog/">About</a>
+        <a href="https://github.com/jsooriah/" target="_blank" rel="noopener">GitHub</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ════ HERO ════ -->
+  <section class="hero">
+    <div class="hero-inner">
+
+      <div class="hero-copy">
+        <p class="hero-label">happyapps</p>
+        <h1>Product & Engineering<br><em>Intelligence</em></h1>
+        <p class="hero-deck">
+          Writing at the intersection of product management, AI engineering, and agile practice. Human-centric by design.
+        </p>
+        <div class="hero-actions">
+          <a href="/blog/posts/page/1" class="btn btn-primary">Read the archive</a>
+          <a href="/blog/posts/about-this-blog/" class="btn btn-secondary">About this blog</a>
+        </div>
+      </div>
+
+      <div class="hero-feature">
+        <p class="hero-feature-tag">Latest · SDD Series</p>
+        <h2>The Spec as a New Social Contract</h2>
+        <p>
+          Spec-Driven Development — SDD — is arriving in 2026 not as a project management reform but as an engineering methodology, carried into organisations on the back of agentic AI tools. And that origin shapes everything about its promise and its limits.
+        </p>
+        <a href="https://jsooriah.github.io/happyapps/blog/posts/sdd-the-spec-as-a-new-social-contract/" class="read-link">Read article</a>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ════ TOPIC CHIPS ════ -->
+  <div class="topics-bar">
+    <div class="topics-inner">
+      <span class="topic-label">On</span>
+      <a href="#" class="topic-chip">Product Management</a>
+      <a href="#" class="topic-chip">Spec-Driven Development</a>
+      <a href="#" class="topic-chip">AI Engineering</a>
+      <a href="#" class="topic-chip">Jobs-to-be-Done</a>
+      <a href="#" class="topic-chip">Graph Databases</a>
+      <a href="#" class="topic-chip">Agile Practice</a>
+      <a href="#" class="topic-chip">Agent Memory</a>
+    </div>
+  </div>
+
+  <!-- ════ POST LIST ════ -->
+  <main class="posts-section">
+    <div class="section-head">
+      <span class="section-title">Recent writing</span>
+      <a href="https://jsooriah.github.io/happyapps/blog/posts/page/1" class="section-more">All posts</a>
+    </div>
+
+    <div class="post-list">
+
+      <a href="https://jsooriah.github.io/happyapps/blog/posts/why-your-best-growth-opportunity-isnt-asking-for-anything/" class="post-item">
+        <div class="post-meta-col">
+          <span class="post-date">2026<br>Jun 05</span>
+          <span class="post-readtime">8 min</span>
+          <span class="post-tag">JTBD</span>
+        </div>
+        <div class="post-body-col">
+          <h3 class="post-title">Why Your Best Growth Opportunity Isn't Asking for Anything</h3>
+          <p class="post-excerpt">Most roadmaps are built on a structurally flawed input — the customers who engage most actively in discovery are rarely the customers who represent the largest growth opportunity.</p>
+        </div>
+      </a>
+
+      <a href="https://jsooriah.github.io/happyapps/blog/posts/openspec-bringing-specification-driven-development-to-a-research-prototype/" class="post-item">
+        <div class="post-meta-col">
+          <span class="post-date">2026<br>Apr 08</span>
+          <span class="post-readtime">24 min</span>
+          <span class="post-tag">SDD</span>
+        </div>
+        <div class="post-body-col">
+          <h3 class="post-title">OpenSpec: Bringing Specification-Driven Development to a Research Prototype</h3>
+          <p class="post-excerpt">Research prototypes have a particular failure mode — they work, and then they grow. What starts as a script to test an idea becomes a pipeline with no documentation but the code itself.</p>
+        </div>
+      </a>
+
+      <a href="https://jsooriah.github.io/happyapps/blog/posts/sdd-the-spec-as-a-new-social-contract/" class="post-item">
+        <div class="post-meta-col">
+          <span class="post-date">2026<br>Apr 06</span>
+          <span class="post-readtime">6 min</span>
+          <span class="post-tag">SDD</span>
+        </div>
+        <div class="post-body-col">
+          <h3 class="post-title">SDD — The Spec as a New Social Contract</h3>
+          <p class="post-excerpt">Spec-Driven Development is arriving as an engineering methodology carried by agentic AI tools. Its origin shapes everything about its promise and its limits.</p>
+        </div>
+      </a>
+
+      <a href="https://jsooriah.github.io/happyapps/blog/posts/before-the-graph-on-the-necessity-of-ontology-design/" class="post-item">
+        <div class="post-meta-col">
+          <span class="post-date">2026<br>Jan 31</span>
+          <span class="post-readtime">8 min</span>
+          <span class="post-tag">GraphRAG</span>
+        </div>
+        <div class="post-body-col">
+          <h3 class="post-title">Before the Graph: On the Necessity of Ontology Design</h3>
+          <p class="post-excerpt">I assumed the hard problem would be the ingestion pipeline. I was wrong about where the hard problem was.</p>
+        </div>
+      </a>
+
+      <a href="https://jsooriah.github.io/happyapps/blog/posts/from-feature-requests-to-customer-jobs-basecamps-root-cause-analysis-approach-to-product-strategy/" class="post-item">
+        <div class="post-meta-col">
+          <span class="post-date">2026<br>Jan 15</span>
+          <span class="post-readtime">9 min</span>
+          <span class="post-tag">JTBD</span>
+        </div>
+        <div class="post-body-col">
+          <h3 class="post-title">From Feature Requests to Customer Jobs: Basecamp's Root Cause Analysis Approach</h3>
+          <p class="post-excerpt">Basecamp's evolved methodology demonstrates how JTBD interviewing transforms raw feature requests into customer-centric product strategy.</p>
+        </div>
+      </a>
+
+      <a href="https://jsooriah.github.io/happyapps/blog/posts/the-agent-memory-landscape/" class="post-item">
+        <div class="post-meta-col">
+          <span class="post-date">2025<br>Dec 07</span>
+          <span class="post-readtime">6 min</span>
+          <span class="post-tag">AI Agents</span>
+        </div>
+        <div class="post-body-col">
+          <h3 class="post-title">The Agent Memory Landscape: A PM Guide to Building Context-Aware AI Systems</h3>
+          <p class="post-excerpt">An agent that forgets is just an expensive API call. An agent that remembers becomes something closer to a very good assistant. A map of the territory.</p>
+        </div>
+      </a>
+
+      <a href="https://jsooriah.github.io/happyapps/blog/posts/the-pragmatist-roots-of-agile-john-deweys-philosophy-and-modern-software-development/" class="post-item">
+        <div class="post-meta-col">
+          <span class="post-date">2025<br>Dec 07</span>
+          <span class="post-readtime">6 min</span>
+          <span class="post-tag">Agile</span>
+        </div>
+        <div class="post-body-col">
+          <h3 class="post-title">The Pragmatist Roots of Agile: John Dewey's Philosophy and Modern Software Development</h3>
+          <p class="post-excerpt">The Agile Manifesto echoed ideas developed nearly a century earlier by philosopher John Dewey — both responses to rigid, theoretical approaches that fail real-world problem-solving.</p>
+        </div>
+      </a>
+
+    </div>
+  </main>
+
+  <!-- ════ ABOUT STRIP ════ -->
+  <section class="about-strip">
+    <div class="about-inner">
+      <img
+        class="about-avatar"
+        src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg"
+        alt="Joel Sooriah"
+        width="80" height="80"
+      />
+      <div>
+        <p class="about-name">Joel Sooriah</p>
+        <p class="about-bio">Head of Product working at the intersection of trust & safety infrastructure, AI agents, and regulatory compliance. Writing about building products and teams the human-centric way.</p>
+        <div class="about-links">
+          <a href="/blog/posts/about-this-blog/">About this blog</a>
+          <a href="https://github.com/jsooriah/" target="_blank" rel="noopener">GitHub</a>
+          <a href="https://www.linkedin.com/in/jsooriah/" target="_blank" rel="noopener">LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ════ FOOTER ════ -->
+  <footer class="site-footer">
+    <p>
+      <a href="https://jsooriah.github.io/happyapps/">happyapps</a> · Joel Sooriah
+    </p>
+    <p class="footer-built">
+      Built with <a href="https://github.com/toucansites/toucan" target="_blank">Toucan</a> &amp; Swift · MIT License
+    </p>
+  </footer>
+
+</body>
+</html>

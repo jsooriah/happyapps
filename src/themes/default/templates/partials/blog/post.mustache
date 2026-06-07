@@ -1,3 +1,17 @@
+<!-- UX REVAMP: post-item row layout (used on home + archive) -->
+<a href="{{permalink}}" class="post-item">
+  <div class="post-meta-col">
+    <span class="post-date">{{publication.html}}</span>
+    {{#readingTime}}<span class="post-readtime">{{readingTime}} min</span>{{/readingTime}}
+    {{#tags}}<span class="post-tag">{{title}}</span>{{/tags}}
+  </div>
+  <div class="post-body-col">
+    <h3 class="post-title">{{title}}</h3>
+    <p class="post-excerpt">{{description}}</p>
+  </div>
+</a>
+
+<!-- OLD CARD (commented out, kept for reference)
 <div class="card post">
     {{#featured}}
     <span class="featured">featured</span>
@@ -9,19 +23,16 @@
             </a>
         {{/authors}}
     </div>
-
     <div class="meta">
         <time datetime="{{publication.html}}">{{publication.html}}</time>
         {{#readingTime}} &middot; <span class="reading-time">{{readingTime}} min read</span>{{/readingTime}}
     </div>
-    
     <h3><a href="{{permalink}}">{{title}}</a></h3>
     <p>{{description}}</p>
-    
-    
     <div class="tag-list">
         {{#tags}}
             <a href="{{permalink}}"><small>{{title}}</small></a>
         {{/tags}}
     </div>
 </div>
+-->

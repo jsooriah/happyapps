@@ -1,6 +1,33 @@
 {{<html}}
 {{$main}}
 
+<!-- UX REVAMP: blog index — same post-list style as archive -->
+<div class="posts-section">
+  <div class="section-head">
+    <span class="section-title">All writing</span>
+    <a href="/happyapps/rss.xml" class="section-more">RSS</a>
+  </div>
+
+  <div class="post-list">
+    {{#empty(pagination.data.post)}}
+    {{/empty(pagination.data.post)}}
+    {{^empty(pagination.data.post)}}
+    {{#pagination.data.post}}
+    {{> partials.blog.post}}
+    {{/pagination.data.post}}
+    {{/empty(pagination.data.post)}}
+  </div>
+
+  {{^empty(pagination.links.post)}}
+  <div class="pagination-bar">
+    {{#pagination.links.post}}
+    {{> partials.pagination}}
+    {{/pagination.links.post}}
+  </div>
+  {{/empty(pagination.links.post)}}
+</div>
+
+<!-- OLD BLOG HOME (commented out, kept for reference)
 <section class="hero primary">
     <div class="wrapper">
         <header>
@@ -18,9 +45,6 @@
 <section class="hero primary">
     <div class="wrapper">
         <header>
-            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
-            </svg>
             <p>Blog</p>
             <h1>Posts</h1>
             <p>Browse all posts</p>
@@ -30,50 +54,34 @@
 
 <section>
     <div class="wrapper">
-
-    {{#empty(pagination.data.post)}}
-        Empty.
-    {{/empty(pagination.data.post)}}
+    {{#empty(pagination.data.post)}}Empty.{{/empty(pagination.data.post)}}
     {{^empty(pagination.data.post)}}
         <div class="grid grid-221">
-        {{#pagination.data.post}}
-            {{> partials.blog.post}}
-        {{/pagination.data.post}}
+        {{#pagination.data.post}}{{> partials.blog.post}}{{/pagination.data.post}}
         </div>
     {{/empty(pagination.data.post)}}
-    
-    {{#empty(pagination.links.post)}}
-    {{/empty(pagination.links.post)}}
     {{^empty(pagination.links.post)}}
         <div class="pagination">
-        {{#pagination.links.post}}
-            {{> partials.pagination}}
-        {{/pagination.links.post}}
+        {{#pagination.links.post}}{{> partials.pagination}}{{/pagination.links.post}}
         </div>
     {{/empty(pagination.links.post)}}
-
     </div>
 </section>
 
 <section class="">
     <div class="wrapper">
-        {{#empty(site.context.posts)}}
-        Empty.
-        {{/empty(site.context.posts)}}
+        {{#empty(site.context.posts)}}Empty.{{/empty(site.context.posts)}}
         {{^empty(site.context.posts)}}
         <div class="grid grid-221">
-            {{#site.context.posts}}
-            {{> partials.blog.post}}
-            {{/site.context.posts}}
+            {{#site.context.posts}}{{> partials.blog.post}}{{/site.context.posts}}
         </div>
         {{/empty(site.context.posts)}}
-
         <div class="centered more-posts">
             <a class="button" href="/blog/posts/page/1">Browse all posts</a>
         </div>
     </div>
 </section>
-
+-->
 
 {{/main}}
 {{/html}}
