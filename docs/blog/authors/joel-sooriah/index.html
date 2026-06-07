@@ -22,10 +22,16 @@
     <meta name="twitter:description" content="Product and Tech Guy">
     <meta name="twitter:image" content="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg">
     
+    <!-- UX REVAMP: new font stack -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
+    <!-- UX REVAMP: single unified stylesheet replaces the 8 below -->
+    <link rel="stylesheet" href="/css/revamp.css">
+
+    <!-- OLD CSS (commented out, kept for reference)
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap">
     <link rel="stylesheet" href="/happyapps/css/modern-normalize.css">
     <link rel="stylesheet" href="/happyapps/css/modern-base.css">
     <link rel="stylesheet" href="/happyapps/css/variables.css">
@@ -34,8 +40,8 @@
     <link rel="stylesheet" href="/happyapps/css/navigation.css">
     <link rel="stylesheet" href="/happyapps/css/footer.css">
     <link rel="stylesheet" href="/happyapps/css/style.css">
-
     
+    -->
     
     <link rel="icon" href="/icons/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/icons/icon-320.png" type="image/png">
@@ -76,6 +82,19 @@
 </head>
 
 <body>
+    <!-- UX REVAMP: text-logo sticky nav -->
+    <header class="site-header">
+      <nav class="site-nav">
+        <a href="/happyapps/" class="site-logo">happyapps</a>
+        <div class="nav-links">
+          <a href="/happyapps/blog/posts/page/1">Writing</a>
+          <a href="/happyapps/blog/posts/about-this-blog/">About</a>
+          <a href="https://github.com/jsooriah/" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </nav>
+    </header>
+    
+    <!-- OLD NAV (commented out, kept for reference)
     <div id="navigation-container">
         <header id="navigation" class="wrapper">
             <a href="/happyapps/">
@@ -107,6 +126,7 @@
             </nav>
         </header>
     </div>
+    -->
     
     <main>
         <section>
@@ -124,106 +144,175 @@
                     
                     <div class="grid grid-221">
                         
+                        <!-- UX REVAMP: post-item row layout (used on home + archive) -->
+                        <a href="https://jsooriah.github.io/happyapps/blog/posts/about-this-blog/" class="post-item">
+                          <div class="post-meta-col">
+                            <span class="post-date">Apr 19, 2025</span>
+                            <span class="post-readtime">1 min</span>
+                            
+                          </div>
+                          <div class="post-body-col">
+                            <h3 class="post-title">About this blog</h3>
+                            <p class="post-excerpt">Blogging helps me reflect on my day to day initiatives at work - product intitiatives, methodologies, interaction with cross functional teams, customers, management, and end users. Being quite fascinated by the human centered design element of things in an excessively digitalized world, I came to realise that most problems encountered by organisations, are ultimately a human problem - lack of alignment, team boundaries, communication, lack of empathy, ..., and the list can be long, ...very long. After some years of experience in the field, I found myself solving these problems, whenever I see teams struggling, I cannot help from finding ways to solve them. As a matter of fact, that&#39;s exactly how I transitioned from engineering to product management. Blogging helps me learn while I am writing - whenever I experience the desire to write on something that I believe should be shared to others, I run also some research to support my writings and learn along the way.</p>
+                          </div>
+                        </a>
+                        
+                        <!-- OLD CARD (commented out, kept for reference)
                         <div class="card post">
                             <div class="author-list">
                                     <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
                                     <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
                                     </a>
                             </div>
-                        
                             <div class="meta">
-                                <time datetime="2025.04.19.">2025.04.19.</time>
+                                <time datetime="Apr 19, 2025">Apr 19, 2025</time>
                                  &middot; <span class="reading-time">1 min read</span>
                             </div>
-                            
                             <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/about-this-blog/">About this blog</a></h3>
                             <p>Blogging helps me reflect on my day to day initiatives at work - product intitiatives, methodologies, interaction with cross functional teams, customers, management, and end users. Being quite fascinated by the human centered design element of things in an excessively digitalized world, I came to realise that most problems encountered by organisations, are ultimately a human problem - lack of alignment, team boundaries, communication, lack of empathy, ..., and the list can be long, ...very long. After some years of experience in the field, I found myself solving these problems, whenever I see teams struggling, I cannot help from finding ways to solve them. As a matter of fact, that&#39;s exactly how I transitioned from engineering to product management. Blogging helps me learn while I am writing - whenever I experience the desire to write on something that I believe should be shared to others, I run also some research to support my writings and learn along the way.</p>
-                            
-                            
                             <div class="tag-list">
                             </div>
                         </div>
+                        -->
                 
+                        <!-- UX REVAMP: post-item row layout (used on home + archive) -->
+                        <a href="https://jsooriah.github.io/happyapps/blog/posts/before-the-graph-on-the-necessity-of-ontology-design/" class="post-item">
+                          <div class="post-meta-col">
+                            <span class="post-date">Apr 6, 2026</span>
+                            <span class="post-readtime">6 min</span>
+                            
+                          </div>
+                          <div class="post-body-col">
+                            <h3 class="post-title">Before the Graph On the Necessity of Ontology Design</h3>
+                            <p class="post-excerpt">I have been dwelling into GraphRAG for a few weeks now, vibe coding in my spare time. I started vibe coding GRAPHOS — a Graph-based Research Assistant for Historical and Ontological Sources (I recently changed the project name to reflect the importance of ontologies in this piece of work) — I assumed the hard problem would be the ingestion pipeline. Parse the documents. Extract the entities. Build the graph. Let the system answer questions.I was wrong about where the hard problem was.</p>
+                          </div>
+                        </a>
+                        
+                        <!-- OLD CARD (commented out, kept for reference)
                         <div class="card post">
                             <div class="author-list">
                                     <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
                                     <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
                                     </a>
                             </div>
-                        
                             <div class="meta">
-                                <time datetime="2026.04.06.">2026.04.06.</time>
+                                <time datetime="Apr 6, 2026">Apr 6, 2026</time>
                                  &middot; <span class="reading-time">6 min read</span>
                             </div>
-                            
                             <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/before-the-graph-on-the-necessity-of-ontology-design/">Before the Graph On the Necessity of Ontology Design</a></h3>
                             <p>I have been dwelling into GraphRAG for a few weeks now, vibe coding in my spare time. I started vibe coding GRAPHOS — a Graph-based Research Assistant for Historical and Ontological Sources (I recently changed the project name to reflect the importance of ontologies in this piece of work) — I assumed the hard problem would be the ingestion pipeline. Parse the documents. Extract the entities. Build the graph. Let the system answer questions.I was wrong about where the hard problem was.</p>
-                            
-                            
                             <div class="tag-list">
                             </div>
                         </div>
+                        -->
                 
+                        <!-- UX REVAMP: post-item row layout (used on home + archive) -->
+                        <a href="https://jsooriah.github.io/happyapps/blog/posts/building-an-agentic-rag-tool-to-support-my-hobby-research-into-the-history-of-the-french-revolution-in-the-indian-ocean/" class="post-item">
+                          <div class="post-meta-col">
+                            <span class="post-date">Jan 14, 2026</span>
+                            <span class="post-readtime">4 min</span>
+                            
+                          </div>
+                          <div class="post-body-col">
+                            <h3 class="post-title">Building an agentic RAG tool to support my hobby research into the history of the French Revolution in the Indian Ocean</h3>
+                            <p class="post-excerpt">Academic research generates an enormous volume of PDF documents—papers, theses, archival materials, and historical analyses. Across the years, I found myself interested into the history of French revolution in the Indian Ocean. This history and its impact spans over decades across multiple locations like the Mascarene Islands, India, and of course, France and the UK as well. Given the huge amount of information that my brain needs to process to get a good understanding of all the intricacies happening on at that time, I have decided to build a RAG pipeline powered by graph databases to help me out. This is perfect for a RAG system based on graph representation of entities. This experiment addresses that challenge head-on, building a Retrieval-Augmented Generation (RAG) system that transforms raw research PDFs into an intelligent, queryable knowledge base augmented with relationship understanding through graph technology.</p>
+                          </div>
+                        </a>
+                        
+                        <!-- OLD CARD (commented out, kept for reference)
                         <div class="card post">
                             <div class="author-list">
                                     <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
                                     <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
                                     </a>
                             </div>
-                        
                             <div class="meta">
-                                <time datetime="2026.01.14.">2026.01.14.</time>
+                                <time datetime="Jan 14, 2026">Jan 14, 2026</time>
                                  &middot; <span class="reading-time">4 min read</span>
                             </div>
-                            
                             <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/building-an-agentic-rag-tool-to-support-my-hobby-research-into-the-history-of-the-french-revolution-in-the-indian-ocean/">Building an agentic RAG tool to support my hobby research into the history of the French Revolution in the Indian Ocean</a></h3>
                             <p>Academic research generates an enormous volume of PDF documents—papers, theses, archival materials, and historical analyses. Across the years, I found myself interested into the history of French revolution in the Indian Ocean. This history and its impact spans over decades across multiple locations like the Mascarene Islands, India, and of course, France and the UK as well. Given the huge amount of information that my brain needs to process to get a good understanding of all the intricacies happening on at that time, I have decided to build a RAG pipeline powered by graph databases to help me out. This is perfect for a RAG system based on graph representation of entities. This experiment addresses that challenge head-on, building a Retrieval-Augmented Generation (RAG) system that transforms raw research PDFs into an intelligent, queryable knowledge base augmented with relationship understanding through graph technology.</p>
-                            
-                            
                             <div class="tag-list">
                             </div>
                         </div>
+                        -->
                 
+                        <!-- UX REVAMP: post-item row layout (used on home + archive) -->
+                        <a href="https://jsooriah.github.io/happyapps/blog/posts/dont-go-chasing-waterfalls-and-turn-the-ship-around/" class="post-item">
+                          <div class="post-meta-col">
+                            <span class="post-date">Sep 6, 2025</span>
+                            <span class="post-readtime">5 min</span>
+                            
+                          </div>
+                          <div class="post-body-col">
+                            <h3 class="post-title">Don&#39;t go chasing waterfalls and turn the ship around</h3>
+                            <p class="post-excerpt">Historically, many organisations operated with a waterfall-like model where product managers or business analysts would create detailed specifications that engineers would implement. Engineering teams would receive “clearer guidance upfront” with regular check-ins to ensure alignment. This approach treats engineers primarily as implementers who translate requirements into code.</p>
+                          </div>
+                        </a>
+                        
+                        <!-- OLD CARD (commented out, kept for reference)
                         <div class="card post">
                             <div class="author-list">
                                     <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
                                     <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
                                     </a>
                             </div>
-                        
                             <div class="meta">
-                                <time datetime="2025.09.06.">2025.09.06.</time>
+                                <time datetime="Sep 6, 2025">Sep 6, 2025</time>
                                  &middot; <span class="reading-time">5 min read</span>
                             </div>
-                            
                             <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/dont-go-chasing-waterfalls-and-turn-the-ship-around/">Don&#39;t go chasing waterfalls and turn the ship around</a></h3>
                             <p>Historically, many organisations operated with a waterfall-like model where product managers or business analysts would create detailed specifications that engineers would implement. Engineering teams would receive “clearer guidance upfront” with regular check-ins to ensure alignment. This approach treats engineers primarily as implementers who translate requirements into code.</p>
-                            
-                            
                             <div class="tag-list">
                             </div>
                         </div>
+                        -->
                 
+                        <!-- UX REVAMP: post-item row layout (used on home + archive) -->
+                        <a href="https://jsooriah.github.io/happyapps/blog/posts/from-feature-requests-to-customer-jobs-basecamps-root-cause-analysis-approach-to-product-strategy/" class="post-item">
+                          <div class="post-meta-col">
+                            <span class="post-date">Jan 31, 2026</span>
+                            <span class="post-readtime">8 min</span>
+                            
+                          </div>
+                          <div class="post-body-col">
+                            <h3 class="post-title">From Feature Requests to Customer Jobs - Basecamp&#39;s Root Cause Analysis Approach to Product Strategy</h3>
+                            <p class="post-excerpt">Product teams face a universal challenge, customers constantly request features, but building everything would create bloated, unfocused products. The traditional approach—either ignoring requests entirely or meticulously tracking them in spreadsheets—fails to extract the strategic intelligence buried within these requests. Basecamp&#39;s evolved methodology demonstrates how Jobs-to-be-Done interviewing transforms raw feature requests into customer-centric product strategy.</p>
+                          </div>
+                        </a>
+                        
+                        <!-- OLD CARD (commented out, kept for reference)
                         <div class="card post">
                             <div class="author-list">
                                     <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
                                     <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
                                     </a>
                             </div>
-                        
                             <div class="meta">
-                                <time datetime="2026.01.31.">2026.01.31.</time>
+                                <time datetime="Jan 31, 2026">Jan 31, 2026</time>
                                  &middot; <span class="reading-time">8 min read</span>
                             </div>
-                            
                             <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/from-feature-requests-to-customer-jobs-basecamps-root-cause-analysis-approach-to-product-strategy/">From Feature Requests to Customer Jobs - Basecamp&#39;s Root Cause Analysis Approach to Product Strategy</a></h3>
                             <p>Product teams face a universal challenge, customers constantly request features, but building everything would create bloated, unfocused products. The traditional approach—either ignoring requests entirely or meticulously tracking them in spreadsheets—fails to extract the strategic intelligence buried within these requests. Basecamp&#39;s evolved methodology demonstrates how Jobs-to-be-Done interviewing transforms raw feature requests into customer-centric product strategy.</p>
-                            
-                            
                             <div class="tag-list">
                             </div>
                         </div>
+                        -->
                 
+                        <!-- UX REVAMP: post-item row layout (used on home + archive) -->
+                        <a href="https://jsooriah.github.io/happyapps/blog/posts/gherkin-syntax-the-rosetta-stone-of-cross-functional-alignment-jtbd-part-2/" class="post-item">
+                          <div class="post-meta-col">
+                            <span class="post-date">Jan 15, 2026</span>
+                            <span class="post-readtime">9 min</span>
+                            
+                          </div>
+                          <div class="post-body-col">
+                            <h3 class="post-title">Gherkin Syntax - The Rosetta Stone of Cross-Functional Alignment</h3>
+                            <p class="post-excerpt">In 1799, French soldiers discovered a stone tablet in Egypt that changed our understanding of ancient civilizations. The Rosetta Stone contained the same decree written in three different scripts—hieroglyphics, Demotic, and ancient Greek. Because scholars could read Greek, they could finally decode hieroglyphics.Your product team needs a Rosetta Stone.Not to decode ancient languages, but to translate between the four dialects we identified in Part 1 - customer outcomes, product capabilities, engineering logic, and business metrics. You need a syntax that all four groups can read, write, and understand without losing meaning in translation.That syntax already exists. You&#39;ve probably seen it in your engineering team&#39;s test suites. It&#39;s called Gherkin.</p>
+                          </div>
+                        </a>
+                        
+                        <!-- OLD CARD (commented out, kept for reference)
                         <div class="card post">
                             <span class="featured">featured</span>
                             <div class="author-list">
@@ -231,60 +320,93 @@
                                     <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
                                     </a>
                             </div>
-                        
                             <div class="meta">
-                                <time datetime="2026.01.15.">2026.01.15.</time>
+                                <time datetime="Jan 15, 2026">Jan 15, 2026</time>
                                  &middot; <span class="reading-time">9 min read</span>
                             </div>
-                            
                             <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/gherkin-syntax-the-rosetta-stone-of-cross-functional-alignment-jtbd-part-2/">Gherkin Syntax - The Rosetta Stone of Cross-Functional Alignment</a></h3>
                             <p>In 1799, French soldiers discovered a stone tablet in Egypt that changed our understanding of ancient civilizations. The Rosetta Stone contained the same decree written in three different scripts—hieroglyphics, Demotic, and ancient Greek. Because scholars could read Greek, they could finally decode hieroglyphics.Your product team needs a Rosetta Stone.Not to decode ancient languages, but to translate between the four dialects we identified in Part 1 - customer outcomes, product capabilities, engineering logic, and business metrics. You need a syntax that all four groups can read, write, and understand without losing meaning in translation.That syntax already exists. You&#39;ve probably seen it in your engineering team&#39;s test suites. It&#39;s called Gherkin.</p>
-                            
-                            
                             <div class="tag-list">
                             </div>
                         </div>
+                        -->
                 
+                        <!-- UX REVAMP: post-item row layout (used on home + archive) -->
+                        <a href="https://jsooriah.github.io/happyapps/blog/posts/openspec-bringing-specification-driven-development-to-a-research-prototype/" class="post-item">
+                          <div class="post-meta-col">
+                            <span class="post-date">Apr 18, 2026</span>
+                            <span class="post-readtime">8 min</span>
+                            
+                          </div>
+                          <div class="post-body-col">
+                            <h3 class="post-title">OpenSpec Bringing Specification-Driven Development to a Research Prototype</h3>
+                            <p class="post-excerpt">Research prototypes have a particular failure mode - they work, and then they grow. What starts as a script to test an idea becomes a pipeline. The pipeline gains a frontend. The frontend gets tabs. New retrieval modes are added. A knowledge graph appears. An agent memory layer. Six months later, the codebase is genuinely complex — but the only documentation is the code itself, scattered comments, and whoever wrote it remembers most of what it does.This is exactly where the RAG assistant for historical research in the Indian Ocean found itself. Eight distinct subsystems — ingestion, chunking, embedding, retrieval, generation, knowledge graph, agent memory, evaluation — each with non-obvious constraints, silent failure modes and subtle interactions. No single file explained how they fit together or *why* certain decisions were made.</p>
+                          </div>
+                        </a>
+                        
+                        <!-- OLD CARD (commented out, kept for reference)
                         <div class="card post">
                             <div class="author-list">
                                     <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
                                     <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
                                     </a>
                             </div>
-                        
                             <div class="meta">
-                                <time datetime="2026.04.18.">2026.04.18.</time>
+                                <time datetime="Apr 18, 2026">Apr 18, 2026</time>
                                  &middot; <span class="reading-time">8 min read</span>
                             </div>
-                            
                             <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/openspec-bringing-specification-driven-development-to-a-research-prototype/">OpenSpec Bringing Specification-Driven Development to a Research Prototype</a></h3>
                             <p>Research prototypes have a particular failure mode - they work, and then they grow. What starts as a script to test an idea becomes a pipeline. The pipeline gains a frontend. The frontend gets tabs. New retrieval modes are added. A knowledge graph appears. An agent memory layer. Six months later, the codebase is genuinely complex — but the only documentation is the code itself, scattered comments, and whoever wrote it remembers most of what it does.This is exactly where the RAG assistant for historical research in the Indian Ocean found itself. Eight distinct subsystems — ingestion, chunking, embedding, retrieval, generation, knowledge graph, agent memory, evaluation — each with non-obvious constraints, silent failure modes and subtle interactions. No single file explained how they fit together or *why* certain decisions were made.</p>
-                            
-                            
                             <div class="tag-list">
                             </div>
                         </div>
+                        -->
                 
+                        <!-- UX REVAMP: post-item row layout (used on home + archive) -->
+                        <a href="https://jsooriah.github.io/happyapps/blog/posts/root-cause-analysis-in-product-management-learning-the-hard-way/" class="post-item">
+                          <div class="post-meta-col">
+                            <span class="post-date">May 29, 2025</span>
+                            <span class="post-readtime">4 min</span>
+                            
+                          </div>
+                          <div class="post-body-col">
+                            <h3 class="post-title">Root Cause Analysis In Product Management Learning The Hard Way</h3>
+                            <p class="post-excerpt">As tech people, we’re often eager to build. The excitement of creating something new, something that showcases our technical capabilities and vision, can be intoxicating. But sometimes, our rush to solution-building can blind us to the fundamental question that should drive every product decision:What problem are we really solving?</p>
+                          </div>
+                        </a>
+                        
+                        <!-- OLD CARD (commented out, kept for reference)
                         <div class="card post">
                             <div class="author-list">
                                     <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
                                     <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
                                     </a>
                             </div>
-                        
                             <div class="meta">
-                                <time datetime="2025.05.29.">2025.05.29.</time>
+                                <time datetime="May 29, 2025">May 29, 2025</time>
                                  &middot; <span class="reading-time">4 min read</span>
                             </div>
-                            
                             <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/root-cause-analysis-in-product-management-learning-the-hard-way/">Root Cause Analysis In Product Management Learning The Hard Way</a></h3>
                             <p>As tech people, we’re often eager to build. The excitement of creating something new, something that showcases our technical capabilities and vision, can be intoxicating. But sometimes, our rush to solution-building can blind us to the fundamental question that should drive every product decision:What problem are we really solving?</p>
-                            
-                            
                             <div class="tag-list">
                             </div>
                         </div>
+                        -->
                 
+                        <!-- UX REVAMP: post-item row layout (used on home + archive) -->
+                        <a href="https://jsooriah.github.io/happyapps/blog/posts/sdd-the-spec-as-a-new-social-contract/" class="post-item">
+                          <div class="post-meta-col">
+                            <span class="post-date">Apr 8, 2026</span>
+                            <span class="post-readtime">24 min</span>
+                            
+                          </div>
+                          <div class="post-body-col">
+                            <h3 class="post-title">SDD - The Spec as a New Social Contract</h3>
+                            <p class="post-excerpt">Spec-Driven Development — SDD — is, at its best, a proposed answer to this perennial failure of translation. But it is arriving in 2026 not as a project management reform but as an engineering methodology, carried into organisations on the back of agentic AI tools. And that origin shapes everything about its promise and its limits.</p>
+                          </div>
+                        </a>
+                        
+                        <!-- OLD CARD (commented out, kept for reference)
                         <div class="card post">
                             <span class="featured">featured</span>
                             <div class="author-list">
@@ -292,19 +414,16 @@
                                     <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
                                     </a>
                             </div>
-                        
                             <div class="meta">
-                                <time datetime="2026.04.08.">2026.04.08.</time>
+                                <time datetime="Apr 8, 2026">Apr 8, 2026</time>
                                  &middot; <span class="reading-time">24 min read</span>
                             </div>
-                            
                             <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/sdd-the-spec-as-a-new-social-contract/">SDD - The Spec as a New Social Contract</a></h3>
                             <p>Spec-Driven Development — SDD — is, at its best, a proposed answer to this perennial failure of translation. But it is arriving in 2026 not as a project management reform but as an engineering methodology, carried into organisations on the back of agentic AI tools. And that origin shapes everything about its promise and its limits.</p>
-                            
-                            
                             <div class="tag-list">
                             </div>
                         </div>
+                        -->
                     </div>
                     
                 </div>
@@ -312,6 +431,13 @@
         </section>
     </main>
     
+    <!-- UX REVAMP: simplified footer -->
+    <footer class="site-footer">
+      <p><a href="/happyapps/">happyapps</a> · Joel Sooriah</p>
+      <p class="footer-copy">Built with <a href="https://github.com/toucansites/toucan" target="_blank" rel="noopener">Toucan</a> &amp; Swift · MIT License</p>
+    </footer>
+    
+    <!-- OLD FOOTER (commented out, kept for reference)
     <div id="footer-container">
         <footer class="wrapper">
             <div class="grid grid-211">
@@ -352,28 +478,17 @@
                     Toucan is open source and is free on Github.<br/>
                     <a href="https://github.com/toucansites/website/blob/main/LICENSE" target="_blank">MIT License</a></small>
                     </p>
-                    <div class="external">
-                        
-                    </div>
+                    <div class="external"></div>
                     <div class="contact">
                         <h3></h3>
-                        <p>
-                        <br>
-                        <a href="mailto:">
-                            
-                        </a>
-                        </p>
+                        <p><br><a href="mailto:"></a></p>
                     </div>
                 </div>
             </div>
-            
-    
             <div id="copyright"></div>
-            
-            
-    
         </footer>
     </div>
+    -->
 
     
     

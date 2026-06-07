@@ -22,10 +22,16 @@
     <meta name="twitter:description" content="">
     <meta name="twitter:image" content="/images/default.png">
     
+    <!-- UX REVAMP: new font stack -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
+    <!-- UX REVAMP: single unified stylesheet replaces the 8 below -->
+    <link rel="stylesheet" href="/css/revamp.css">
+
+    <!-- OLD CSS (commented out, kept for reference)
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap">
     <link rel="stylesheet" href="/happyapps/css/modern-normalize.css">
     <link rel="stylesheet" href="/happyapps/css/modern-base.css">
     <link rel="stylesheet" href="/happyapps/css/variables.css">
@@ -34,8 +40,8 @@
     <link rel="stylesheet" href="/happyapps/css/navigation.css">
     <link rel="stylesheet" href="/happyapps/css/footer.css">
     <link rel="stylesheet" href="/happyapps/css/style.css">
-
     
+    -->
     
     <link rel="icon" href="/icons/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/icons/icon-320.png" type="image/png">
@@ -76,6 +82,19 @@
 </head>
 
 <body>
+    <!-- UX REVAMP: text-logo sticky nav -->
+    <header class="site-header">
+      <nav class="site-nav">
+        <a href="/happyapps/" class="site-logo">happyapps</a>
+        <div class="nav-links">
+          <a href="/happyapps/blog/posts/page/1">Writing</a>
+          <a href="/happyapps/blog/posts/about-this-blog/">About</a>
+          <a href="https://github.com/jsooriah/" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </nav>
+    </header>
+    
+    <!-- OLD NAV (commented out, kept for reference)
     <div id="navigation-container">
         <header id="navigation" class="wrapper">
             <a href="/happyapps/">
@@ -107,265 +126,389 @@
             </nav>
         </header>
     </div>
+    -->
     
     <main>
         
+        <!-- UX REVAMP: hero + topics + post list + about strip -->
         
+        <section class="home-hero">
+          <div class="home-hero-inner">
         
-        <section class="hero primary">
-            <div class="wrapper">
-                <picture>
-                    <source
-                        srcset="/happyapps/images/logos/happyapps-logo~dark.png"
-                        media="(prefers-color-scheme: dark)"
-                        >
-                    <img
-                        src="/happyapps/images/logos/happyapps-logo.png"
-                        alt="Logo of Happy Apps"
-                        title="Happy Apps"
-                        >
-                </picture>
-                <h2>Product and Engineering Intelligence</h2>
+            <div class="hero-copy">
+              <p class="hero-label">happyapps</p>
+              <h1>Product, Business<br>&amp; Engineering <em>Intelligence</em></h1>
+              <p class="hero-deck">
+                Writing at the intersection of product management, AI engineering, and agile practice. Human-centric by design.
+              </p>
+              <div class="hero-actions">
+                <a href="/happyapps/blog/posts/page/1" class="btn btn-primary">Read the archive</a>
+                <a href="/happyapps/blog/posts/about-this-blog/" class="btn btn-secondary">About this blog</a>
+              </div>
             </div>
+        
+            <!-- UPDATE this card when a new post becomes the featured one -->
+            <div class="hero-feature">
+              <p class="hero-feature-tag">Latest · JTBD Series</p>
+              <h2>Why Your Best Growth Opportunity Isn't Asking for Anything</h2>
+              <p>Most roadmaps are built on a structurally flawed input — the customers who engage most actively in discovery are rarely the customers who represent the largest growth opportunity.</p>
+              <a href="/happyapps/blog/posts/why-your-best-growth-opportunity-isnt-asking-for-anything/" class="read-link">Read article</a>
+            </div>
+        
+          </div>
         </section>
         
-        <section class="book">
-          <div class="wrapper">
-              <header>
-                  <h2>Featured Article</h2>
-                  <p>Current series describe how to use the Jobs to Done framework at each step to ensure customer centricity but also how to use Gherkins as foundation for alignment across all expertise in an organisation</p>
-              </header>
+        <div class="topics-bar">
+          <div class="topics-inner">
+            <span class="topic-label">On</span>
+            <a href="#" class="topic-chip">Product Management</a>
+            <a href="#" class="topic-chip">Spec-Driven Development</a>
+            <a href="#" class="topic-chip">AI Engineering</a>
+            <a href="#" class="topic-chip">Jobs-to-be-Done</a>
+            <a href="#" class="topic-chip">Graph Databases</a>
+            <a href="#" class="topic-chip">Agile Practice</a>
+            <a href="#" class="topic-chip">Agent Memory</a>
+          </div>
+        </div>
         
-              <div class="grid grid-422">    
-                  <div class="info">
-                    <h3>Gherkin Syntax - The Rosetta Stone of Cross-Functional Alignment</h3>
-                    <p>In 1799, French soldiers discovered a stone tablet in Egypt that changed our understanding of ancient civilizations. The Rosetta Stone contained the same decree written in three different scripts—hieroglyphics, Demotic, and ancient Greek. Because scholars could read Greek, they could finally decode hieroglyphics.Your product team needs a Rosetta Stone.Not to decode ancient languages, but to translate between the four dialects we identified in Part 1 - customer outcomes, product capabilities, engineering logic, and business metrics. You need a syntax that all four groups can read, write, and understand without losing meaning in translation.That syntax already exists. You've probably seen it in your engineering team's test suites. It's called Gherkin.</p>
-                  </div>
-                  <div class="centered more-posts">
-                    <a class="button" href="/blog/posts/page/1">Read Article</a>
-                </div>
+        <div class="posts-section">
+          <div class="section-head">
+            <span class="section-title">Recent writing</span>
+            <a href="/happyapps/blog/posts/page/1" class="section-more">All posts</a>
+          </div>
+          <div class="post-list">
+            <!-- UX REVAMP: post-item row layout (used on home + archive) -->
+            <a href="https://jsooriah.github.io/happyapps/blog/posts/why-your-best-growth-opportunity-isnt-asking-for-anything/" class="post-item">
+              <div class="post-meta-col">
+                <span class="post-date">Jun 5, 2026</span>
+                <span class="post-readtime">9 min</span>
+                
               </div>
+              <div class="post-body-col">
+                <h3 class="post-title">Why Your Best Growth Opportunity Isn&#39;t Asking for Anything</h3>
+                <p class="post-excerpt">Most roadmaps are built on a structurally flawed input - the customers who engage most actively in discovery are rarely the customers who represent the largest growth opportunity nor the one your organization need at a specific point in time. They are also potentially vocal, articulate, and easy to build a business case around. They are, more often than not, a minority of the addressable market — and the energy spent serving their sophistication is energy not spent on the segment that would actually move the revenue needle. This is the minority segment problem. It doesn&#39;t show up in your funnel metrics your NPS or your win/loss analysis. It shows up when a competitor enters with a simpler product captures a segment you never knew you were ignoring and grows faster than your roadmap can respond.</p>
+              </div>
+            </a>
             
+            <!-- OLD CARD (commented out, kept for reference)
+            <div class="card post">
+                <div class="author-list">
+                        <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
+                        <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
+                        </a>
+                </div>
+                <div class="meta">
+                    <time datetime="Jun 5, 2026">Jun 5, 2026</time>
+                     &middot; <span class="reading-time">9 min read</span>
+                </div>
+                <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/why-your-best-growth-opportunity-isnt-asking-for-anything/">Why Your Best Growth Opportunity Isn&#39;t Asking for Anything</a></h3>
+                <p>Most roadmaps are built on a structurally flawed input - the customers who engage most actively in discovery are rarely the customers who represent the largest growth opportunity nor the one your organization need at a specific point in time. They are also potentially vocal, articulate, and easy to build a business case around. They are, more often than not, a minority of the addressable market — and the energy spent serving their sophistication is energy not spent on the segment that would actually move the revenue needle. This is the minority segment problem. It doesn&#39;t show up in your funnel metrics your NPS or your win/loss analysis. It shows up when a competitor enters with a simpler product captures a segment you never knew you were ignoring and grows faster than your roadmap can respond.</p>
+                <div class="tag-list">
+                </div>
+            </div>
+            -->
+    <!-- UX REVAMP: post-item row layout (used on home + archive) -->
+            <a href="https://jsooriah.github.io/happyapps/blog/posts/openspec-bringing-specification-driven-development-to-a-research-prototype/" class="post-item">
+              <div class="post-meta-col">
+                <span class="post-date">Apr 18, 2026</span>
+                <span class="post-readtime">8 min</span>
+                
+              </div>
+              <div class="post-body-col">
+                <h3 class="post-title">OpenSpec Bringing Specification-Driven Development to a Research Prototype</h3>
+                <p class="post-excerpt">Research prototypes have a particular failure mode - they work, and then they grow. What starts as a script to test an idea becomes a pipeline. The pipeline gains a frontend. The frontend gets tabs. New retrieval modes are added. A knowledge graph appears. An agent memory layer. Six months later, the codebase is genuinely complex — but the only documentation is the code itself, scattered comments, and whoever wrote it remembers most of what it does.This is exactly where the RAG assistant for historical research in the Indian Ocean found itself. Eight distinct subsystems — ingestion, chunking, embedding, retrieval, generation, knowledge graph, agent memory, evaluation — each with non-obvious constraints, silent failure modes and subtle interactions. No single file explained how they fit together or *why* certain decisions were made.</p>
+              </div>
+            </a>
+            
+            <!-- OLD CARD (commented out, kept for reference)
+            <div class="card post">
+                <div class="author-list">
+                        <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
+                        <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
+                        </a>
+                </div>
+                <div class="meta">
+                    <time datetime="Apr 18, 2026">Apr 18, 2026</time>
+                     &middot; <span class="reading-time">8 min read</span>
+                </div>
+                <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/openspec-bringing-specification-driven-development-to-a-research-prototype/">OpenSpec Bringing Specification-Driven Development to a Research Prototype</a></h3>
+                <p>Research prototypes have a particular failure mode - they work, and then they grow. What starts as a script to test an idea becomes a pipeline. The pipeline gains a frontend. The frontend gets tabs. New retrieval modes are added. A knowledge graph appears. An agent memory layer. Six months later, the codebase is genuinely complex — but the only documentation is the code itself, scattered comments, and whoever wrote it remembers most of what it does.This is exactly where the RAG assistant for historical research in the Indian Ocean found itself. Eight distinct subsystems — ingestion, chunking, embedding, retrieval, generation, knowledge graph, agent memory, evaluation — each with non-obvious constraints, silent failure modes and subtle interactions. No single file explained how they fit together or *why* certain decisions were made.</p>
+                <div class="tag-list">
+                </div>
+            </div>
+            -->
+    <!-- UX REVAMP: post-item row layout (used on home + archive) -->
+            <a href="https://jsooriah.github.io/happyapps/blog/posts/sdd-the-spec-as-a-new-social-contract/" class="post-item">
+              <div class="post-meta-col">
+                <span class="post-date">Apr 8, 2026</span>
+                <span class="post-readtime">24 min</span>
+                
+              </div>
+              <div class="post-body-col">
+                <h3 class="post-title">SDD - The Spec as a New Social Contract</h3>
+                <p class="post-excerpt">Spec-Driven Development — SDD — is, at its best, a proposed answer to this perennial failure of translation. But it is arriving in 2026 not as a project management reform but as an engineering methodology, carried into organisations on the back of agentic AI tools. And that origin shapes everything about its promise and its limits.</p>
+              </div>
+            </a>
+            
+            <!-- OLD CARD (commented out, kept for reference)
+            <div class="card post">
+                <span class="featured">featured</span>
+                <div class="author-list">
+                        <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
+                        <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
+                        </a>
+                </div>
+                <div class="meta">
+                    <time datetime="Apr 8, 2026">Apr 8, 2026</time>
+                     &middot; <span class="reading-time">24 min read</span>
+                </div>
+                <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/sdd-the-spec-as-a-new-social-contract/">SDD - The Spec as a New Social Contract</a></h3>
+                <p>Spec-Driven Development — SDD — is, at its best, a proposed answer to this perennial failure of translation. But it is arriving in 2026 not as a project management reform but as an engineering methodology, carried into organisations on the back of agentic AI tools. And that origin shapes everything about its promise and its limits.</p>
+                <div class="tag-list">
+                </div>
+            </div>
+            -->
+    <!-- UX REVAMP: post-item row layout (used on home + archive) -->
+            <a href="https://jsooriah.github.io/happyapps/blog/posts/before-the-graph-on-the-necessity-of-ontology-design/" class="post-item">
+              <div class="post-meta-col">
+                <span class="post-date">Apr 6, 2026</span>
+                <span class="post-readtime">6 min</span>
+                
+              </div>
+              <div class="post-body-col">
+                <h3 class="post-title">Before the Graph On the Necessity of Ontology Design</h3>
+                <p class="post-excerpt">I have been dwelling into GraphRAG for a few weeks now, vibe coding in my spare time. I started vibe coding GRAPHOS — a Graph-based Research Assistant for Historical and Ontological Sources (I recently changed the project name to reflect the importance of ontologies in this piece of work) — I assumed the hard problem would be the ingestion pipeline. Parse the documents. Extract the entities. Build the graph. Let the system answer questions.I was wrong about where the hard problem was.</p>
+              </div>
+            </a>
+            
+            <!-- OLD CARD (commented out, kept for reference)
+            <div class="card post">
+                <div class="author-list">
+                        <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
+                        <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
+                        </a>
+                </div>
+                <div class="meta">
+                    <time datetime="Apr 6, 2026">Apr 6, 2026</time>
+                     &middot; <span class="reading-time">6 min read</span>
+                </div>
+                <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/before-the-graph-on-the-necessity-of-ontology-design/">Before the Graph On the Necessity of Ontology Design</a></h3>
+                <p>I have been dwelling into GraphRAG for a few weeks now, vibe coding in my spare time. I started vibe coding GRAPHOS — a Graph-based Research Assistant for Historical and Ontological Sources (I recently changed the project name to reflect the importance of ontologies in this piece of work) — I assumed the hard problem would be the ingestion pipeline. Parse the documents. Extract the entities. Build the graph. Let the system answer questions.I was wrong about where the hard problem was.</p>
+                <div class="tag-list">
+                </div>
+            </div>
+            -->
+    <!-- UX REVAMP: post-item row layout (used on home + archive) -->
+            <a href="https://jsooriah.github.io/happyapps/blog/posts/from-feature-requests-to-customer-jobs-basecamps-root-cause-analysis-approach-to-product-strategy/" class="post-item">
+              <div class="post-meta-col">
+                <span class="post-date">Jan 31, 2026</span>
+                <span class="post-readtime">8 min</span>
+                
+              </div>
+              <div class="post-body-col">
+                <h3 class="post-title">From Feature Requests to Customer Jobs - Basecamp&#39;s Root Cause Analysis Approach to Product Strategy</h3>
+                <p class="post-excerpt">Product teams face a universal challenge, customers constantly request features, but building everything would create bloated, unfocused products. The traditional approach—either ignoring requests entirely or meticulously tracking them in spreadsheets—fails to extract the strategic intelligence buried within these requests. Basecamp&#39;s evolved methodology demonstrates how Jobs-to-be-Done interviewing transforms raw feature requests into customer-centric product strategy.</p>
+              </div>
+            </a>
+            
+            <!-- OLD CARD (commented out, kept for reference)
+            <div class="card post">
+                <div class="author-list">
+                        <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
+                        <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
+                        </a>
+                </div>
+                <div class="meta">
+                    <time datetime="Jan 31, 2026">Jan 31, 2026</time>
+                     &middot; <span class="reading-time">8 min read</span>
+                </div>
+                <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/from-feature-requests-to-customer-jobs-basecamps-root-cause-analysis-approach-to-product-strategy/">From Feature Requests to Customer Jobs - Basecamp&#39;s Root Cause Analysis Approach to Product Strategy</a></h3>
+                <p>Product teams face a universal challenge, customers constantly request features, but building everything would create bloated, unfocused products. The traditional approach—either ignoring requests entirely or meticulously tracking them in spreadsheets—fails to extract the strategic intelligence buried within these requests. Basecamp&#39;s evolved methodology demonstrates how Jobs-to-be-Done interviewing transforms raw feature requests into customer-centric product strategy.</p>
+                <div class="tag-list">
+                </div>
+            </div>
+            -->
+    <!-- UX REVAMP: post-item row layout (used on home + archive) -->
+            <a href="https://jsooriah.github.io/happyapps/blog/posts/gherkin-syntax-the-rosetta-stone-of-cross-functional-alignment-jtbd-part-2/" class="post-item">
+              <div class="post-meta-col">
+                <span class="post-date">Jan 15, 2026</span>
+                <span class="post-readtime">9 min</span>
+                
+              </div>
+              <div class="post-body-col">
+                <h3 class="post-title">Gherkin Syntax - The Rosetta Stone of Cross-Functional Alignment</h3>
+                <p class="post-excerpt">In 1799, French soldiers discovered a stone tablet in Egypt that changed our understanding of ancient civilizations. The Rosetta Stone contained the same decree written in three different scripts—hieroglyphics, Demotic, and ancient Greek. Because scholars could read Greek, they could finally decode hieroglyphics.Your product team needs a Rosetta Stone.Not to decode ancient languages, but to translate between the four dialects we identified in Part 1 - customer outcomes, product capabilities, engineering logic, and business metrics. You need a syntax that all four groups can read, write, and understand without losing meaning in translation.That syntax already exists. You&#39;ve probably seen it in your engineering team&#39;s test suites. It&#39;s called Gherkin.</p>
+              </div>
+            </a>
+            
+            <!-- OLD CARD (commented out, kept for reference)
+            <div class="card post">
+                <span class="featured">featured</span>
+                <div class="author-list">
+                        <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
+                        <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
+                        </a>
+                </div>
+                <div class="meta">
+                    <time datetime="Jan 15, 2026">Jan 15, 2026</time>
+                     &middot; <span class="reading-time">9 min read</span>
+                </div>
+                <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/gherkin-syntax-the-rosetta-stone-of-cross-functional-alignment-jtbd-part-2/">Gherkin Syntax - The Rosetta Stone of Cross-Functional Alignment</a></h3>
+                <p>In 1799, French soldiers discovered a stone tablet in Egypt that changed our understanding of ancient civilizations. The Rosetta Stone contained the same decree written in three different scripts—hieroglyphics, Demotic, and ancient Greek. Because scholars could read Greek, they could finally decode hieroglyphics.Your product team needs a Rosetta Stone.Not to decode ancient languages, but to translate between the four dialects we identified in Part 1 - customer outcomes, product capabilities, engineering logic, and business metrics. You need a syntax that all four groups can read, write, and understand without losing meaning in translation.That syntax already exists. You&#39;ve probably seen it in your engineering team&#39;s test suites. It&#39;s called Gherkin.</p>
+                <div class="tag-list">
+                </div>
+            </div>
+            -->
+    <!-- UX REVAMP: post-item row layout (used on home + archive) -->
+            <a href="https://jsooriah.github.io/happyapps/blog/posts/building-an-agentic-rag-tool-to-support-my-hobby-research-into-the-history-of-the-french-revolution-in-the-indian-ocean/" class="post-item">
+              <div class="post-meta-col">
+                <span class="post-date">Jan 14, 2026</span>
+                <span class="post-readtime">4 min</span>
+                
+              </div>
+              <div class="post-body-col">
+                <h3 class="post-title">Building an agentic RAG tool to support my hobby research into the history of the French Revolution in the Indian Ocean</h3>
+                <p class="post-excerpt">Academic research generates an enormous volume of PDF documents—papers, theses, archival materials, and historical analyses. Across the years, I found myself interested into the history of French revolution in the Indian Ocean. This history and its impact spans over decades across multiple locations like the Mascarene Islands, India, and of course, France and the UK as well. Given the huge amount of information that my brain needs to process to get a good understanding of all the intricacies happening on at that time, I have decided to build a RAG pipeline powered by graph databases to help me out. This is perfect for a RAG system based on graph representation of entities. This experiment addresses that challenge head-on, building a Retrieval-Augmented Generation (RAG) system that transforms raw research PDFs into an intelligent, queryable knowledge base augmented with relationship understanding through graph technology.</p>
+              </div>
+            </a>
+            
+            <!-- OLD CARD (commented out, kept for reference)
+            <div class="card post">
+                <div class="author-list">
+                        <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
+                        <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
+                        </a>
+                </div>
+                <div class="meta">
+                    <time datetime="Jan 14, 2026">Jan 14, 2026</time>
+                     &middot; <span class="reading-time">4 min read</span>
+                </div>
+                <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/building-an-agentic-rag-tool-to-support-my-hobby-research-into-the-history-of-the-french-revolution-in-the-indian-ocean/">Building an agentic RAG tool to support my hobby research into the history of the French Revolution in the Indian Ocean</a></h3>
+                <p>Academic research generates an enormous volume of PDF documents—papers, theses, archival materials, and historical analyses. Across the years, I found myself interested into the history of French revolution in the Indian Ocean. This history and its impact spans over decades across multiple locations like the Mascarene Islands, India, and of course, France and the UK as well. Given the huge amount of information that my brain needs to process to get a good understanding of all the intricacies happening on at that time, I have decided to build a RAG pipeline powered by graph databases to help me out. This is perfect for a RAG system based on graph representation of entities. This experiment addresses that challenge head-on, building a Retrieval-Augmented Generation (RAG) system that transforms raw research PDFs into an intelligent, queryable knowledge base augmented with relationship understanding through graph technology.</p>
+                <div class="tag-list">
+                </div>
+            </div>
+            -->
+    <!-- UX REVAMP: post-item row layout (used on home + archive) -->
+            <a href="https://jsooriah.github.io/happyapps/blog/posts/why-your-product-team-speaks-a-different-language-than-your-customers-jtbd-part-1/" class="post-item">
+              <div class="post-meta-col">
+                <span class="post-date">Jan 12, 2026</span>
+                <span class="post-readtime">4 min</span>
+                
+              </div>
+              <div class="post-body-col">
+                <h3 class="post-title">Why Your Product Team Speaks a Different Language Than Your customers</h3>
+                <p class="post-excerpt">Every product team has experienced this moment. You ship a feature you&#39;re certain customers need. The engineering was solid. The design was clean. The rollout was smooth. And then... crickets. Not because customers don&#39;t have the problem you&#39;re solving. They do. But because the way you understood their problem and the way they actually experience it exist in two completely different universes.</p>
+              </div>
+            </a>
+            
+            <!-- OLD CARD (commented out, kept for reference)
+            <div class="card post">
+                <div class="author-list">
+                        <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
+                        <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
+                        </a>
+                </div>
+                <div class="meta">
+                    <time datetime="Jan 12, 2026">Jan 12, 2026</time>
+                     &middot; <span class="reading-time">4 min read</span>
+                </div>
+                <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/why-your-product-team-speaks-a-different-language-than-your-customers-jtbd-part-1/">Why Your Product Team Speaks a Different Language Than Your customers</a></h3>
+                <p>Every product team has experienced this moment. You ship a feature you&#39;re certain customers need. The engineering was solid. The design was clean. The rollout was smooth. And then... crickets. Not because customers don&#39;t have the problem you&#39;re solving. They do. But because the way you understood their problem and the way they actually experience it exist in two completely different universes.</p>
+                <div class="tag-list">
+                </div>
+            </div>
+            -->
+    <!-- UX REVAMP: post-item row layout (used on home + archive) -->
+            <a href="https://jsooriah.github.io/happyapps/blog/posts/the-pragmatist-roots-of-agile-john-deweys-philosophy-and-modern-software-development/" class="post-item">
+              <div class="post-meta-col">
+                <span class="post-date">Dec 12, 2025</span>
+                <span class="post-readtime">6 min</span>
+                
+              </div>
+              <div class="post-body-col">
+                <h3 class="post-title">The Pragmatist Roots of Agile - John Dewey&#39;s Philosophy and Modern Software Development</h3>
+                <p class="post-excerpt">The Pragmatist Roots of Agile - John Dewey&#39;s Philosophy and Modern Software Development. When the seventeen software developers gathered at the Snowbird ski resort in Utah in 2001 to draft the Agile Manifesto, they were articulating principles that would revolutionize how teams build software. What they may not have realized is that they were echoing ideas first developed nearly a century earlier by American philosopher and educator John Dewey. The parallels between Dewey&#39;s pragmatist philosophy and agile software development reveal a deeper truth - both represent responses to rigid, theoretical approaches that fail to account for the messy, adaptive nature of real-world problem-solving.</p>
+              </div>
+            </a>
+            
+            <!-- OLD CARD (commented out, kept for reference)
+            <div class="card post">
+                <div class="author-list">
+                        <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
+                        <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
+                        </a>
+                </div>
+                <div class="meta">
+                    <time datetime="Dec 12, 2025">Dec 12, 2025</time>
+                     &middot; <span class="reading-time">6 min read</span>
+                </div>
+                <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/the-pragmatist-roots-of-agile-john-deweys-philosophy-and-modern-software-development/">The Pragmatist Roots of Agile - John Dewey&#39;s Philosophy and Modern Software Development</a></h3>
+                <p>The Pragmatist Roots of Agile - John Dewey&#39;s Philosophy and Modern Software Development. When the seventeen software developers gathered at the Snowbird ski resort in Utah in 2001 to draft the Agile Manifesto, they were articulating principles that would revolutionize how teams build software. What they may not have realized is that they were echoing ideas first developed nearly a century earlier by American philosopher and educator John Dewey. The parallels between Dewey&#39;s pragmatist philosophy and agile software development reveal a deeper truth - both represent responses to rigid, theoretical approaches that fail to account for the messy, adaptive nature of real-world problem-solving.</p>
+                <div class="tag-list">
+                </div>
+            </div>
+            -->
+    <!-- UX REVAMP: post-item row layout (used on home + archive) -->
+            <a href="https://jsooriah.github.io/happyapps/blog/posts/the-agent-memory-landscape/" class="post-item">
+              <div class="post-meta-col">
+                <span class="post-date">Dec 7, 2025</span>
+                <span class="post-readtime">6 min</span>
+                
+              </div>
+              <div class="post-body-col">
+                <h3 class="post-title">The Agent Memory Landscape - A PM Guide to Building Context-Aware AI Systems</h3>
+                <p class="post-excerpt">AI agents, quite often, don’t remember. They are brilliant in the moment, terrible across moments. Every conversation is day one. Every interaction starts from zero ! That limitation—and the architectural challenge of solving it—has become close to fascination to me. LLMs and agents are nothing without memory and context. An agent that forgets is just an expensive API call. An agent that remembers becomes something closer to a very good friend or assistant ! The landscape of agent memory solutions has exploded in the past two years. For product managers building AI-native products, understanding this landscape isn&#39;t optional—it&#39;s foundational. Here&#39;s a map of the territory.</p>
+              </div>
+            </a>
+            
+            <!-- OLD CARD (commented out, kept for reference)
+            <div class="card post">
+                <div class="author-list">
+                        <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
+                        <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
+                        </a>
+                </div>
+                <div class="meta">
+                    <time datetime="Dec 7, 2025">Dec 7, 2025</time>
+                     &middot; <span class="reading-time">6 min read</span>
+                </div>
+                <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/the-agent-memory-landscape/">The Agent Memory Landscape - A PM Guide to Building Context-Aware AI Systems</a></h3>
+                <p>AI agents, quite often, don’t remember. They are brilliant in the moment, terrible across moments. Every conversation is day one. Every interaction starts from zero ! That limitation—and the architectural challenge of solving it—has become close to fascination to me. LLMs and agents are nothing without memory and context. An agent that forgets is just an expensive API call. An agent that remembers becomes something closer to a very good friend or assistant ! The landscape of agent memory solutions has exploded in the past two years. For product managers building AI-native products, understanding this landscape isn&#39;t optional—it&#39;s foundational. Here&#39;s a map of the territory.</p>
+                <div class="tag-list">
+                </div>
+            </div>
+            -->
+          </div>
+        </div>
+        
+        <section class="about-strip">
+          <div class="about-inner">
+            <img class="about-avatar"
+              src="/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg"
+              alt="Joel Sooriah" width="80" height="80" />
+            <div>
+              <p class="about-name">Joel Sooriah</p>
+              <p class="about-bio">Head of Product working at the intersection of trust &amp; safety infrastructure, AI agents, and regulatory compliance. Writing about building products and teams the human-centric way.</p>
+              <div class="about-links">
+                <a href="/happyapps/blog/posts/about-this-blog/">About this blog</a>
+                <a href="https://github.com/jsooriah/" target="_blank" rel="noopener">GitHub</a>
+                <a href="https://www.linkedin.com/in/jsooriah/" target="_blank" rel="noopener">LinkedIn</a>
+              </div>
+            </div>
           </div>
         </section>
         
         
-        <section class="">
-            <div class="wrapper">
-                <div class="grid grid-221">
-                    <div class="card post">
-                        <div class="author-list">
-                                <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
-                                <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
-                                </a>
-                        </div>
-                    
-                        <div class="meta">
-                            <time datetime="2026.06.05.">2026.06.05.</time>
-                             &middot; <span class="reading-time">9 min read</span>
-                        </div>
-                        
-                        <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/why-your-best-growth-opportunity-isnt-asking-for-anything/">Why Your Best Growth Opportunity Isn&#39;t Asking for Anything</a></h3>
-                        <p>Most roadmaps are built on a structurally flawed input - the customers who engage most actively in discovery are rarely the customers who represent the largest growth opportunity nor the one your organization need at a specific point in time. They are also potentially vocal, articulate, and easy to build a business case around. They are, more often than not, a minority of the addressable market — and the energy spent serving their sophistication is energy not spent on the segment that would actually move the revenue needle. This is the minority segment problem. It doesn&#39;t show up in your funnel metrics your NPS or your win/loss analysis. It shows up when a competitor enters with a simpler product captures a segment you never knew you were ignoring and grows faster than your roadmap can respond.</p>
-                        
-                        
-                        <div class="tag-list">
-                        </div>
-                    </div>
-            <div class="card post">
-                        <div class="author-list">
-                                <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
-                                <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
-                                </a>
-                        </div>
-                    
-                        <div class="meta">
-                            <time datetime="2026.04.18.">2026.04.18.</time>
-                             &middot; <span class="reading-time">8 min read</span>
-                        </div>
-                        
-                        <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/openspec-bringing-specification-driven-development-to-a-research-prototype/">OpenSpec Bringing Specification-Driven Development to a Research Prototype</a></h3>
-                        <p>Research prototypes have a particular failure mode - they work, and then they grow. What starts as a script to test an idea becomes a pipeline. The pipeline gains a frontend. The frontend gets tabs. New retrieval modes are added. A knowledge graph appears. An agent memory layer. Six months later, the codebase is genuinely complex — but the only documentation is the code itself, scattered comments, and whoever wrote it remembers most of what it does.This is exactly where the RAG assistant for historical research in the Indian Ocean found itself. Eight distinct subsystems — ingestion, chunking, embedding, retrieval, generation, knowledge graph, agent memory, evaluation — each with non-obvious constraints, silent failure modes and subtle interactions. No single file explained how they fit together or *why* certain decisions were made.</p>
-                        
-                        
-                        <div class="tag-list">
-                        </div>
-                    </div>
-            <div class="card post">
-                        <span class="featured">featured</span>
-                        <div class="author-list">
-                                <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
-                                <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
-                                </a>
-                        </div>
-                    
-                        <div class="meta">
-                            <time datetime="2026.04.08.">2026.04.08.</time>
-                             &middot; <span class="reading-time">24 min read</span>
-                        </div>
-                        
-                        <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/sdd-the-spec-as-a-new-social-contract/">SDD - The Spec as a New Social Contract</a></h3>
-                        <p>Spec-Driven Development — SDD — is, at its best, a proposed answer to this perennial failure of translation. But it is arriving in 2026 not as a project management reform but as an engineering methodology, carried into organisations on the back of agentic AI tools. And that origin shapes everything about its promise and its limits.</p>
-                        
-                        
-                        <div class="tag-list">
-                        </div>
-                    </div>
-            <div class="card post">
-                        <div class="author-list">
-                                <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
-                                <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
-                                </a>
-                        </div>
-                    
-                        <div class="meta">
-                            <time datetime="2026.04.06.">2026.04.06.</time>
-                             &middot; <span class="reading-time">6 min read</span>
-                        </div>
-                        
-                        <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/before-the-graph-on-the-necessity-of-ontology-design/">Before the Graph On the Necessity of Ontology Design</a></h3>
-                        <p>I have been dwelling into GraphRAG for a few weeks now, vibe coding in my spare time. I started vibe coding GRAPHOS — a Graph-based Research Assistant for Historical and Ontological Sources (I recently changed the project name to reflect the importance of ontologies in this piece of work) — I assumed the hard problem would be the ingestion pipeline. Parse the documents. Extract the entities. Build the graph. Let the system answer questions.I was wrong about where the hard problem was.</p>
-                        
-                        
-                        <div class="tag-list">
-                        </div>
-                    </div>
-            <div class="card post">
-                        <div class="author-list">
-                                <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
-                                <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
-                                </a>
-                        </div>
-                    
-                        <div class="meta">
-                            <time datetime="2026.01.31.">2026.01.31.</time>
-                             &middot; <span class="reading-time">8 min read</span>
-                        </div>
-                        
-                        <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/from-feature-requests-to-customer-jobs-basecamps-root-cause-analysis-approach-to-product-strategy/">From Feature Requests to Customer Jobs - Basecamp&#39;s Root Cause Analysis Approach to Product Strategy</a></h3>
-                        <p>Product teams face a universal challenge, customers constantly request features, but building everything would create bloated, unfocused products. The traditional approach—either ignoring requests entirely or meticulously tracking them in spreadsheets—fails to extract the strategic intelligence buried within these requests. Basecamp&#39;s evolved methodology demonstrates how Jobs-to-be-Done interviewing transforms raw feature requests into customer-centric product strategy.</p>
-                        
-                        
-                        <div class="tag-list">
-                        </div>
-                    </div>
-            <div class="card post">
-                        <span class="featured">featured</span>
-                        <div class="author-list">
-                                <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
-                                <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
-                                </a>
-                        </div>
-                    
-                        <div class="meta">
-                            <time datetime="2026.01.15.">2026.01.15.</time>
-                             &middot; <span class="reading-time">9 min read</span>
-                        </div>
-                        
-                        <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/gherkin-syntax-the-rosetta-stone-of-cross-functional-alignment-jtbd-part-2/">Gherkin Syntax - The Rosetta Stone of Cross-Functional Alignment</a></h3>
-                        <p>In 1799, French soldiers discovered a stone tablet in Egypt that changed our understanding of ancient civilizations. The Rosetta Stone contained the same decree written in three different scripts—hieroglyphics, Demotic, and ancient Greek. Because scholars could read Greek, they could finally decode hieroglyphics.Your product team needs a Rosetta Stone.Not to decode ancient languages, but to translate between the four dialects we identified in Part 1 - customer outcomes, product capabilities, engineering logic, and business metrics. You need a syntax that all four groups can read, write, and understand without losing meaning in translation.That syntax already exists. You&#39;ve probably seen it in your engineering team&#39;s test suites. It&#39;s called Gherkin.</p>
-                        
-                        
-                        <div class="tag-list">
-                        </div>
-                    </div>
-            <div class="card post">
-                        <div class="author-list">
-                                <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
-                                <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
-                                </a>
-                        </div>
-                    
-                        <div class="meta">
-                            <time datetime="2026.01.14.">2026.01.14.</time>
-                             &middot; <span class="reading-time">4 min read</span>
-                        </div>
-                        
-                        <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/building-an-agentic-rag-tool-to-support-my-hobby-research-into-the-history-of-the-french-revolution-in-the-indian-ocean/">Building an agentic RAG tool to support my hobby research into the history of the French Revolution in the Indian Ocean</a></h3>
-                        <p>Academic research generates an enormous volume of PDF documents—papers, theses, archival materials, and historical analyses. Across the years, I found myself interested into the history of French revolution in the Indian Ocean. This history and its impact spans over decades across multiple locations like the Mascarene Islands, India, and of course, France and the UK as well. Given the huge amount of information that my brain needs to process to get a good understanding of all the intricacies happening on at that time, I have decided to build a RAG pipeline powered by graph databases to help me out. This is perfect for a RAG system based on graph representation of entities. This experiment addresses that challenge head-on, building a Retrieval-Augmented Generation (RAG) system that transforms raw research PDFs into an intelligent, queryable knowledge base augmented with relationship understanding through graph technology.</p>
-                        
-                        
-                        <div class="tag-list">
-                        </div>
-                    </div>
-            <div class="card post">
-                        <div class="author-list">
-                                <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
-                                <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
-                                </a>
-                        </div>
-                    
-                        <div class="meta">
-                            <time datetime="2026.01.12.">2026.01.12.</time>
-                             &middot; <span class="reading-time">4 min read</span>
-                        </div>
-                        
-                        <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/why-your-product-team-speaks-a-different-language-than-your-customers-jtbd-part-1/">Why Your Product Team Speaks a Different Language Than Your customers</a></h3>
-                        <p>Every product team has experienced this moment. You ship a feature you&#39;re certain customers need. The engineering was solid. The design was clean. The rollout was smooth. And then... crickets. Not because customers don&#39;t have the problem you&#39;re solving. They do. But because the way you understood their problem and the way they actually experience it exist in two completely different universes.</p>
-                        
-                        
-                        <div class="tag-list">
-                        </div>
-                    </div>
-            <div class="card post">
-                        <div class="author-list">
-                                <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
-                                <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
-                                </a>
-                        </div>
-                    
-                        <div class="meta">
-                            <time datetime="2025.12.12.">2025.12.12.</time>
-                             &middot; <span class="reading-time">6 min read</span>
-                        </div>
-                        
-                        <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/the-pragmatist-roots-of-agile-john-deweys-philosophy-and-modern-software-development/">The Pragmatist Roots of Agile - John Dewey&#39;s Philosophy and Modern Software Development</a></h3>
-                        <p>The Pragmatist Roots of Agile - John Dewey&#39;s Philosophy and Modern Software Development. When the seventeen software developers gathered at the Snowbird ski resort in Utah in 2001 to draft the Agile Manifesto, they were articulating principles that would revolutionize how teams build software. What they may not have realized is that they were echoing ideas first developed nearly a century earlier by American philosopher and educator John Dewey. The parallels between Dewey&#39;s pragmatist philosophy and agile software development reveal a deeper truth - both represent responses to rigid, theoretical approaches that fail to account for the messy, adaptive nature of real-world problem-solving.</p>
-                        
-                        
-                        <div class="tag-list">
-                        </div>
-                    </div>
-            <div class="card post">
-                        <div class="author-list">
-                                <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
-                                <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
-                                </a>
-                        </div>
-                    
-                        <div class="meta">
-                            <time datetime="2025.12.07.">2025.12.07.</time>
-                             &middot; <span class="reading-time">6 min read</span>
-                        </div>
-                        
-                        <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/the-agent-memory-landscape/">The Agent Memory Landscape - A PM Guide to Building Context-Aware AI Systems</a></h3>
-                        <p>AI agents, quite often, don’t remember. They are brilliant in the moment, terrible across moments. Every conversation is day one. Every interaction starts from zero ! That limitation—and the architectural challenge of solving it—has become close to fascination to me. LLMs and agents are nothing without memory and context. An agent that forgets is just an expensive API call. An agent that remembers becomes something closer to a very good friend or assistant ! The landscape of agent memory solutions has exploded in the past two years. For product managers building AI-native products, understanding this landscape isn&#39;t optional—it&#39;s foundational. Here&#39;s a map of the territory.</p>
-                        
-                        
-                        <div class="tag-list">
-                        </div>
-                    </div>
-                </div>
-        
-                <div class="centered more-posts">
-                    <a class="button" href="/happyapps/blog/posts/page/1">Browse all posts</a>
-                </div>
-            </div>
-        </section>
-        
-        <!-- Google tag (gtag.js) -->
-        <script async src="https://www.googletagmanager.com/gtag/js?id="></script>
-        <script>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-        
-          gtag('config', '');
-        </script>
-        
-        
     </main>
     
+    <!-- UX REVAMP: simplified footer -->
+    <footer class="site-footer">
+      <p><a href="/happyapps/">happyapps</a> · Joel Sooriah</p>
+      <p class="footer-copy">Built with <a href="https://github.com/toucansites/toucan" target="_blank" rel="noopener">Toucan</a> &amp; Swift · MIT License</p>
+    </footer>
+    
+    <!-- OLD FOOTER (commented out, kept for reference)
     <div id="footer-container">
         <footer class="wrapper">
             <div class="grid grid-211">
@@ -406,28 +549,17 @@
                     Toucan is open source and is free on Github.<br/>
                     <a href="https://github.com/toucansites/website/blob/main/LICENSE" target="_blank">MIT License</a></small>
                     </p>
-                    <div class="external">
-                        
-                    </div>
+                    <div class="external"></div>
                     <div class="contact">
                         <h3></h3>
-                        <p>
-                        <br>
-                        <a href="mailto:">
-                            
-                        </a>
-                        </p>
+                        <p><br><a href="mailto:"></a></p>
                     </div>
                 </div>
             </div>
-            
-    
             <div id="copyright"></div>
-            
-            
-    
         </footer>
     </div>
+    -->
 
     
     

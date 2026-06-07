@@ -8,7 +8,7 @@
 
     <div class="hero-copy">
       <p class="hero-label">happyapps</p>
-      <h1>Product &amp; Engineering<br><em>Intelligence</em></h1>
+      <h1>Product, Business<br>&amp; Engineering <em>Intelligence</em></h1>
       <p class="hero-deck">
         Writing at the intersection of product management, AI engineering, and agile practice. Human-centric by design.
       </p>
@@ -71,51 +71,10 @@
   </div>
 </section>
 
-<!-- OLD HOME (commented out, kept for reference)
-{{& page.contents}}
-
-<section class="hero primary">
-    <div class="wrapper">
-        <picture>
-            <source srcset="/happyapps/images/logos/happyapps-logo~dark.png" media="(prefers-color-scheme: dark)">
-            <img src="/happyapps/images/logos/happyapps-logo.png" alt="Logo of {{site.title}}" title="{{site.title}}">
-        </picture>
-        <h2>Product and Engineering Intelligence</h2>
-    </div>
-</section>
-
-<section class="book">
-  <div class="wrapper">
-      <header>
-          <h2>Featured Article</h2>
-          <p>Current series describe how to use the Jobs to Done framework at each step to ensure customer centricity but also how to use Gherkins as foundation for alignment across all expertise in an organisation</p>
-      </header>
-      <div class="grid grid-422">
-          <div class="info">
-            <h3>Gherkin Syntax - The Rosetta Stone of Cross-Functional Alignment</h3>
-            <p>In 1799...</p>
-          </div>
-          <div class="centered more-posts">
-            <a class="button" href="/blog/posts/page/1">Read Article</a>
-        </div>
-      </div>
-  </div>
-</section>
-
-<section class="">
-    <div class="wrapper">
-        {{#empty(site.context.posts)}}Empty.{{/empty(site.context.posts)}}
-        {{^empty(site.context.posts)}}
-        <div class="grid grid-221">
-            {{#site.context.posts}}{{> partials.blog.post}}{{/site.context.posts}}
-        </div>
-        {{/empty(site.context.posts)}}
-        <div class="centered more-posts">
-            <a class="button" href="/happyapps/blog/posts/page/1">Browse all posts</a>
-        </div>
-    </div>
-</section>
--->
+{{! OLD HOME — Mustache tags stripped to prevent rendering inside HTML comments.
+    Structure was: image logo hero > hardcoded featured article card > grid of site.context.posts
+    Replaced by: home-hero + topics-bar + posts-section + about-strip (above)
+}}
 
 {{/main}}
 {{/html}}
