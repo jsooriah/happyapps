@@ -1,33 +1,59 @@
 {{<html}}
 {{$main}}
+
+<!-- UX REVAMP: article hero + full-width body -->
+<article>
+  <header class="article-hero">
+    <div class="hero-inner">
+
+      <p class="kicker">
+        {{#page.tags}}<span class="kicker-tag">{{title}}</span>{{/page.tags}}
+        <span class="kicker-date">{{page.publication.html}}</span>
+      </p>
+
+      <h1>{{page.title}}</h1>
+
+      <p class="deck">{{page.description}}</p>
+
+      <div class="byline-block">
+        <div class="byline-meta">
+          {{#page.authors}}
+          <span class="byline-name">{{title}}</span>
+          <span class="byline-role">Head of Product · happyapps</span>
+          {{/page.authors}}
+        </div>
+        {{#page.readingTime}}<div class="byline-reading">{{page.readingTime}} min read</div>{{/page.readingTime}}
+      </div>
+
+    </div>
+  </header>
+
+  <div class="article-body">
+    {{& page.contents}}
+  </div>
+</article>
+
+<!-- OLD ARTICLE LAYOUT (commented out, kept for reference)
 <div class="wrapper">
 <div class="article-with-toc">
     <div>
         <article>
             <header>
-
                 <div class="meta">
                     <time datetime="{{page.publication.html}}">{{page.publication.html}}</time>
                     {{#page.readingTime}} &middot; <span class="reading-time">{{page.readingTime}} min read</span>{{/page.readingTime}}
                 </div>
-                
                 <h1>{{page.title}}</h1>
                 <p>{{page.description}}</p>
             </header>
-
             <section>
                 {{& page.contents}}
             </section>
-            
-            
         </article>
     </div>
     <div>
         <aside>
-        {{#page.featured}}
-        <span class="featured">featured</span>
-        {{/page.featured}}
-
+        {{#page.featured}}<span class="featured">featured</span>{{/page.featured}}
         <div class="author-list">
             {{#page.authors}}
                 <a href="{{permalink}}">
@@ -48,22 +74,15 @@
 
 <section class="primary">
     <div class="wrapper">
-        {{#empty(page.related)}}
-        {{/empty(page.related)}}
         {{^empty(page.related)}}
-        <header>
-        <h2>Related posts</h2>
-        </header>
+        <header><h2>Related posts</h2></header>
         <div class="grid grid-221">
-            {{#page.related}}
-                {{> partials.blog.post}}
-            {{/page.related}}
+            {{#page.related}}{{> partials.blog.post}}{{/page.related}}
         </div>
         {{/empty(page.related)}}
     </div>
 </section>
-
-
+-->
 
 {{/main}}
 {{/html}}

@@ -22,10 +22,16 @@
     <meta name="twitter:description" content="Posts page - 2 / 2">
     <meta name="twitter:image" content="images/default.png">
     
+    <!-- UX REVAMP: new font stack -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
+    <!-- UX REVAMP: single unified stylesheet replaces the 8 below -->
+    <link rel="stylesheet" href="/css/revamp.css">
+
+    <!-- OLD CSS (commented out, kept for reference)
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap">
     <link rel="stylesheet" href="/happyapps/css/modern-normalize.css">
     <link rel="stylesheet" href="/happyapps/css/modern-base.css">
     <link rel="stylesheet" href="/happyapps/css/variables.css">
@@ -34,8 +40,8 @@
     <link rel="stylesheet" href="/happyapps/css/navigation.css">
     <link rel="stylesheet" href="/happyapps/css/footer.css">
     <link rel="stylesheet" href="/happyapps/css/style.css">
-
     
+    -->
     
     <link rel="icon" href="/icons/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/icons/icon-320.png" type="image/png">
@@ -76,6 +82,19 @@
 </head>
 
 <body>
+    <!-- UX REVAMP: text-logo sticky nav -->
+    <header class="site-header">
+      <nav class="site-nav">
+        <a href="/happyapps/" class="site-logo">happyapps</a>
+        <div class="nav-links">
+          <a href="/happyapps/blog/posts/page/1">Writing</a>
+          <a href="/happyapps/blog/posts/about-this-blog/">About</a>
+          <a href="https://github.com/jsooriah/" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </nav>
+    </header>
+    
+    <!-- OLD NAV (commented out, kept for reference)
     <div id="navigation-container">
         <header id="navigation" class="wrapper">
             <a href="/happyapps/">
@@ -107,14 +126,242 @@
             </nav>
         </header>
     </div>
+    -->
     
     <main>
+        
+        <!-- UX REVAMP: clean paginated archive -->
+        <div class="posts-section">
+          <div class="section-head">
+            <span class="section-title">Writing</span>
+            <a href="/happyapps/rss.xml" class="section-more">RSS</a>
+          </div>
+        
+          <div class="post-list">
+            <!-- UX REVAMP: post-item row layout (used on home + archive) -->
+            <a href="https://jsooriah.github.io/happyapps/blog/posts/the-silent-kitchen-what-sebastien-bras-reminds-us-about-building-products-and-teams/" class="post-item">
+              <div class="post-meta-col">
+                <span class="post-date">Nov 13, 2025</span>
+                <span class="post-readtime">13 min</span>
+                
+              </div>
+              <div class="post-body-col">
+                <h3 class="post-title">The Silent Kitchen - What Sébastien Bras Reminds Us About Building Products and Teams</h3>
+                <p class="post-excerpt">We&#39;ve all absorbed the mythology of the chaotic kitchen—the screaming, the clanging, the barely controlled chaos of a dinner rush. Gordon Ramsay has built an empire on it. &quot;Yes, chef!&quot; shouted at maximum volume. Pans slammed for emphasis. The kitchen as controlled explosion. The brigade system as military operation, with hierarchy enforced through decibels. This mythology is so pervasive that we accept it as the natural state of excellence under pressure. We assume that when stakes are high and standards are higher, chaos is not just inevitable but necessary—the very proof of seriousness, of commitment, of refusing to accept mediocrity.</p>
+              </div>
+            </a>
+            
+            <!-- OLD CARD (commented out, kept for reference)
+            <div class="card post">
+                <div class="author-list">
+                        <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
+                        <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
+                        </a>
+                </div>
+                <div class="meta">
+                    <time datetime="Nov 13, 2025">Nov 13, 2025</time>
+                     &middot; <span class="reading-time">13 min read</span>
+                </div>
+                <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/the-silent-kitchen-what-sebastien-bras-reminds-us-about-building-products-and-teams/">The Silent Kitchen - What Sébastien Bras Reminds Us About Building Products and Teams</a></h3>
+                <p>We&#39;ve all absorbed the mythology of the chaotic kitchen—the screaming, the clanging, the barely controlled chaos of a dinner rush. Gordon Ramsay has built an empire on it. &quot;Yes, chef!&quot; shouted at maximum volume. Pans slammed for emphasis. The kitchen as controlled explosion. The brigade system as military operation, with hierarchy enforced through decibels. This mythology is so pervasive that we accept it as the natural state of excellence under pressure. We assume that when stakes are high and standards are higher, chaos is not just inevitable but necessary—the very proof of seriousness, of commitment, of refusing to accept mediocrity.</p>
+                <div class="tag-list">
+                </div>
+            </div>
+            -->
+    <!-- UX REVAMP: post-item row layout (used on home + archive) -->
+            <a href="https://jsooriah.github.io/happyapps/blog/posts/the-coordination-infrastructure-of-small-talk-in-remote-teams/" class="post-item">
+              <div class="post-meta-col">
+                <span class="post-date">Sep 6, 2025</span>
+                <span class="post-readtime">4 min</span>
+                
+              </div>
+              <div class="post-body-col">
+                <h3 class="post-title">The Coordination Infrastructure of Small Talk in Remote Teams</h3>
+                <p class="post-excerpt">Remote work hasn&#39;t just changed where we work - it&#39;s exposed how much of our coordination machinery was invisible. When teams went remote and small talk evaporated, what broke wasn&#39;t morale or &quot;culture&quot; in some fuzzy sense. It was the infrastructure for coordination itself. Small talk wasn&#39;t downtime between real work. It was the continuous background process that made everything else work - the ambient context sharing, the trust building, the calibration of shared understanding. Teams that lost it found collaboration got harder, not easier, even with all the productivity tools in the world.</p>
+              </div>
+            </a>
+            
+            <!-- OLD CARD (commented out, kept for reference)
+            <div class="card post">
+                <div class="author-list">
+                        <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
+                        <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
+                        </a>
+                </div>
+                <div class="meta">
+                    <time datetime="Sep 6, 2025">Sep 6, 2025</time>
+                     &middot; <span class="reading-time">4 min read</span>
+                </div>
+                <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/the-coordination-infrastructure-of-small-talk-in-remote-teams/">The Coordination Infrastructure of Small Talk in Remote Teams</a></h3>
+                <p>Remote work hasn&#39;t just changed where we work - it&#39;s exposed how much of our coordination machinery was invisible. When teams went remote and small talk evaporated, what broke wasn&#39;t morale or &quot;culture&quot; in some fuzzy sense. It was the infrastructure for coordination itself. Small talk wasn&#39;t downtime between real work. It was the continuous background process that made everything else work - the ambient context sharing, the trust building, the calibration of shared understanding. Teams that lost it found collaboration got harder, not easier, even with all the productivity tools in the world.</p>
+                <div class="tag-list">
+                </div>
+            </div>
+            -->
+    <!-- UX REVAMP: post-item row layout (used on home + archive) -->
+            <a href="https://jsooriah.github.io/happyapps/blog/posts/dont-go-chasing-waterfalls-and-turn-the-ship-around/" class="post-item">
+              <div class="post-meta-col">
+                <span class="post-date">Sep 6, 2025</span>
+                <span class="post-readtime">5 min</span>
+                
+              </div>
+              <div class="post-body-col">
+                <h3 class="post-title">Don&#39;t go chasing waterfalls and turn the ship around</h3>
+                <p class="post-excerpt">Historically, many organisations operated with a waterfall-like model where product managers or business analysts would create detailed specifications that engineers would implement. Engineering teams would receive “clearer guidance upfront” with regular check-ins to ensure alignment. This approach treats engineers primarily as implementers who translate requirements into code.</p>
+              </div>
+            </a>
+            
+            <!-- OLD CARD (commented out, kept for reference)
+            <div class="card post">
+                <div class="author-list">
+                        <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
+                        <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
+                        </a>
+                </div>
+                <div class="meta">
+                    <time datetime="Sep 6, 2025">Sep 6, 2025</time>
+                     &middot; <span class="reading-time">5 min read</span>
+                </div>
+                <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/dont-go-chasing-waterfalls-and-turn-the-ship-around/">Don&#39;t go chasing waterfalls and turn the ship around</a></h3>
+                <p>Historically, many organisations operated with a waterfall-like model where product managers or business analysts would create detailed specifications that engineers would implement. Engineering teams would receive “clearer guidance upfront” with regular check-ins to ensure alignment. This approach treats engineers primarily as implementers who translate requirements into code.</p>
+                <div class="tag-list">
+                </div>
+            </div>
+            -->
+    <!-- UX REVAMP: post-item row layout (used on home + archive) -->
+            <a href="https://jsooriah.github.io/happyapps/blog/posts/root-cause-analysis-in-product-management-learning-the-hard-way/" class="post-item">
+              <div class="post-meta-col">
+                <span class="post-date">May 29, 2025</span>
+                <span class="post-readtime">4 min</span>
+                
+              </div>
+              <div class="post-body-col">
+                <h3 class="post-title">Root Cause Analysis In Product Management Learning The Hard Way</h3>
+                <p class="post-excerpt">As tech people, we’re often eager to build. The excitement of creating something new, something that showcases our technical capabilities and vision, can be intoxicating. But sometimes, our rush to solution-building can blind us to the fundamental question that should drive every product decision:What problem are we really solving?</p>
+              </div>
+            </a>
+            
+            <!-- OLD CARD (commented out, kept for reference)
+            <div class="card post">
+                <div class="author-list">
+                        <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
+                        <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
+                        </a>
+                </div>
+                <div class="meta">
+                    <time datetime="May 29, 2025">May 29, 2025</time>
+                     &middot; <span class="reading-time">4 min read</span>
+                </div>
+                <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/root-cause-analysis-in-product-management-learning-the-hard-way/">Root Cause Analysis In Product Management Learning The Hard Way</a></h3>
+                <p>As tech people, we’re often eager to build. The excitement of creating something new, something that showcases our technical capabilities and vision, can be intoxicating. But sometimes, our rush to solution-building can blind us to the fundamental question that should drive every product decision:What problem are we really solving?</p>
+                <div class="tag-list">
+                </div>
+            </div>
+            -->
+    <!-- UX REVAMP: post-item row layout (used on home + archive) -->
+            <a href="https://jsooriah.github.io/happyapps/blog/posts/the-evolution-of-ux-in-the-age-of-ai-from-interfaces-to-intelligence/" class="post-item">
+              <div class="post-meta-col">
+                <span class="post-date">May 20, 2025</span>
+                <span class="post-readtime">5 min</span>
+                
+              </div>
+              <div class="post-body-col">
+                <h3 class="post-title">The Evolution of UX in the Age of AI - From Interfaces to Intelligence</h3>
+                <p class="post-excerpt">Users don’t fundamentally care about your interface — they care about what it helps them accomplish. Nobody opens Photoshop because they love its toolbar; they open it because they need to edit an image. The interface is just the mediator between intention and result. This realization brings us to a critical inflection point - What if our obsession with UI elements has been missing the bigger picture of UX — the holistic user experience? What if AI could help us transcend the limitations of traditional interfaces to focus directly on user outcomes?</p>
+              </div>
+            </a>
+            
+            <!-- OLD CARD (commented out, kept for reference)
+            <div class="card post">
+                <div class="author-list">
+                        <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
+                        <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
+                        </a>
+                </div>
+                <div class="meta">
+                    <time datetime="May 20, 2025">May 20, 2025</time>
+                     &middot; <span class="reading-time">5 min read</span>
+                </div>
+                <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/the-evolution-of-ux-in-the-age-of-ai-from-interfaces-to-intelligence/">The Evolution of UX in the Age of AI - From Interfaces to Intelligence</a></h3>
+                <p>Users don’t fundamentally care about your interface — they care about what it helps them accomplish. Nobody opens Photoshop because they love its toolbar; they open it because they need to edit an image. The interface is just the mediator between intention and result. This realization brings us to a critical inflection point - What if our obsession with UI elements has been missing the bigger picture of UX — the holistic user experience? What if AI could help us transcend the limitations of traditional interfaces to focus directly on user outcomes?</p>
+                <div class="tag-list">
+                </div>
+            </div>
+            -->
+    <!-- UX REVAMP: post-item row layout (used on home + archive) -->
+            <a href="https://jsooriah.github.io/happyapps/blog/posts/about-this-blog/" class="post-item">
+              <div class="post-meta-col">
+                <span class="post-date">Apr 19, 2025</span>
+                <span class="post-readtime">1 min</span>
+                
+              </div>
+              <div class="post-body-col">
+                <h3 class="post-title">About this blog</h3>
+                <p class="post-excerpt">Blogging helps me reflect on my day to day initiatives at work - product intitiatives, methodologies, interaction with cross functional teams, customers, management, and end users. Being quite fascinated by the human centered design element of things in an excessively digitalized world, I came to realise that most problems encountered by organisations, are ultimately a human problem - lack of alignment, team boundaries, communication, lack of empathy, ..., and the list can be long, ...very long. After some years of experience in the field, I found myself solving these problems, whenever I see teams struggling, I cannot help from finding ways to solve them. As a matter of fact, that&#39;s exactly how I transitioned from engineering to product management. Blogging helps me learn while I am writing - whenever I experience the desire to write on something that I believe should be shared to others, I run also some research to support my writings and learn along the way.</p>
+              </div>
+            </a>
+            
+            <!-- OLD CARD (commented out, kept for reference)
+            <div class="card post">
+                <div class="author-list">
+                        <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
+                        <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
+                        </a>
+                </div>
+                <div class="meta">
+                    <time datetime="Apr 19, 2025">Apr 19, 2025</time>
+                     &middot; <span class="reading-time">1 min read</span>
+                </div>
+                <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/about-this-blog/">About this blog</a></h3>
+                <p>Blogging helps me reflect on my day to day initiatives at work - product intitiatives, methodologies, interaction with cross functional teams, customers, management, and end users. Being quite fascinated by the human centered design element of things in an excessively digitalized world, I came to realise that most problems encountered by organisations, are ultimately a human problem - lack of alignment, team boundaries, communication, lack of empathy, ..., and the list can be long, ...very long. After some years of experience in the field, I found myself solving these problems, whenever I see teams struggling, I cannot help from finding ways to solve them. As a matter of fact, that&#39;s exactly how I transitioned from engineering to product management. Blogging helps me learn while I am writing - whenever I experience the desire to write on something that I believe should be shared to others, I run also some research to support my writings and learn along the way.</p>
+                <div class="tag-list">
+                </div>
+            </div>
+            -->
+    <!-- UX REVAMP: post-item row layout (used on home + archive) -->
+            <a href="https://jsooriah.github.io/happyapps/blog/posts/shift-from-product-thinking-to-customer-progress-thinking/" class="post-item">
+              <div class="post-meta-col">
+                <span class="post-date">Mar 18, 2025</span>
+                <span class="post-readtime">17 min</span>
+                
+              </div>
+              <div class="post-body-col">
+                <h3 class="post-title">Shift from product thinking to customer progress thinking</h3>
+                <p class="post-excerpt">Every product manager has sat through a roadmap prioritization meeting that devolves into chaos. Engineering wants to pay down technical debt. Sales wants features that will close their current deals. Customer success wants fixes for the loudest complaints. Leadership wants innovation that moves metrics. Everyone&#39;s arguing about what to build. Nobody&#39;s asking why any of it matters. This is the natural endpoint of product thinking —a mode of operating where the product itself becomes the center of gravity. Features become the unit of value. Roadmaps become lists of things to ship. Success becomes adoption metrics. Product thinking feels productive because there&#39;s always something to build, something to measure, something to optimize. But it&#39;s fundamentally disconnected from the reason products exist in the first place. This is what Jobs-to-be-Done forces you to confront, customers don&#39;t want your product. They want progress. Your product is just a means to that end.</p>
+              </div>
+            </a>
+            
+            <!-- OLD CARD (commented out, kept for reference)
+            <div class="card post">
+                <span class="featured">featured</span>
+                <div class="author-list">
+                        <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
+                        <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
+                        </a>
+                </div>
+                <div class="meta">
+                    <time datetime="Mar 18, 2025">Mar 18, 2025</time>
+                     &middot; <span class="reading-time">17 min read</span>
+                </div>
+                <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/shift-from-product-thinking-to-customer-progress-thinking/">Shift from product thinking to customer progress thinking</a></h3>
+                <p>Every product manager has sat through a roadmap prioritization meeting that devolves into chaos. Engineering wants to pay down technical debt. Sales wants features that will close their current deals. Customer success wants fixes for the loudest complaints. Leadership wants innovation that moves metrics. Everyone&#39;s arguing about what to build. Nobody&#39;s asking why any of it matters. This is the natural endpoint of product thinking —a mode of operating where the product itself becomes the center of gravity. Features become the unit of value. Roadmaps become lists of things to ship. Success becomes adoption metrics. Product thinking feels productive because there&#39;s always something to build, something to measure, something to optimize. But it&#39;s fundamentally disconnected from the reason products exist in the first place. This is what Jobs-to-be-Done forces you to confront, customers don&#39;t want your product. They want progress. Your product is just a means to that end.</p>
+                <div class="tag-list">
+                </div>
+            </div>
+            -->
+          </div>
+        
+          <div class="pagination-bar">
+            <a href="https://jsooriah.github.io/happyapps/blog/posts/page/1/">1</a>
+    <a href="https://jsooriah.github.io/happyapps/blog/posts/page/2/" class="current-page">2</a>
+          </div>
+        </div>
+        
+        <!-- OLD POSTS LISTING (commented out, kept for reference)
         <section class="hero primary">
             <div class="wrapper">
                 <header>
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
-                    </svg>
+                    <svg>...</svg>
                     <p>Blog</p>
                     <h1>Posts</h1>
                     <p>Browse all posts</p>
@@ -124,154 +371,239 @@
         
         <section>
             <div class="wrapper">
-        
-                <div class="grid grid-221">
-                    <div class="card post">
-                        <div class="author-list">
-                                <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
-                                <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
-                                </a>
-                        </div>
-                    
-                        <div class="meta">
-                            <time datetime="2025.11.13.">2025.11.13.</time>
-                             &middot; <span class="reading-time">13 min read</span>
-                        </div>
-                        
-                        <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/the-silent-kitchen-what-sebastien-bras-reminds-us-about-building-products-and-teams/">The Silent Kitchen - What Sébastien Bras Reminds Us About Building Products and Teams</a></h3>
-                        <p>We&#39;ve all absorbed the mythology of the chaotic kitchen—the screaming, the clanging, the barely controlled chaos of a dinner rush. Gordon Ramsay has built an empire on it. &quot;Yes, chef!&quot; shouted at maximum volume. Pans slammed for emphasis. The kitchen as controlled explosion. The brigade system as military operation, with hierarchy enforced through decibels. This mythology is so pervasive that we accept it as the natural state of excellence under pressure. We assume that when stakes are high and standards are higher, chaos is not just inevitable but necessary—the very proof of seriousness, of commitment, of refusing to accept mediocrity.</p>
-                        
-                        
-                        <div class="tag-list">
-                        </div>
-                    </div>
-            <div class="card post">
-                        <div class="author-list">
-                                <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
-                                <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
-                                </a>
-                        </div>
-                    
-                        <div class="meta">
-                            <time datetime="2025.09.06.">2025.09.06.</time>
-                             &middot; <span class="reading-time">4 min read</span>
-                        </div>
-                        
-                        <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/the-coordination-infrastructure-of-small-talk-in-remote-teams/">The Coordination Infrastructure of Small Talk in Remote Teams</a></h3>
-                        <p>Remote work hasn&#39;t just changed where we work - it&#39;s exposed how much of our coordination machinery was invisible. When teams went remote and small talk evaporated, what broke wasn&#39;t morale or &quot;culture&quot; in some fuzzy sense. It was the infrastructure for coordination itself. Small talk wasn&#39;t downtime between real work. It was the continuous background process that made everything else work - the ambient context sharing, the trust building, the calibration of shared understanding. Teams that lost it found collaboration got harder, not easier, even with all the productivity tools in the world.</p>
-                        
-                        
-                        <div class="tag-list">
-                        </div>
-                    </div>
-            <div class="card post">
-                        <div class="author-list">
-                                <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
-                                <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
-                                </a>
-                        </div>
-                    
-                        <div class="meta">
-                            <time datetime="2025.09.06.">2025.09.06.</time>
-                             &middot; <span class="reading-time">5 min read</span>
-                        </div>
-                        
-                        <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/dont-go-chasing-waterfalls-and-turn-the-ship-around/">Don&#39;t go chasing waterfalls and turn the ship around</a></h3>
-                        <p>Historically, many organisations operated with a waterfall-like model where product managers or business analysts would create detailed specifications that engineers would implement. Engineering teams would receive “clearer guidance upfront” with regular check-ins to ensure alignment. This approach treats engineers primarily as implementers who translate requirements into code.</p>
-                        
-                        
-                        <div class="tag-list">
-                        </div>
-                    </div>
-            <div class="card post">
-                        <div class="author-list">
-                                <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
-                                <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
-                                </a>
-                        </div>
-                    
-                        <div class="meta">
-                            <time datetime="2025.05.29.">2025.05.29.</time>
-                             &middot; <span class="reading-time">4 min read</span>
-                        </div>
-                        
-                        <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/root-cause-analysis-in-product-management-learning-the-hard-way/">Root Cause Analysis In Product Management Learning The Hard Way</a></h3>
-                        <p>As tech people, we’re often eager to build. The excitement of creating something new, something that showcases our technical capabilities and vision, can be intoxicating. But sometimes, our rush to solution-building can blind us to the fundamental question that should drive every product decision:What problem are we really solving?</p>
-                        
-                        
-                        <div class="tag-list">
-                        </div>
-                    </div>
-            <div class="card post">
-                        <div class="author-list">
-                                <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
-                                <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
-                                </a>
-                        </div>
-                    
-                        <div class="meta">
-                            <time datetime="2025.05.20.">2025.05.20.</time>
-                             &middot; <span class="reading-time">5 min read</span>
-                        </div>
-                        
-                        <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/the-evolution-of-ux-in-the-age-of-ai-from-interfaces-to-intelligence/">The Evolution of UX in the Age of AI - From Interfaces to Intelligence</a></h3>
-                        <p>Users don’t fundamentally care about your interface — they care about what it helps them accomplish. Nobody opens Photoshop because they love its toolbar; they open it because they need to edit an image. The interface is just the mediator between intention and result. This realization brings us to a critical inflection point - What if our obsession with UI elements has been missing the bigger picture of UX — the holistic user experience? What if AI could help us transcend the limitations of traditional interfaces to focus directly on user outcomes?</p>
-                        
-                        
-                        <div class="tag-list">
-                        </div>
-                    </div>
-            <div class="card post">
-                        <div class="author-list">
-                                <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
-                                <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
-                                </a>
-                        </div>
-                    
-                        <div class="meta">
-                            <time datetime="2025.04.19.">2025.04.19.</time>
-                             &middot; <span class="reading-time">1 min read</span>
-                        </div>
-                        
-                        <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/about-this-blog/">About this blog</a></h3>
-                        <p>Blogging helps me reflect on my day to day initiatives at work - product intitiatives, methodologies, interaction with cross functional teams, customers, management, and end users. Being quite fascinated by the human centered design element of things in an excessively digitalized world, I came to realise that most problems encountered by organisations, are ultimately a human problem - lack of alignment, team boundaries, communication, lack of empathy, ..., and the list can be long, ...very long. After some years of experience in the field, I found myself solving these problems, whenever I see teams struggling, I cannot help from finding ways to solve them. As a matter of fact, that&#39;s exactly how I transitioned from engineering to product management. Blogging helps me learn while I am writing - whenever I experience the desire to write on something that I believe should be shared to others, I run also some research to support my writings and learn along the way.</p>
-                        
-                        
-                        <div class="tag-list">
-                        </div>
-                    </div>
-            <div class="card post">
-                        <span class="featured">featured</span>
-                        <div class="author-list">
-                                <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
-                                <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
-                                </a>
-                        </div>
-                    
-                        <div class="meta">
-                            <time datetime="2025.03.18.">2025.03.18.</time>
-                             &middot; <span class="reading-time">17 min read</span>
-                        </div>
-                        
-                        <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/shift-from-product-thinking-to-customer-progress-thinking/">Shift from product thinking to customer progress thinking</a></h3>
-                        <p>Every product manager has sat through a roadmap prioritization meeting that devolves into chaos. Engineering wants to pay down technical debt. Sales wants features that will close their current deals. Customer success wants fixes for the loudest complaints. Leadership wants innovation that moves metrics. Everyone&#39;s arguing about what to build. Nobody&#39;s asking why any of it matters. This is the natural endpoint of product thinking —a mode of operating where the product itself becomes the center of gravity. Features become the unit of value. Roadmaps become lists of things to ship. Success becomes adoption metrics. Product thinking feels productive because there&#39;s always something to build, something to measure, something to optimize. But it&#39;s fundamentally disconnected from the reason products exist in the first place. This is what Jobs-to-be-Done forces you to confront, customers don&#39;t want your product. They want progress. Your product is just a means to that end.</p>
-                        
-                        
-                        <div class="tag-list">
-                        </div>
-                    </div>
-                </div>
             
-                <div class="pagination">
-                    <a href="https://jsooriah.github.io/happyapps/blog/posts/page/1/">1</a>
-            <a href="https://jsooriah.github.io/happyapps/blog/posts/page/2/" class="current-page">2</a>
-                </div>
+                <div class="grid grid-221">
+                <!-- UX REVAMP: post-item row layout (used on home + archive) -->
+        <a href="https://jsooriah.github.io/happyapps/blog/posts/the-silent-kitchen-what-sebastien-bras-reminds-us-about-building-products-and-teams/" class="post-item">
+          <div class="post-meta-col">
+            <span class="post-date">Nov 13, 2025</span>
+            <span class="post-readtime">13 min</span>
+            
+          </div>
+          <div class="post-body-col">
+            <h3 class="post-title">The Silent Kitchen - What Sébastien Bras Reminds Us About Building Products and Teams</h3>
+            <p class="post-excerpt">We&#39;ve all absorbed the mythology of the chaotic kitchen—the screaming, the clanging, the barely controlled chaos of a dinner rush. Gordon Ramsay has built an empire on it. &quot;Yes, chef!&quot; shouted at maximum volume. Pans slammed for emphasis. The kitchen as controlled explosion. The brigade system as military operation, with hierarchy enforced through decibels. This mythology is so pervasive that we accept it as the natural state of excellence under pressure. We assume that when stakes are high and standards are higher, chaos is not just inevitable but necessary—the very proof of seriousness, of commitment, of refusing to accept mediocrity.</p>
+          </div>
+        </a>
         
+        <!-- OLD CARD (commented out, kept for reference)
+        <div class="card post">
+            <div class="author-list">
+                    <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
+                    <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
+                    </a>
+            </div>
+            <div class="meta">
+                <time datetime="Nov 13, 2025">Nov 13, 2025</time>
+                 &middot; <span class="reading-time">13 min read</span>
+            </div>
+            <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/the-silent-kitchen-what-sebastien-bras-reminds-us-about-building-products-and-teams/">The Silent Kitchen - What Sébastien Bras Reminds Us About Building Products and Teams</a></h3>
+            <p>We&#39;ve all absorbed the mythology of the chaotic kitchen—the screaming, the clanging, the barely controlled chaos of a dinner rush. Gordon Ramsay has built an empire on it. &quot;Yes, chef!&quot; shouted at maximum volume. Pans slammed for emphasis. The kitchen as controlled explosion. The brigade system as military operation, with hierarchy enforced through decibels. This mythology is so pervasive that we accept it as the natural state of excellence under pressure. We assume that when stakes are high and standards are higher, chaos is not just inevitable but necessary—the very proof of seriousness, of commitment, of refusing to accept mediocrity.</p>
+            <div class="tag-list">
+            </div>
+        </div>
+        -->
+<!-- UX REVAMP: post-item row layout (used on home + archive) -->
+        <a href="https://jsooriah.github.io/happyapps/blog/posts/the-coordination-infrastructure-of-small-talk-in-remote-teams/" class="post-item">
+          <div class="post-meta-col">
+            <span class="post-date">Sep 6, 2025</span>
+            <span class="post-readtime">4 min</span>
+            
+          </div>
+          <div class="post-body-col">
+            <h3 class="post-title">The Coordination Infrastructure of Small Talk in Remote Teams</h3>
+            <p class="post-excerpt">Remote work hasn&#39;t just changed where we work - it&#39;s exposed how much of our coordination machinery was invisible. When teams went remote and small talk evaporated, what broke wasn&#39;t morale or &quot;culture&quot; in some fuzzy sense. It was the infrastructure for coordination itself. Small talk wasn&#39;t downtime between real work. It was the continuous background process that made everything else work - the ambient context sharing, the trust building, the calibration of shared understanding. Teams that lost it found collaboration got harder, not easier, even with all the productivity tools in the world.</p>
+          </div>
+        </a>
+        
+        <!-- OLD CARD (commented out, kept for reference)
+        <div class="card post">
+            <div class="author-list">
+                    <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
+                    <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
+                    </a>
+            </div>
+            <div class="meta">
+                <time datetime="Sep 6, 2025">Sep 6, 2025</time>
+                 &middot; <span class="reading-time">4 min read</span>
+            </div>
+            <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/the-coordination-infrastructure-of-small-talk-in-remote-teams/">The Coordination Infrastructure of Small Talk in Remote Teams</a></h3>
+            <p>Remote work hasn&#39;t just changed where we work - it&#39;s exposed how much of our coordination machinery was invisible. When teams went remote and small talk evaporated, what broke wasn&#39;t morale or &quot;culture&quot; in some fuzzy sense. It was the infrastructure for coordination itself. Small talk wasn&#39;t downtime between real work. It was the continuous background process that made everything else work - the ambient context sharing, the trust building, the calibration of shared understanding. Teams that lost it found collaboration got harder, not easier, even with all the productivity tools in the world.</p>
+            <div class="tag-list">
+            </div>
+        </div>
+        -->
+<!-- UX REVAMP: post-item row layout (used on home + archive) -->
+        <a href="https://jsooriah.github.io/happyapps/blog/posts/dont-go-chasing-waterfalls-and-turn-the-ship-around/" class="post-item">
+          <div class="post-meta-col">
+            <span class="post-date">Sep 6, 2025</span>
+            <span class="post-readtime">5 min</span>
+            
+          </div>
+          <div class="post-body-col">
+            <h3 class="post-title">Don&#39;t go chasing waterfalls and turn the ship around</h3>
+            <p class="post-excerpt">Historically, many organisations operated with a waterfall-like model where product managers or business analysts would create detailed specifications that engineers would implement. Engineering teams would receive “clearer guidance upfront” with regular check-ins to ensure alignment. This approach treats engineers primarily as implementers who translate requirements into code.</p>
+          </div>
+        </a>
+        
+        <!-- OLD CARD (commented out, kept for reference)
+        <div class="card post">
+            <div class="author-list">
+                    <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
+                    <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
+                    </a>
+            </div>
+            <div class="meta">
+                <time datetime="Sep 6, 2025">Sep 6, 2025</time>
+                 &middot; <span class="reading-time">5 min read</span>
+            </div>
+            <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/dont-go-chasing-waterfalls-and-turn-the-ship-around/">Don&#39;t go chasing waterfalls and turn the ship around</a></h3>
+            <p>Historically, many organisations operated with a waterfall-like model where product managers or business analysts would create detailed specifications that engineers would implement. Engineering teams would receive “clearer guidance upfront” with regular check-ins to ensure alignment. This approach treats engineers primarily as implementers who translate requirements into code.</p>
+            <div class="tag-list">
+            </div>
+        </div>
+        -->
+<!-- UX REVAMP: post-item row layout (used on home + archive) -->
+        <a href="https://jsooriah.github.io/happyapps/blog/posts/root-cause-analysis-in-product-management-learning-the-hard-way/" class="post-item">
+          <div class="post-meta-col">
+            <span class="post-date">May 29, 2025</span>
+            <span class="post-readtime">4 min</span>
+            
+          </div>
+          <div class="post-body-col">
+            <h3 class="post-title">Root Cause Analysis In Product Management Learning The Hard Way</h3>
+            <p class="post-excerpt">As tech people, we’re often eager to build. The excitement of creating something new, something that showcases our technical capabilities and vision, can be intoxicating. But sometimes, our rush to solution-building can blind us to the fundamental question that should drive every product decision:What problem are we really solving?</p>
+          </div>
+        </a>
+        
+        <!-- OLD CARD (commented out, kept for reference)
+        <div class="card post">
+            <div class="author-list">
+                    <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
+                    <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
+                    </a>
+            </div>
+            <div class="meta">
+                <time datetime="May 29, 2025">May 29, 2025</time>
+                 &middot; <span class="reading-time">4 min read</span>
+            </div>
+            <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/root-cause-analysis-in-product-management-learning-the-hard-way/">Root Cause Analysis In Product Management Learning The Hard Way</a></h3>
+            <p>As tech people, we’re often eager to build. The excitement of creating something new, something that showcases our technical capabilities and vision, can be intoxicating. But sometimes, our rush to solution-building can blind us to the fundamental question that should drive every product decision:What problem are we really solving?</p>
+            <div class="tag-list">
+            </div>
+        </div>
+        -->
+<!-- UX REVAMP: post-item row layout (used on home + archive) -->
+        <a href="https://jsooriah.github.io/happyapps/blog/posts/the-evolution-of-ux-in-the-age-of-ai-from-interfaces-to-intelligence/" class="post-item">
+          <div class="post-meta-col">
+            <span class="post-date">May 20, 2025</span>
+            <span class="post-readtime">5 min</span>
+            
+          </div>
+          <div class="post-body-col">
+            <h3 class="post-title">The Evolution of UX in the Age of AI - From Interfaces to Intelligence</h3>
+            <p class="post-excerpt">Users don’t fundamentally care about your interface — they care about what it helps them accomplish. Nobody opens Photoshop because they love its toolbar; they open it because they need to edit an image. The interface is just the mediator between intention and result. This realization brings us to a critical inflection point - What if our obsession with UI elements has been missing the bigger picture of UX — the holistic user experience? What if AI could help us transcend the limitations of traditional interfaces to focus directly on user outcomes?</p>
+          </div>
+        </a>
+        
+        <!-- OLD CARD (commented out, kept for reference)
+        <div class="card post">
+            <div class="author-list">
+                    <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
+                    <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
+                    </a>
+            </div>
+            <div class="meta">
+                <time datetime="May 20, 2025">May 20, 2025</time>
+                 &middot; <span class="reading-time">5 min read</span>
+            </div>
+            <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/the-evolution-of-ux-in-the-age-of-ai-from-interfaces-to-intelligence/">The Evolution of UX in the Age of AI - From Interfaces to Intelligence</a></h3>
+            <p>Users don’t fundamentally care about your interface — they care about what it helps them accomplish. Nobody opens Photoshop because they love its toolbar; they open it because they need to edit an image. The interface is just the mediator between intention and result. This realization brings us to a critical inflection point - What if our obsession with UI elements has been missing the bigger picture of UX — the holistic user experience? What if AI could help us transcend the limitations of traditional interfaces to focus directly on user outcomes?</p>
+            <div class="tag-list">
+            </div>
+        </div>
+        -->
+<!-- UX REVAMP: post-item row layout (used on home + archive) -->
+        <a href="https://jsooriah.github.io/happyapps/blog/posts/about-this-blog/" class="post-item">
+          <div class="post-meta-col">
+            <span class="post-date">Apr 19, 2025</span>
+            <span class="post-readtime">1 min</span>
+            
+          </div>
+          <div class="post-body-col">
+            <h3 class="post-title">About this blog</h3>
+            <p class="post-excerpt">Blogging helps me reflect on my day to day initiatives at work - product intitiatives, methodologies, interaction with cross functional teams, customers, management, and end users. Being quite fascinated by the human centered design element of things in an excessively digitalized world, I came to realise that most problems encountered by organisations, are ultimately a human problem - lack of alignment, team boundaries, communication, lack of empathy, ..., and the list can be long, ...very long. After some years of experience in the field, I found myself solving these problems, whenever I see teams struggling, I cannot help from finding ways to solve them. As a matter of fact, that&#39;s exactly how I transitioned from engineering to product management. Blogging helps me learn while I am writing - whenever I experience the desire to write on something that I believe should be shared to others, I run also some research to support my writings and learn along the way.</p>
+          </div>
+        </a>
+        
+        <!-- OLD CARD (commented out, kept for reference)
+        <div class="card post">
+            <div class="author-list">
+                    <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
+                    <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
+                    </a>
+            </div>
+            <div class="meta">
+                <time datetime="Apr 19, 2025">Apr 19, 2025</time>
+                 &middot; <span class="reading-time">1 min read</span>
+            </div>
+            <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/about-this-blog/">About this blog</a></h3>
+            <p>Blogging helps me reflect on my day to day initiatives at work - product intitiatives, methodologies, interaction with cross functional teams, customers, management, and end users. Being quite fascinated by the human centered design element of things in an excessively digitalized world, I came to realise that most problems encountered by organisations, are ultimately a human problem - lack of alignment, team boundaries, communication, lack of empathy, ..., and the list can be long, ...very long. After some years of experience in the field, I found myself solving these problems, whenever I see teams struggling, I cannot help from finding ways to solve them. As a matter of fact, that&#39;s exactly how I transitioned from engineering to product management. Blogging helps me learn while I am writing - whenever I experience the desire to write on something that I believe should be shared to others, I run also some research to support my writings and learn along the way.</p>
+            <div class="tag-list">
+            </div>
+        </div>
+        -->
+<!-- UX REVAMP: post-item row layout (used on home + archive) -->
+        <a href="https://jsooriah.github.io/happyapps/blog/posts/shift-from-product-thinking-to-customer-progress-thinking/" class="post-item">
+          <div class="post-meta-col">
+            <span class="post-date">Mar 18, 2025</span>
+            <span class="post-readtime">17 min</span>
+            
+          </div>
+          <div class="post-body-col">
+            <h3 class="post-title">Shift from product thinking to customer progress thinking</h3>
+            <p class="post-excerpt">Every product manager has sat through a roadmap prioritization meeting that devolves into chaos. Engineering wants to pay down technical debt. Sales wants features that will close their current deals. Customer success wants fixes for the loudest complaints. Leadership wants innovation that moves metrics. Everyone&#39;s arguing about what to build. Nobody&#39;s asking why any of it matters. This is the natural endpoint of product thinking —a mode of operating where the product itself becomes the center of gravity. Features become the unit of value. Roadmaps become lists of things to ship. Success becomes adoption metrics. Product thinking feels productive because there&#39;s always something to build, something to measure, something to optimize. But it&#39;s fundamentally disconnected from the reason products exist in the first place. This is what Jobs-to-be-Done forces you to confront, customers don&#39;t want your product. They want progress. Your product is just a means to that end.</p>
+          </div>
+        </a>
+        
+        <!-- OLD CARD (commented out, kept for reference)
+        <div class="card post">
+            <span class="featured">featured</span>
+            <div class="author-list">
+                    <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
+                    <img class="small rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
+                    </a>
+            </div>
+            <div class="meta">
+                <time datetime="Mar 18, 2025">Mar 18, 2025</time>
+                 &middot; <span class="reading-time">17 min read</span>
+            </div>
+            <h3><a href="https://jsooriah.github.io/happyapps/blog/posts/shift-from-product-thinking-to-customer-progress-thinking/">Shift from product thinking to customer progress thinking</a></h3>
+            <p>Every product manager has sat through a roadmap prioritization meeting that devolves into chaos. Engineering wants to pay down technical debt. Sales wants features that will close their current deals. Customer success wants fixes for the loudest complaints. Leadership wants innovation that moves metrics. Everyone&#39;s arguing about what to build. Nobody&#39;s asking why any of it matters. This is the natural endpoint of product thinking —a mode of operating where the product itself becomes the center of gravity. Features become the unit of value. Roadmaps become lists of things to ship. Success becomes adoption metrics. Product thinking feels productive because there&#39;s always something to build, something to measure, something to optimize. But it&#39;s fundamentally disconnected from the reason products exist in the first place. This is what Jobs-to-be-Done forces you to confront, customers don&#39;t want your product. They want progress. Your product is just a means to that end.</p>
+            <div class="tag-list">
+            </div>
+        </div>
+        -->
+        
+                </div>
+                <div class="pagination">
+                <a href="https://jsooriah.github.io/happyapps/blog/posts/page/1/">1</a>
+<a href="https://jsooriah.github.io/happyapps/blog/posts/page/2/" class="current-page">2</a>
+        
+                </div>
             </div>
         </section>
+        -->
         
     </main>
     
+    <!-- UX REVAMP: simplified footer -->
+    <footer class="site-footer">
+      <p><a href="/happyapps/">happyapps</a> · Joel Sooriah</p>
+      <p class="footer-copy">Built with <a href="https://github.com/toucansites/toucan" target="_blank" rel="noopener">Toucan</a> &amp; Swift · MIT License</p>
+    </footer>
+    
+    <!-- OLD FOOTER (commented out, kept for reference)
     <div id="footer-container">
         <footer class="wrapper">
             <div class="grid grid-211">
@@ -312,28 +644,17 @@
                     Toucan is open source and is free on Github.<br/>
                     <a href="https://github.com/toucansites/website/blob/main/LICENSE" target="_blank">MIT License</a></small>
                     </p>
-                    <div class="external">
-                        
-                    </div>
+                    <div class="external"></div>
                     <div class="contact">
                         <h3></h3>
-                        <p>
-                        <br>
-                        <a href="mailto:">
-                            
-                        </a>
-                        </p>
+                        <p><br><a href="mailto:"></a></p>
                     </div>
                 </div>
             </div>
-            
-    
             <div id="copyright"></div>
-            
-            
-    
         </footer>
     </div>
+    -->
 
     
     

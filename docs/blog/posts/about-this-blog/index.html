@@ -22,10 +22,16 @@
     <meta name="twitter:description" content="Blogging helps me reflect on my day to day initiatives at work - product intitiatives, methodologies, interaction with cross functional teams, customers, management, and end users. Being quite fascinated by the human centered design element of things in an excessively digitalized world, I came to realise that most problems encountered by organisations, are ultimately a human problem - lack of alignment, team boundaries, communication, lack of empathy, ..., and the list can be long, ...very long. After some years of experience in the field, I found myself solving these problems, whenever I see teams struggling, I cannot help from finding ways to solve them. As a matter of fact, that&#39;s exactly how I transitioned from engineering to product management. Blogging helps me learn while I am writing - whenever I experience the desire to write on something that I believe should be shared to others, I run also some research to support my writings and learn along the way.">
     
     
+    <!-- UX REVAMP: new font stack -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap">
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
 
+    <!-- UX REVAMP: single unified stylesheet replaces the 8 below -->
+    <link rel="stylesheet" href="/css/revamp.css">
+
+    <!-- OLD CSS (commented out, kept for reference)
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap">
     <link rel="stylesheet" href="/happyapps/css/modern-normalize.css">
     <link rel="stylesheet" href="/happyapps/css/modern-base.css">
     <link rel="stylesheet" href="/happyapps/css/variables.css">
@@ -34,8 +40,8 @@
     <link rel="stylesheet" href="/happyapps/css/navigation.css">
     <link rel="stylesheet" href="/happyapps/css/footer.css">
     <link rel="stylesheet" href="/happyapps/css/style.css">
-
     
+    -->
     
     <link rel="icon" href="/icons/favicon.ico" type="image/x-icon">
     <link rel="shortcut icon" href="/icons/icon-320.png" type="image/png">
@@ -76,6 +82,19 @@
 </head>
 
 <body>
+    <!-- UX REVAMP: text-logo sticky nav -->
+    <header class="site-header">
+      <nav class="site-nav">
+        <a href="/happyapps/" class="site-logo">happyapps</a>
+        <div class="nav-links">
+          <a href="/happyapps/blog/posts/page/1">Writing</a>
+          <a href="/happyapps/blog/posts/about-this-blog/">About</a>
+          <a href="https://github.com/jsooriah/" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </nav>
+    </header>
+    
+    <!-- OLD NAV (commented out, kept for reference)
     <div id="navigation-container">
         <header id="navigation" class="wrapper">
             <a href="/happyapps/">
@@ -107,33 +126,61 @@
             </nav>
         </header>
     </div>
+    -->
     
     <main>
+        
+        <!-- UX REVAMP: article hero + full-width body -->
+        <article>
+          <header class="article-hero">
+            <div class="hero-inner">
+        
+              <p class="kicker">
+                
+                <span class="kicker-date">Apr 19, 2025</span>
+              </p>
+        
+              <h1>About this blog</h1>
+        
+              <p class="deck">Blogging helps me reflect on my day to day initiatives at work - product intitiatives, methodologies, interaction with cross functional teams, customers, management, and end users. Being quite fascinated by the human centered design element of things in an excessively digitalized world, I came to realise that most problems encountered by organisations, are ultimately a human problem - lack of alignment, team boundaries, communication, lack of empathy, ..., and the list can be long, ...very long. After some years of experience in the field, I found myself solving these problems, whenever I see teams struggling, I cannot help from finding ways to solve them. As a matter of fact, that&#39;s exactly how I transitioned from engineering to product management. Blogging helps me learn while I am writing - whenever I experience the desire to write on something that I believe should be shared to others, I run also some research to support my writings and learn along the way.</p>
+        
+              <div class="byline-block">
+                <div class="byline-meta">
+                  <span class="byline-name">Joel Sooriah</span>
+                  <span class="byline-role">Head of Product · happyapps</span>
+                </div>
+                <div class="byline-reading">1 min read</div>
+              </div>
+        
+            </div>
+          </header>
+        
+          <div class="article-body">
+            <h2 id="how-do-i-run-this-blog">How do I run this blog</h2><p><strong>Open Source Server-Side-Swift & Markdown-Based Static Site Generator</strong><br>The last time I pushed code into production was in 2018 and that was on the Apple store and in Swift - Since then I have had in my mind the desire to mingle with some server side swift at some point.<br>I was more than happy when I discovered Toucan (please make sure to have a look at it) - moreover given the fact that it is markdown based and follows some nice convention over configuration paradigm.</p><p><strong>LLM based knowledge Management System</strong><br>I like the potential of coupling Toucan with an AI writing Assistant working on an LLM based personal knowledge management system.<br>Btw this blog is also a journey into AI engineering, leveraging some tools out there to do some cool stuff !</p>
+          </div>
+        </article>
+        
+        <!-- OLD ARTICLE LAYOUT (commented out, kept for reference)
         <div class="wrapper">
         <div class="article-with-toc">
             <div>
                 <article>
                     <header>
-        
                         <div class="meta">
-                            <time datetime="2025.04.19.">2025.04.19.</time>
+                            <time datetime="Apr 19, 2025">Apr 19, 2025</time>
                              &middot; <span class="reading-time">1 min read</span>
                         </div>
-                        
                         <h1>About this blog</h1>
                         <p>Blogging helps me reflect on my day to day initiatives at work - product intitiatives, methodologies, interaction with cross functional teams, customers, management, and end users. Being quite fascinated by the human centered design element of things in an excessively digitalized world, I came to realise that most problems encountered by organisations, are ultimately a human problem - lack of alignment, team boundaries, communication, lack of empathy, ..., and the list can be long, ...very long. After some years of experience in the field, I found myself solving these problems, whenever I see teams struggling, I cannot help from finding ways to solve them. As a matter of fact, that&#39;s exactly how I transitioned from engineering to product management. Blogging helps me learn while I am writing - whenever I experience the desire to write on something that I believe should be shared to others, I run also some research to support my writings and learn along the way.</p>
                     </header>
-        
                     <section>
                         <h2 id="how-do-i-run-this-blog">How do I run this blog</h2><p><strong>Open Source Server-Side-Swift & Markdown-Based Static Site Generator</strong><br>The last time I pushed code into production was in 2018 and that was on the Apple store and in Swift - Since then I have had in my mind the desire to mingle with some server side swift at some point.<br>I was more than happy when I discovered Toucan (please make sure to have a look at it) - moreover given the fact that it is markdown based and follows some nice convention over configuration paradigm.</p><p><strong>LLM based knowledge Management System</strong><br>I like the potential of coupling Toucan with an AI writing Assistant working on an LLM based personal knowledge management system.<br>Btw this blog is also a journey into AI engineering, leveraging some tools out there to do some cool stuff !</p>
                     </section>
-                    
-                    
                 </article>
             </div>
             <div>
                 <aside>
-        
+                
                 <div class="author-list">
                         <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
                         <img class="medium rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
@@ -159,11 +206,17 @@
             <div class="wrapper">
             </div>
         </section>
-        
-        
+        -->
         
     </main>
     
+    <!-- UX REVAMP: simplified footer -->
+    <footer class="site-footer">
+      <p><a href="/happyapps/">happyapps</a> · Joel Sooriah</p>
+      <p class="footer-copy">Built with <a href="https://github.com/toucansites/toucan" target="_blank" rel="noopener">Toucan</a> &amp; Swift · MIT License</p>
+    </footer>
+    
+    <!-- OLD FOOTER (commented out, kept for reference)
     <div id="footer-container">
         <footer class="wrapper">
             <div class="grid grid-211">
@@ -204,28 +257,17 @@
                     Toucan is open source and is free on Github.<br/>
                     <a href="https://github.com/toucansites/website/blob/main/LICENSE" target="_blank">MIT License</a></small>
                     </p>
-                    <div class="external">
-                        
-                    </div>
+                    <div class="external"></div>
                     <div class="contact">
                         <h3></h3>
-                        <p>
-                        <br>
-                        <a href="mailto:">
-                            
-                        </a>
-                        </p>
+                        <p><br><a href="mailto:"></a></p>
                     </div>
                 </div>
             </div>
-            
-    
             <div id="copyright"></div>
-            
-            
-    
         </footer>
     </div>
+    -->
 
     
     

@@ -2,5 +2,6 @@ baseUrl: "https://jsooriah.github.io/happyapps/"
 language: "en-US"
 title: "Happy Apps"
 description: "Designing products and teams, the human centric way"
-dateFormat: "yyyy.MM.dd."
+dateFormat: "MMM d, yyyy"
+# OLD: dateFormat: "yyyy.MM.dd."
 navigation:

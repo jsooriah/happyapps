@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- ── SEO & Open Graph ── -->
+  <title>Article Title — happyapps</title>
+  <meta name="description" content="Article description for search engines and LinkedIn preview." />
+  <meta property="og:type"        content="article" />
+  <meta property="og:title"       content="Article Title — happyapps" />
+  <meta property="og:description" content="Article description for search engines and LinkedIn preview." />
+  <meta property="og:url"         content="https://jsooriah.github.io/happyapps/your-post-url" />
+  <meta property="og:image"       content="https://jsooriah.github.io/happyapps/images/your-cover.jpg" />
+  <meta name="author"             content="Joel Sooriah" />
+
+  <!-- ── Fonts ── -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet" />
+
+  <link rel="stylesheet" href="article.css" />
+</head>
+<body>
+
+  <!-- ══════════════════════════════════════════
+       SITE HEADER / NAV
+  ══════════════════════════════════════════ -->
+  <header class="site-header">
+    <nav class="site-nav">
+      <a href="/" class="site-logo">happyapps</a>
+      <div class="nav-links">
+        <a href="/writing">Writing</a>
+        <a href="/about">About</a>
+      </div>
+    </nav>
+  </header>
+
+  <!-- ══════════════════════════════════════════
+       ARTICLE HERO
+  ══════════════════════════════════════════ -->
+  <article>
+    <header class="article-hero">
+      <div class="hero-inner">
+
+        <p class="kicker">
+          <span class="kicker-tag">Product · AI</span>
+          <span class="kicker-date">June 2026</span>
+        </p>
+
+        <h1>Your Article Title Goes Here, <em>Even When It Spans Two Lines</em></h1>
+
+        <p class="deck">
+          A concise, compelling subtitle that frames the argument. One or two sentences, no more. Pulls the reader in before the byline.
+        </p>
+
+        <div class="byline-block">
+          <div class="byline-meta">
+            <span class="byline-name">Joel Sooriah</span>
+            <span class="byline-role">Head of Product · happyapps</span>
+          </div>
+          <div class="byline-reading">
+            <span>12 min read</span>
+          </div>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- ══════════════════════════════════════════
+         ARTICLE BODY
+    ══════════════════════════════════════════ -->
+    <div class="article-body">
+
+      <!-- LEAD / INTRO -->
+      <p class="lead">
+        This is the opening paragraph — your lede. Write it with force. One strong claim, a provocation, or an image that demands the reader keep going. No hedging, no warming up. The first sentence has to land.
+      </p>
+
+      <p>
+        Normal body copy follows. <code>Lora</code> at a comfortable reading size with generous line-height. References can be footnoted<sup><a href="#fn1" id="ref1">1</a></sup> using simple anchor links. <strong>Bold for emphasis</strong>, <em>italic for a term being introduced</em> or for a voice shift.
+      </p>
+
+      <!-- SECTION -->
+      <h2>Section One: The Problem</h2>
+
+      <p>
+        Each section opens with a paragraph that sets up what follows. Don't start with "In this section…" — just make the first claim. The structure should be visible in the prose, not announced.
+      </p>
+
+      <p>
+        More body copy. Link to external sources with <a href="#">inline anchor text</a> rather than bare URLs. Keep links purposeful — every outbound link is a small exit ramp.
+      </p>
+
+      <!-- PULL QUOTE -->
+      <blockquote class="pull-quote">
+        <p>The spec is not a deliverable. It is a shared commitment to what done looks like — before a single line of code is written.</p>
+      </blockquote>
+
+      <p>
+        Continuation after the pull quote. The quote should feel earned — place it after you've built up enough context for it to resonate, not as a way to break up density.
+      </p>
+
+      <!-- SUBSECTION -->
+      <h3>A nuanced sub-point</h3>
+
+      <p>
+        Use <code>h3</code> sparingly — only when a section genuinely has distinct sub-arguments worth naming. Overuse dilutes the hierarchy. Three levels of heading (h1 → h2 → h3) is usually the ceiling.
+      </p>
+
+      <!-- CODE / TECHNICAL ASIDE -->
+      <pre><code>// Inline code block for technical content
+const spec = { source: "truth", status: "before-code" };
+// Use sparingly — only when the exact syntax matters
+</code></pre>
+
+      <!-- SECTION -->
+      <h2>Section Two: The Argument</h2>
+
+      <p>
+        Second major section. Notice the left-rule accent on the heading — it creates a strong vertical rhythm as the reader scans. Each h2 should be a claim, not just a label. "Why specs fail" beats "Spec failures."
+      </p>
+
+      <!-- CALLOUT / ASIDE -->
+      <aside class="callout">
+        <p class="callout-label">Key concept</p>
+        <p>Use the callout block for a definition, a framework summary, or a short concept that deserves visual separation from the main argument flow. Keep it to three sentences maximum.</p>
+      </aside>
+
+      <p>
+        Resume the main argument after the callout. The callout is a brief stop, not a detour — the reader should drop back into the thread immediately.
+      </p>
+
+      <!-- SECTION -->
+      <h2>Closing: What This Means</h2>
+
+      <p>
+        The conclusion should do three things: restate the core claim without repeating yourself, draw out the implication the reader should carry away, and close on a line that feels final. No "In conclusion…" — just the last move in the argument.
+      </p>
+
+      <p>
+        End on something concrete. A question that opens the next problem. A call to action. A provocation. Something that gives the reader a reason to share.
+      </p>
+
+      <!-- ── FOOTNOTES ── -->
+      <section class="footnotes" aria-label="Footnotes">
+        <h4>Notes</h4>
+        <ol>
+          <li id="fn1">
+            Author, A. (Year). <em>Title of Referenced Work</em>. Publisher / URL.
+            <a href="#ref1" class="fn-back" aria-label="Back to reference 1">↩</a>
+          </li>
+          <li id="fn2">
+            Second reference, same format.
+            <a href="#ref2" class="fn-back" aria-label="Back to reference 2">↩</a>
+          </li>
+        </ol>
+      </section>
+
+    </div><!-- /.article-body -->
+  </article>
+
+  <!-- ══════════════════════════════════════════
+       FOOTER
+  ══════════════════════════════════════════ -->
+  <footer class="site-footer">
+    <p>
+      <a href="https://jsooriah.github.io/happyapps">happyapps</a> · Joel Sooriah ·
+      <a href="mailto:joel@example.com">Get in touch</a>
+    </p>
+    <p class="footer-copy">© 2026 Joel Sooriah. All rights reserved.</p>
+  </footer>
+
+</body>
+</html>
