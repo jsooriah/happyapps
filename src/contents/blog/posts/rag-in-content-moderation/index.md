@@ -6,7 +6,7 @@ description: |-
   This pattern has found applications in question-answering, legal research, customer support, and increasingly in content moderation. The appeal in a moderation context is straightforward: moderation decisions are inherently precedent-driven. Given a new piece of content, the question is whether it resembles cases previously flagged as violations — and if so, which ones. A retrieval-augmented system formalises this by embedding the incoming content, finding the most similar past cases in a policy library, and using those analogues to guide the decision. This approach is sometimes described as embedding-driven development: building decision logic from the structure of a vector space rather than from hand-authored rules.
   The practical advantage over traditional rule-based approaches — keyword filters, regex patterns, manually maintained taxonomies — is that embedding-based retrieval generalises from examples. It can adapt to novel phrasings and new harm types without requiring explicit rule updates, and it produces interpretable outputs in the form of retrieved precedents.
   The critical dependency in this setup is the embedding model itself. The quality of retrieval — how consistently it surfaces policy-relevant analogues — depends entirely on how the embedding model structures its vector space. A model that clusters content by surface vocabulary rather than by policy intent will retrieve plausible-looking but policy-irrelevant matches, undermining everything downstream.
-publication: 17/06/2026, 09:00
+publication: 2026-06-17 10:46:53
 tags: rag content mdoeration
 authors:
   - joel-sooriah
