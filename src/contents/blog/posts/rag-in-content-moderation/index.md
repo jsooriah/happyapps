@@ -16,8 +16,6 @@ redirects:
 
 Retrieval-augmented approaches to AI content moderation depend on embedding models that can surface policy-analogous cases from a violation database. We evaluate a three-stage pipeline — retrieval, rule induction, and downstream classification — comparing moderation-aware embeddings (HateBERT, trained on banned Reddit communities) against general-purpose embeddings (BGE-M3). Using the Aegis AI Content Safety Dataset across six violation categories, we find that BGE-M3 consistently outperforms HateBERT on retrieval (Precision@10), by an average of 8.7 pp on explicit violations and 6.4 pp on implicit violations. We term this the **policy-semantics gap**: the divergence between domain-specific classification objectives and the representational quality needed for policy-grounded retrieval. However, when the retrieved analogues are used to induce moderation rules via Claude Sonnet, and those rules are injected into Claude Haiku for classification, HateBERT's rules produce higher macro F1 (72.9% vs 68.2%). This inversion — better retrieval leading to worse downstream classification — reveals that retrieval quality and rule usability are distinct dimensions that can conflict. Our results caution against optimising retrieval in isolation and highlight the need for end-to-end evaluation of retrieval-augmented moderation pipelines.
 
-
-
 ## Glossary of Terms
 
 **Embedding model** — a neural network that maps a text input to a fixed-dimensional real-valued vector. Proximity in the vector space is intended to reflect semantic similarity between inputs.
