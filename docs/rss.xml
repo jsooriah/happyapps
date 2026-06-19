@@ -4,11 +4,18 @@
     <description>Designing products and teams, the human centric way</description>
     <link>https://jsooriah.github.io/happyapps</link>
     <language>en-US</language>
-    <lastBuildDate>Wed, 17 Jun 2026 10:45:54 +0000</lastBuildDate>
-    <pubDate>Wed, 17 Jun 2026 10:00:00 +0000</pubDate>
+    <lastBuildDate>Fri, 19 Jun 2026 07:27:02 +0000</lastBuildDate>
+    <pubDate>Fri, 19 Jun 2026 07:08:19 +0000</pubDate>
     <ttl>250</ttl>
     <atom:link href="https://jsooriah.github.io/happyappsrss.xml" rel="self" type="application/rss+xml"/>
 
+<item>
+    <guid isPermaLink="true">https://jsooriah.github.io/happyapps/blog/posts/closing-the-gap-between-automation-goals-and-customer-experience-goals/</guid>
+    <title><![CDATA[ Closing the Gap Between Automation Goals and Customer Experience Goals ]]></title>
+    <description><![CDATA[ Most organizations building chatbots or voice assistants frame their objectives around two goals - automation and customer experience. These goals are often treated as if they pull in opposite directions. Automation is associated with efficiency, cost reduction, and scale — qualities that read as cold and transactional. Customer experience, by contrast, is associated with warmth, empathy, and individual attention. The implicit assumption in many organizations is that you can optimize for one or the other, but not both at once. ]]></description>
+    <link>https://jsooriah.github.io/happyapps/blog/posts/closing-the-gap-between-automation-goals-and-customer-experience-goals/</link>
+    <pubDate>Fri, 19 Jun 2026 07:08:19 +0000</pubDate>
+</item>
 <item>
     <guid isPermaLink="true">https://jsooriah.github.io/happyapps/blog/posts/rag-in-content-moderation/</guid>
     <title><![CDATA[ RAG In Content Moderation ]]></title>

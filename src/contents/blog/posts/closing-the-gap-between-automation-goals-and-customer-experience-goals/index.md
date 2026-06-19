@@ -1,7 +1,7 @@
 ---
 type: post
 title: Closing the Gap Between Automation Goals and Customer Experience Goals
-description: Most organizations building chatbots or voice assistants frame their objectives around two goals: automation and customer experience. These goals are often treated as if they pull in opposite directions. Automation is associated with efficiency, cost reduction, and scale — qualities that read as cold and transactional. Customer experience, by contrast, is associated with warmth, empathy, and individual attention. The implicit assumption in many organizations is that you can optimize for one or the other, but not both at once.
+description: Most organizations building chatbots or voice assistants frame their objectives around two goals - automation and customer experience. These goals are often treated as if they pull in opposite directions. Automation is associated with efficiency, cost reduction, and scale — qualities that read as cold and transactional. Customer experience, by contrast, is associated with warmth, empathy, and individual attention. The implicit assumption in many organizations is that you can optimize for one or the other, but not both at once.
 publication: 2026-06-19 07:08:19
 tags:
   - aiux
