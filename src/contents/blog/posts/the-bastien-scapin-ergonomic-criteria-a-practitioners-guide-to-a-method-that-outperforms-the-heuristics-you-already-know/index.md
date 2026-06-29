@@ -2,7 +2,7 @@
 type: post
 title: The Bastien & Scapin Ergonomic Criteria - A Practitioner's Guide to a Method That Outperforms the Heuristics You Already Know
 description: If you've run a heuristic evaluation, you've probably used Jakob Nielsen's 10 usability heuristics. They're fast, well-known, and good enough for a first pass. They're also not the only option — and in at least one direct comparison, not the better one.
-publication: 2026-06-29 15:22:08
+publication: 2026-06-28 15:22:08
 tags:
   - 
 authors:
