@@ -1,0 +1,298 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+    <meta charset="utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <link rel="canonical" href="https://jsooriah.github.io/happyapps/blog/posts/the-bastien-scapin-ergonomic-criteria-a-practitioners-guide-to-a-method-that-outperforms-the-heuristics-you-already-know/">
+    
+    <link rel="next" href="https://jsooriah.github.io/happyapps/blog/posts/closing-the-gap-between-automation-goals-and-customer-experience-goals/">
+    
+    <title>The Bastien &amp; Scapin Ergonomic Criteria - A Practitioner&#39;s Guide to a Method That Outperforms the Heuristics You Already Know - Happy Apps</title>
+    <meta name="description" content="If you&#39;ve run a heuristic evaluation, you&#39;ve probably used Jakob Nielsen&#39;s 10 usability heuristics. They&#39;re fast, well-known, and good enough for a first pass. They&#39;re also not the only option — and in at least one direct comparison, not the better one.">
+    
+    <meta property="og:url" content="https://jsooriah.github.io/happyapps/blog/posts/the-bastien-scapin-ergonomic-criteria-a-practitioners-guide-to-a-method-that-outperforms-the-heuristics-you-already-know/">
+    <meta property="og:title" content="The Bastien &amp; Scapin Ergonomic Criteria - A Practitioner&#39;s Guide to a Method That Outperforms the Heuristics You Already Know - Happy Apps">
+    <meta property="og:description" content="If you&#39;ve run a heuristic evaluation, you&#39;ve probably used Jakob Nielsen&#39;s 10 usability heuristics. They&#39;re fast, well-known, and good enough for a first pass. They&#39;re also not the only option — and in at least one direct comparison, not the better one.">
+    <meta property="og:image" content="https://jsooriah.github.io/happyapps/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="627" />
+
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="The Bastien &amp; Scapin Ergonomic Criteria - A Practitioner&#39;s Guide to a Method That Outperforms the Heuristics You Already Know - Happy Apps">
+    <meta name="twitter:description" content="If you&#39;ve run a heuristic evaluation, you&#39;ve probably used Jakob Nielsen&#39;s 10 usability heuristics. They&#39;re fast, well-known, and good enough for a first pass. They&#39;re also not the only option — and in at least one direct comparison, not the better one.">
+    
+    
+    <!-- UX REVAMP: new font stack -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&family=Lora:ital,wght@0,400;0,600;1,400;1,600&family=DM+Mono:ital,wght@0,400;0,500;1,400&display=swap" rel="stylesheet">
+
+    <!-- UX REVAMP: single unified stylesheet replaces the 8 below -->
+    <link rel="stylesheet" href="/happyapps/css/revamp.css">
+
+    <!-- OLD CSS (commented out, kept for reference)
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap">
+    <link rel="stylesheet" href="/happyapps/css/modern-normalize.css">
+    <link rel="stylesheet" href="/happyapps/css/modern-base.css">
+    <link rel="stylesheet" href="/happyapps/css/variables.css">
+    <link rel="stylesheet" href="/happyapps/css/base.css">
+    <link rel="stylesheet" href="/happyapps/css/grid.css">
+    <link rel="stylesheet" href="/happyapps/css/navigation.css">
+    <link rel="stylesheet" href="/happyapps/css/footer.css">
+    <link rel="stylesheet" href="/happyapps/css/style.css">
+    
+    -->
+    
+    <link rel="icon" href="/icons/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="/icons/icon-320.png" type="image/png">
+    
+    <link rel="apple-touch-icon" href="/icons/apple-touch-icon.png">
+    <link rel="apple-touch-icon" sizes="57x57" href="/icons/apple-touch-icon-57x57.png">
+    <link rel="apple-touch-icon" sizes="72x72" href="/icons/apple-touch-icon-72x72.png">
+    <link rel="apple-touch-icon" sizes="76x76" href="/icons/apple-touch-icon-76x76.png">
+    <link rel="apple-touch-icon" sizes="114x114" href="/icons/apple-touch-icon-114x114.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="/icons/apple-touch-icon-120x120.png">
+    <link rel="apple-touch-icon" sizes="144x144" href="/icons/apple-touch-icon-144x144.png">
+    <link rel="apple-touch-icon" sizes="152x152" href="/icons/apple-touch-icon-152x152.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="/icons/apple-touch-icon-180x180.png">
+
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github.min.css"
+        media="(prefers-color-scheme: light), (prefers-color-scheme: no-preference)">
+    <link
+        rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/styles/github-dark.min.css"
+        media="(prefers-color-scheme: dark)"
+    >
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/highlight.js/11.9.0/highlight.min.js"></script>
+    <script>hljs.highlightAll();</script>
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-FPVBWK1C1S"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag(){dataLayer.push(arguments);}
+        gtag('js', new Date());
+
+        gtag('config', 'G-FPVBWK1C1S');
+    </script>
+
+</head>
+
+<body>
+    <!-- UX REVAMP: text-logo sticky nav -->
+    <header class="site-header">
+      <nav class="site-nav">
+        <a href="/happyapps/" class="site-logo">happyapps</a>
+        <div class="nav-links">
+          <a href="/happyapps/blog/posts/page/1">Writing</a>
+          <a href="/happyapps/blog/posts/about-this-blog/">About</a>
+          <a href="https://github.com/jsooriah/" target="_blank" rel="noopener">GitHub</a>
+        </div>
+      </nav>
+    </header>
+    
+    <!-- OLD NAV (commented out, kept for reference)
+    <div id="navigation-container">
+        <header id="navigation" class="wrapper">
+            <a href="/happyapps/">
+                <picture>
+                    <source
+                        srcset="/happyapps/images/logos/happyapps-logo~dark.png"
+                        media="(prefers-color-scheme: dark)"
+                        >
+                    <img
+                        src="/happyapps/images/logos/happyapps-logo.png"
+                        alt="Logo of Happy Apps"
+                        title="Happy Apps"
+                        >
+                </picture>
+            </a>
+            <nav>
+                <input type="checkbox" id="primary-menu-button" name="menu-button" class="menu-button">
+                    <label for="primary-menu-button">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                            <line x1="3" y1="12" x2="21" y2="12"></line>
+                            <line x1="3" y1="6" x2="21" y2="6"></line>
+                            <line x1="3" y1="18" x2="21" y2="18"></line>
+                        </svg>
+                    </label>
+                    <div class="menu-items">
+                        <a href="https://github.com/jsooriah/">Github</a>
+                        <a href="https://jsooriah.github.io/happyapps/blog/posts/about-this-blog/">About</a>
+                    </div>
+            </nav>
+        </header>
+    </div>
+    -->
+    
+    <main>
+        
+        <!-- UX REVAMP: article hero + full-width body -->
+        <article>
+          <header class="article-hero">
+            <div class="hero-inner">
+        
+              <p class="kicker">
+                
+                <span class="kicker-date">Jun 29, 2026</span>
+              </p>
+        
+              <h1>The Bastien &amp; Scapin Ergonomic Criteria - A Practitioner&#39;s Guide to a Method That Outperforms the Heuristics You Already Know</h1>
+        
+              <p class="deck">If you&#39;ve run a heuristic evaluation, you&#39;ve probably used Jakob Nielsen&#39;s 10 usability heuristics. They&#39;re fast, well-known, and good enough for a first pass. They&#39;re also not the only option — and in at least one direct comparison, not the better one.</p>
+        
+              <div class="byline-block">
+                <div class="byline-meta">
+                  <span class="byline-name">Joel Sooriah</span>
+                  <span class="byline-role">Head of Product · happyapps</span>
+                </div>
+                <div class="byline-reading">5 min read</div>
+              </div>
+        
+            </div>
+          </header>
+        
+          <div class="article-body">
+            <h1>The Bastien & Scapin Ergonomic Criteria: A Practitioner’s Guide to a Method That Outperforms the Heuristics You Already Know</h1><p>If you’ve run a heuristic evaluation, you’ve probably used Jakob Nielsen’s 10 usability heuristics. They’re fast, well-known, and good enough for a first pass. They’re also not the only option — and in at least one direct comparison, not the better one.</p><p>Bastien and Scapin’s ergonomic criteria are a less-cited but more rigorously derived framework, built specifically for the kind of close, systematic inspection that catches problems a quick Nielsen pass misses. This article covers where the criteria came from, what they actually contain, how they stack up against Nielsen’s heuristics in practice, and how to actually run an evaluation with the method.</p><h2 id="where-the-criteria-came-from">Where the criteria came from</h2><p>Christian Bastien and Dominique Scapin, both researchers in ergonomic psychology and cognitive ergonomics, published the criteria in May 1993 as an INRIA technical report (RT-0156), under the title “Ergonomic Criteria for the Evaluation of Human-Computer Interfaces.” A refined version followed in 1997 in <em>Behaviour & Information Technology</em>.</p><p>The method wasn’t built top-down from theory. Bastien and Scapin gathered roughly 900 existing ergonomic recommendations from the human-computer interaction literature and sorted them — empirically, through an iterative classification process — into a structure that could hold all of them without losing the distinctions that made each recommendation useful. That sorting process is what produced the final structure: <strong>8 main criteria, broken into 18 elementary sub-criteria.</strong></p><p>This origin matters for how you should think about the method. Nielsen’s heuristics were authored as a compact, memorable set of ten. Bastien and Scapin’s were derived from a much larger body of accumulated, validated guidance and only afterward compressed into a usable taxonomy. The criteria are more granular as a direct consequence — and that granularity is what gives evaluators more precise language for what’s actually wrong with an interface.</p><h2 id="the-8-criteria-and-their-18-sub-criteria">The 8 criteria and their 18 sub-criteria</h2><ol><li><strong>Guidance (Guidage)</strong> — the means available to advise, orient, inform, and guide the user through their interactions with the system. Splits into:<ul><li><em>Prompting</em> — are users told what’s expected of them at each step?</li><li><em>Grouping/Distinction of Items</em> — are related items visually grouped, and unrelated items visually distinguished?</li><li><em>Immediate Feedback</em> — does the system respond to user actions in a way that confirms what just happened?</li><li><em>Legibility</em> — are labels, text, and visual elements actually readable?</li></ul></li><li><strong>Workload (Charge de travail)</strong> — minimizing the perceptual and cognitive load on the user, and maximizing dialogue efficiency. Splits into:<ul><li><em>Brevity</em> — are interactions as short as they can be without losing clarity?</li><li><em>Minimal Actions</em> — is the number of steps to complete a task as low as it can reasonably be?</li></ul></li><li><strong>Explicit Control (Contrôle explicite)</strong> — the system should only do what the user explicitly asks it to, and the user should be able to control the pace and sequence of their own actions. Splits into:<ul><li><em>Explicit User Action</em> — does the system only take consequential action in direct response to something the user asked for, rather than as a side effect?</li><li><em>User Control</em> — can the user control the dialogue (interrupt, go back, change their mind) rather than being railroaded through a fixed sequence?</li></ul></li><li><strong>Adaptability (Adaptabilité)</strong> — the system’s capacity to behave differently for different contexts and different users. Splits into:<ul><li><em>Flexibility</em> — are there multiple ways to accomplish the same task, suited to different user preferences?</li><li><em>User Experience Consideration</em> — does the system account for users at different experience levels (a novice and a power user shouldn’t be forced through identical interaction paths)?</li></ul></li><li><strong>Error Management (Gestion des erreurs)</strong> — preventing errors where possible, and handling them well where not. Splits into:<ul><li><em>Error Protection</em> — does the system prevent or flag likely mistakes before they cause damage?</li><li><em>Quality of Error Messages</em> — when something goes wrong, is the message specific and actionable, or generic and unhelpful?</li><li><em>Error Correction</em> — can the user actually recover from the error without starting over?</li></ul></li><li><strong>Consistency (Homogénéité/Cohérence)</strong> — similar elements and actions should look and behave the same way throughout the system, so that what a user learns in one place transfers to another.</li><li><strong>Significance of Codes (Signifiance des codes et dénominations)</strong> — labels, codes, and abbreviations should have an understandable, ideally self-evident, relationship to what they represent — not an arbitrary one the user has to memorize.</li><li><strong>Compatibility (Compatibilité)</strong> — the degree to which the system matches the characteristics, expectations, and prior experience of its actual users (their task knowledge, their habits from other tools, their mental models).</li></ol><p>Two things stand out next to Nielsen’s list. First, several criteria that Nielsen folds into one heuristic are split apart here — <em>Error Prevention</em> and <em>Help Users Recognize, Diagnose, and Recover from Errors</em> are one Nielsen heuristic, but three distinct Bastien & Scapin sub-criteria (Error Protection, Quality of Error Messages, Error Correction). Second, <em>Compatibility</em> has no clean Nielsen equivalent — it’s closest to “match the real world,” but it’s explicitly about the user’s actual prior experience with other systems, not just real-world conventions in the abstract.</p><h2 id="does-the-extra-granularity-actually-find-more-problems">Does the extra granularity actually find more problems?</h2><p>This is the part that’s easy to assert and hard to prove, so it’s worth being precise about the one study that’s actually tested it directly.</p><p>Luzzardi et al. (2004), in a comparative case study evaluating information visualization techniques, had separate groups of evaluators run heuristic evaluations using Nielsen’s heuristics and Bastien & Scapin’s criteria on the same interfaces. The Bastien & Scapin group found more problems overall (46 vs. 39) and, more importantly, found a higher proportion of severe problems (22 vs. 14). The criteria’s extra granularity didn’t just produce more line items — it produced more of the line items that actually mattered.</p><p>That’s a single study, not a meta-analysis, and direct head-to-head comparisons between the two frameworks remain rare in the literature. It’s evidence, not proof. But it’s evidence in a specific, falsifiable direction, which is more than can be said for most “heuristic A vs. heuristic B” claims that circulate in UX folklore.</p><h2 id="how-to-actually-run-an-evaluation-with-this-method">How to actually run an evaluation with this method</h2><ol><li><strong>Don’t try to apply all 18 at once on first pass.</strong> Walk the interface task by task (not screen by screen), and at each step ask which criterion, if any, is being violated.</li><li><strong>Use the sub-criteria to settle disagreements, not just to generate findings.</strong> When two evaluators disagree about whether something is a problem, the granularity often resolves it — “is this a Guidance issue or an Error Management issue?” is a more answerable question than “is this generally bad UX?”</li><li><strong>Expect inter-rater variation, and plan for it.</strong> Even trained evaluators don’t converge perfectly on which criterion best explains a given problem — that’s a known limitation of the method, not a sign you’re doing it wrong. Pair evaluations or a short calibration pass help more than trying to write an ever-more-precise definition.</li><li><strong>Log the criterion name with each finding, not just a severity score.</strong> This is what makes the method more actionable for engineering teams than a generic “usability issue” ticket — it tells the team which category of fix is needed.</li></ol><p>For product teams specifically — where the cost of a missed error-handling or guidance failure isn’t just an annoyed user but a support escalation or a churn risk — the extra rigor is rarely wasted effort.</p><hr><p><em>Sources: Bastien, J.M.C. & Scapin, D.L. (1993), “Ergonomic criteria for the evaluation of human-computer interfaces,” INRIA Technical Report RT-0156; Scapin, D.L. & Bastien, J.M.C. (1997), “Ergonomic criteria for evaluating the ergonomic quality of interactive systems,” Behaviour & Information Technology, 16(4–5); Luzzardi et al. (2004), comparative case study cited via Chen, “UX heuristics: a closer look at Bastien and Scapin.”</em></p>
+          </div>
+        </article>
+        
+        <!-- OLD ARTICLE LAYOUT (commented out, kept for reference)
+        <div class="wrapper">
+        <div class="article-with-toc">
+            <div>
+                <article>
+                    <header>
+                        <div class="meta">
+                            <time datetime="Jun 29, 2026">Jun 29, 2026</time>
+                             &middot; <span class="reading-time">5 min read</span>
+                        </div>
+                        <h1>The Bastien &amp; Scapin Ergonomic Criteria - A Practitioner&#39;s Guide to a Method That Outperforms the Heuristics You Already Know</h1>
+                        <p>If you&#39;ve run a heuristic evaluation, you&#39;ve probably used Jakob Nielsen&#39;s 10 usability heuristics. They&#39;re fast, well-known, and good enough for a first pass. They&#39;re also not the only option — and in at least one direct comparison, not the better one.</p>
+                    </header>
+                    <section>
+                        <h1>The Bastien & Scapin Ergonomic Criteria: A Practitioner’s Guide to a Method That Outperforms the Heuristics You Already Know</h1><p>If you’ve run a heuristic evaluation, you’ve probably used Jakob Nielsen’s 10 usability heuristics. They’re fast, well-known, and good enough for a first pass. They’re also not the only option — and in at least one direct comparison, not the better one.</p><p>Bastien and Scapin’s ergonomic criteria are a less-cited but more rigorously derived framework, built specifically for the kind of close, systematic inspection that catches problems a quick Nielsen pass misses. This article covers where the criteria came from, what they actually contain, how they stack up against Nielsen’s heuristics in practice, and how to actually run an evaluation with the method.</p><h2 id="where-the-criteria-came-from">Where the criteria came from</h2><p>Christian Bastien and Dominique Scapin, both researchers in ergonomic psychology and cognitive ergonomics, published the criteria in May 1993 as an INRIA technical report (RT-0156), under the title “Ergonomic Criteria for the Evaluation of Human-Computer Interfaces.” A refined version followed in 1997 in <em>Behaviour & Information Technology</em>.</p><p>The method wasn’t built top-down from theory. Bastien and Scapin gathered roughly 900 existing ergonomic recommendations from the human-computer interaction literature and sorted them — empirically, through an iterative classification process — into a structure that could hold all of them without losing the distinctions that made each recommendation useful. That sorting process is what produced the final structure: <strong>8 main criteria, broken into 18 elementary sub-criteria.</strong></p><p>This origin matters for how you should think about the method. Nielsen’s heuristics were authored as a compact, memorable set of ten. Bastien and Scapin’s were derived from a much larger body of accumulated, validated guidance and only afterward compressed into a usable taxonomy. The criteria are more granular as a direct consequence — and that granularity is what gives evaluators more precise language for what’s actually wrong with an interface.</p><h2 id="the-8-criteria-and-their-18-sub-criteria">The 8 criteria and their 18 sub-criteria</h2><ol><li><strong>Guidance (Guidage)</strong> — the means available to advise, orient, inform, and guide the user through their interactions with the system. Splits into:<ul><li><em>Prompting</em> — are users told what’s expected of them at each step?</li><li><em>Grouping/Distinction of Items</em> — are related items visually grouped, and unrelated items visually distinguished?</li><li><em>Immediate Feedback</em> — does the system respond to user actions in a way that confirms what just happened?</li><li><em>Legibility</em> — are labels, text, and visual elements actually readable?</li></ul></li><li><strong>Workload (Charge de travail)</strong> — minimizing the perceptual and cognitive load on the user, and maximizing dialogue efficiency. Splits into:<ul><li><em>Brevity</em> — are interactions as short as they can be without losing clarity?</li><li><em>Minimal Actions</em> — is the number of steps to complete a task as low as it can reasonably be?</li></ul></li><li><strong>Explicit Control (Contrôle explicite)</strong> — the system should only do what the user explicitly asks it to, and the user should be able to control the pace and sequence of their own actions. Splits into:<ul><li><em>Explicit User Action</em> — does the system only take consequential action in direct response to something the user asked for, rather than as a side effect?</li><li><em>User Control</em> — can the user control the dialogue (interrupt, go back, change their mind) rather than being railroaded through a fixed sequence?</li></ul></li><li><strong>Adaptability (Adaptabilité)</strong> — the system’s capacity to behave differently for different contexts and different users. Splits into:<ul><li><em>Flexibility</em> — are there multiple ways to accomplish the same task, suited to different user preferences?</li><li><em>User Experience Consideration</em> — does the system account for users at different experience levels (a novice and a power user shouldn’t be forced through identical interaction paths)?</li></ul></li><li><strong>Error Management (Gestion des erreurs)</strong> — preventing errors where possible, and handling them well where not. Splits into:<ul><li><em>Error Protection</em> — does the system prevent or flag likely mistakes before they cause damage?</li><li><em>Quality of Error Messages</em> — when something goes wrong, is the message specific and actionable, or generic and unhelpful?</li><li><em>Error Correction</em> — can the user actually recover from the error without starting over?</li></ul></li><li><strong>Consistency (Homogénéité/Cohérence)</strong> — similar elements and actions should look and behave the same way throughout the system, so that what a user learns in one place transfers to another.</li><li><strong>Significance of Codes (Signifiance des codes et dénominations)</strong> — labels, codes, and abbreviations should have an understandable, ideally self-evident, relationship to what they represent — not an arbitrary one the user has to memorize.</li><li><strong>Compatibility (Compatibilité)</strong> — the degree to which the system matches the characteristics, expectations, and prior experience of its actual users (their task knowledge, their habits from other tools, their mental models).</li></ol><p>Two things stand out next to Nielsen’s list. First, several criteria that Nielsen folds into one heuristic are split apart here — <em>Error Prevention</em> and <em>Help Users Recognize, Diagnose, and Recover from Errors</em> are one Nielsen heuristic, but three distinct Bastien & Scapin sub-criteria (Error Protection, Quality of Error Messages, Error Correction). Second, <em>Compatibility</em> has no clean Nielsen equivalent — it’s closest to “match the real world,” but it’s explicitly about the user’s actual prior experience with other systems, not just real-world conventions in the abstract.</p><h2 id="does-the-extra-granularity-actually-find-more-problems">Does the extra granularity actually find more problems?</h2><p>This is the part that’s easy to assert and hard to prove, so it’s worth being precise about the one study that’s actually tested it directly.</p><p>Luzzardi et al. (2004), in a comparative case study evaluating information visualization techniques, had separate groups of evaluators run heuristic evaluations using Nielsen’s heuristics and Bastien & Scapin’s criteria on the same interfaces. The Bastien & Scapin group found more problems overall (46 vs. 39) and, more importantly, found a higher proportion of severe problems (22 vs. 14). The criteria’s extra granularity didn’t just produce more line items — it produced more of the line items that actually mattered.</p><p>That’s a single study, not a meta-analysis, and direct head-to-head comparisons between the two frameworks remain rare in the literature. It’s evidence, not proof. But it’s evidence in a specific, falsifiable direction, which is more than can be said for most “heuristic A vs. heuristic B” claims that circulate in UX folklore.</p><h2 id="how-to-actually-run-an-evaluation-with-this-method">How to actually run an evaluation with this method</h2><ol><li><strong>Don’t try to apply all 18 at once on first pass.</strong> Walk the interface task by task (not screen by screen), and at each step ask which criterion, if any, is being violated.</li><li><strong>Use the sub-criteria to settle disagreements, not just to generate findings.</strong> When two evaluators disagree about whether something is a problem, the granularity often resolves it — “is this a Guidance issue or an Error Management issue?” is a more answerable question than “is this generally bad UX?”</li><li><strong>Expect inter-rater variation, and plan for it.</strong> Even trained evaluators don’t converge perfectly on which criterion best explains a given problem — that’s a known limitation of the method, not a sign you’re doing it wrong. Pair evaluations or a short calibration pass help more than trying to write an ever-more-precise definition.</li><li><strong>Log the criterion name with each finding, not just a severity score.</strong> This is what makes the method more actionable for engineering teams than a generic “usability issue” ticket — it tells the team which category of fix is needed.</li></ol><p>For product teams specifically — where the cost of a missed error-handling or guidance failure isn’t just an annoyed user but a support escalation or a churn risk — the extra rigor is rarely wasted effort.</p><hr><p><em>Sources: Bastien, J.M.C. & Scapin, D.L. (1993), “Ergonomic criteria for the evaluation of human-computer interfaces,” INRIA Technical Report RT-0156; Scapin, D.L. & Bastien, J.M.C. (1997), “Ergonomic criteria for evaluating the ergonomic quality of interactive systems,” Behaviour & Information Technology, 16(4–5); Luzzardi et al. (2004), comparative case study cited via Chen, “UX heuristics: a closer look at Bastien and Scapin.”</em></p>
+                    </section>
+                </article>
+            </div>
+            <div>
+                <aside>
+                
+                <div class="author-list">
+                        <a href="https://jsooriah.github.io/happyapps/blog/authors/joel-sooriah/">
+                        <img class="medium rounded" src="https://jsooriah.github.io/happyapps/assets/blog/authors/joel-sooriah/joel-sooriah.jpeg" alt="Joel Sooriah">
+                        </a>
+                </div>
+                <div class="tag-list">
+                </div>
+                
+                <h4>On this page</h4>
+                <ul>
+                    <li class="first-level">
+                        <a href="#where-the-criteria-came-from">Where the criteria came from</a>
+                        <ul>
+                        </ul>
+                    </li>
+    <li class="first-level">
+                        <a href="#the-8-criteria-and-their-18-sub-criteria">The 8 criteria and their 18 sub-criteria</a>
+                        <ul>
+                        </ul>
+                    </li>
+    <li class="first-level">
+                        <a href="#does-the-extra-granularity-actually-find-more-problems">Does the extra granularity actually find more problems?</a>
+                        <ul>
+                        </ul>
+                    </li>
+    <li class="first-level">
+                        <a href="#how-to-actually-run-an-evaluation-with-this-method">How to actually run an evaluation with this method</a>
+                        <ul>
+                        </ul>
+                    </li>
+                </ul>
+                </aside>
+            </div>
+        </div>
+        </div>
+        
+        <section class="primary">
+            <div class="wrapper">
+            </div>
+        </section>
+        -->
+        
+    </main>
+    
+    <!-- UX REVAMP: simplified footer -->
+    <footer class="site-footer">
+      <p><a href="/happyapps/">happyapps</a> · Joel Sooriah</p>
+      <p class="footer-copy">Built with <a href="https://github.com/toucansites/toucan" target="_blank" rel="noopener">Toucan</a> &amp; Swift · MIT License</p>
+    </footer>
+    
+    <!-- OLD FOOTER (commented out, kept for reference)
+    <div id="footer-container">
+        <footer class="wrapper">
+            <div class="grid grid-211">
+                <div>
+                    <a href="/">
+                <picture>
+                    <source
+                        srcset="/happyapps/images/logos/happyapps-logo~dark.png"
+                        media="(prefers-color-scheme: dark)"
+                        >
+                    <img
+                        src="/happyapps/images/logos/happyapps-logo.png"
+                        alt="Logo of Happy Apps"
+                        title="Happy Apps"
+                        >
+                </picture>
+            </a>
+                    <h2></h2>
+                    <p></p>
+                </div>
+                <div class="links">
+                    <a href="/">
+                        <picture>
+                            <source
+                                srcset="/happyapps/images/footer/toucan-logo.png"
+                                media="(prefers-color-scheme: dark)"
+                            >
+                            <img
+                                src="/happyapps/images/footer/toucan-logo.png"
+                                alt="Logo of Happy Apps"
+                                title="Happy Apps"
+                            >
+                        </picture>
+                    </a>
+                    <p><small>This site was generated<br>using <a href="https://swift.org/" target="_blank">Swift</a> &amp; <a href="https://github.com/toucansites/toucan/" target="_blank">Toucan</a>.</small>
+                    <small>
+                    Toucan is a markdown-based static site generator writter in Swift.
+                    Toucan is open source and is free on Github.<br/>
+                    <a href="https://github.com/toucansites/website/blob/main/LICENSE" target="_blank">MIT License</a></small>
+                    </p>
+                    <div class="external"></div>
+                    <div class="contact">
+                        <h3></h3>
+                        <p><br><a href="mailto:"></a></p>
+                    </div>
+                </div>
+            </div>
+            <div id="copyright"></div>
+        </footer>
+    </div>
+    -->
+
+    
+    
+    <script src="/js/favicon.js"></script>
+    
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KQCKHXQ8"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+</body>
+</html>
